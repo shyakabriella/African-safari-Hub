@@ -52,24 +52,47 @@ function Avatar({ src, alt }: { src: string; alt: string }) {
 
   if (failed) {
     return (
-      <div className="h-[56px] w-[56px] rounded-full bg-white/90 ring-2 ring-white grid place-items-center text-zinc-700 text-sm font-semibold shadow-sm">
+      <div className="h-12 w-12 rounded-full bg-white ring-2 ring-white grid place-items-center text-zinc-700 text-sm font-semibold shadow-sm">
         {alt.slice(0, 1)}
       </div>
     );
   }
 
   return (
-    <div className="h-[56px] w-[56px] overflow-hidden rounded-full ring-2 ring-white shadow-sm">
+    <div className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-white shadow-sm">
       <Image
         src={src}
         alt={alt}
-        width={56}
-        height={56}
+        width={48}
+        height={48}
         className="h-full w-full object-cover"
         onError={() => setFailed(true)}
       />
     </div>
   );
+}
+
+function CardShell({
+  children,
+  href,
+  className = "",
+}: {
+  children: React.ReactNode;
+  href?: string;
+  className?: string;
+}) {
+  const base =
+    "group block rounded-2xl bg-white/95 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_22px_rgba(0,0,0,0.10)] hover:shadow-[0_14px_30px_rgba(0,0,0,0.14)] transition-all duration-300";
+
+  if (href) {
+    return (
+      <Link href={href} className={`${base} ${className}`}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <div className={`${base} ${className}`}>{children}</div>;
 }
 
 export default function CategoryStrip({
@@ -83,69 +106,95 @@ export default function CategoryStrip({
 }) {
   return (
     <section className={`w-full ${className}`}>
-      {/* ✅ FULL WIDTH STRIP (edge-to-edge) */}
+      {/* ✅ Normal flow (no absolute “band” that causes weird layout) */}
       <div
-        className="relative w-full h-[205px] overflow-hidden bg-[#FFF7ED]"
+        className="relative w-full overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* ✅ warm overlay so your strip always matches brand and stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#7C2D12]/10 via-white/30 to-[#14532D]/10" />
+        {/* overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#7C2D12]/10 via-white/35 to-[#14532D]/10" />
 
-        {/* ✅ strong readable band (white/cream like your branding slides) */}
-        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[90px] bg-white/90 backdrop-blur-md ring-1 ring-black/5 shadow-[0_12px_35px_rgba(0,0,0,0.18)]" />
-
-        {/* ✅ Content aligned (but background still full width) */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
-            <div className="flex items-center gap-14 overflow-x-auto no-scrollbar snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:overflow-visible">
-              {items.map((it, idx) => {
-                const block = (
-                  <div
-                    className="min-w-[320px] snap-start lg:min-w-0 stripItemIn"
-                    style={{ animationDelay: `${idx * 120}ms` }}
+        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-7">
+          {/* ✅ Mobile: scroll cards | Desktop: grid cards */}
+          <div className="lg:hidden">
+            <div className="-mx-4 px-4">
+              <div className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
+                {items.map((it, idx) => (
+                  <CardShell
+                    key={`${it.category}-${idx}`}
+                    href={it.href}
+                    className="snap-start min-w-[285px] sm:min-w-[330px] stripItemIn"
+                    // ✅ uses your existing animation class
+                    style={{ animationDelay: `${idx * 120}ms` } as any}
                   >
-                    <div className="group flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1">
-                      {/* avatar + badge */}
-                      <div className="relative shrink-0">
-                        <Avatar src={it.avatarSrc} alt={it.category} />
+                    <div className="p-4">
+                      <div className="flex items-start gap-4">
+                        <div className="relative shrink-0">
+                          <Avatar src={it.avatarSrc} alt={it.category} />
+                          {!!it.badge && (
+                            <span className="absolute -top-2 -right-2 inline-flex h-7 items-center justify-center rounded-full bg-[#2E7D32] px-2 text-[12px] font-semibold text-white ring-2 ring-white shadow-sm">
+                              {String(it.badge)}
+                            </span>
+                          )}
+                        </div>
 
-                        {!!it.badge && (
-                          <span className="absolute -top-2 -right-2 inline-flex h-7 items-center justify-center rounded-full bg-[#2E7D32] px-2 text-[12px] font-semibold text-white ring-2 ring-white shadow-sm">
-                            {String(it.badge)}
-                          </span>
-                        )}
-                      </div>
+                        <div className="min-w-0">
+                          <p className="text-[11px] tracking-[0.18em] text-zinc-500 whitespace-nowrap">
+                            {it.category}
+                          </p>
 
-                      {/* text */}
-                      <div className="min-w-0">
-                        <p className="text-[12px] tracking-[0.18em] text-zinc-900/55 whitespace-nowrap transition-colors duration-300 group-hover:text-[#B45309]">
-                          {it.category}
-                        </p>
+                          <h3 className="mt-1 whitespace-pre-line text-[16px] font-semibold leading-[1.2] text-zinc-900 group-hover:text-[#B45309] transition-colors">
+                            {it.title}
+                          </h3>
 
-                        <h3 className="mt-1 whitespace-pre-line text-[18px] font-semibold leading-[1.15] text-zinc-900 transition-colors duration-300 group-hover:text-[#B45309]">
-                          {it.title}
-                        </h3>
-
-                        {/* ✅ orange underline like your branding */}
-                        <div className="mt-3 h-[3px] w-0 rounded-full bg-[#F59E0B] transition-all duration-300 group-hover:w-full" />
+                          <div className="mt-3 h-[3px] w-10 rounded-full bg-[#F59E0B] group-hover:w-16 transition-all" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-
-                return it.href ? (
-                  <Link key={`${it.category}-${idx}`} href={it.href} className="block">
-                    {block}
-                  </Link>
-                ) : (
-                  <div key={`${it.category}-${idx}`}>{block}</div>
-                );
-              })}
+                  </CardShell>
+                ))}
+              </div>
             </div>
+          </div>
+
+          <div className="hidden lg:grid lg:grid-cols-4 lg:gap-6">
+            {items.map((it, idx) => (
+              <CardShell
+                key={`${it.category}-${idx}`}
+                href={it.href}
+                className="stripItemIn"
+                style={{ animationDelay: `${idx * 120}ms` } as any}
+              >
+                <div className="p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="relative shrink-0">
+                      <Avatar src={it.avatarSrc} alt={it.category} />
+                      {!!it.badge && (
+                        <span className="absolute -top-2 -right-2 inline-flex h-7 items-center justify-center rounded-full bg-[#2E7D32] px-2 text-[12px] font-semibold text-white ring-2 ring-white shadow-sm">
+                          {String(it.badge)}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="min-w-0">
+                      <p className="text-[11px] tracking-[0.18em] text-zinc-500 whitespace-nowrap">
+                        {it.category}
+                      </p>
+
+                      <h3 className="mt-1 whitespace-pre-line text-[16px] font-semibold leading-[1.2] text-zinc-900 group-hover:text-[#B45309] transition-colors">
+                        {it.title}
+                      </h3>
+
+                      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#F59E0B] group-hover:w-16 transition-all" />
+                    </div>
+                  </div>
+                </div>
+              </CardShell>
+            ))}
           </div>
         </div>
       </div>
