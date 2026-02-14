@@ -3,12 +3,18 @@
 import Link from "next/link";
 import { Clock, Eye } from "lucide-react";
 
-type Post = {
+export type Post = {
   title: string;
   href: string;
-  image: string; // online image
-  readTime: string;
-  views: string;
+  image: string; // online or /public image
+
+  /** ✅ make these optional so marketing cards can pass without them */
+  readTime?: string;
+  views?: string | number;
+
+  /** ✅ optional (if you ever want to reuse the type elsewhere) */
+  tag?: string;
+  description?: string;
 };
 
 export default function SidebarPosts({
@@ -35,21 +41,31 @@ export default function SidebarPosts({
           {top.title}
         </h3>
 
-        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-600">
-          <span className="inline-flex items-center gap-2">
-            <Clock className="h-4 w-4 text-zinc-500" />
-            {top.readTime}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Eye className="h-4 w-4 text-zinc-500" />
-            {top.views}
-          </span>
-        </div>
+        {/* ✅ show meta only if readTime/views exist */}
+        {(top.readTime || top.views) && (
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-600">
+            {top.readTime && (
+              <span className="inline-flex items-center gap-2">
+                <Clock className="h-4 w-4 text-zinc-500" />
+                {top.readTime}
+              </span>
+            )}
+
+            {top.views && (
+              <span className="inline-flex items-center gap-2">
+                <Eye className="h-4 w-4 text-zinc-500" />
+                {typeof top.views === "number"
+                  ? `${top.views.toLocaleString()}`
+                  : top.views}
+              </span>
+            )}
+          </div>
+        )}
       </Link>
 
       <div className="mt-6 space-y-5 flex-1">
-        {list.map((p, i) => (
-          <Link key={i} href={p.href} className="group flex items-start gap-4">
+        {list.map((p) => (
+          <Link key={p.href} href={p.href} className="group flex items-start gap-4">
             <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg">
               <img
                 src={p.image}
@@ -63,16 +79,26 @@ export default function SidebarPosts({
                 {p.title}
               </h4>
 
-              <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-600">
-                <span className="inline-flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-zinc-500" />
-                  {p.readTime}
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <Eye className="h-4 w-4 text-zinc-500" />
-                  {p.views}
-                </span>
-              </div>
+              {/* ✅ show meta only if exists */}
+              {(p.readTime || p.views) && (
+                <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-600">
+                  {p.readTime && (
+                    <span className="inline-flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-zinc-500" />
+                      {p.readTime}
+                    </span>
+                  )}
+
+                  {p.views && (
+                    <span className="inline-flex items-center gap-2">
+                      <Eye className="h-4 w-4 text-zinc-500" />
+                      {typeof p.views === "number"
+                        ? `${p.views.toLocaleString()}`
+                        : p.views}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
           </Link>
         ))}
