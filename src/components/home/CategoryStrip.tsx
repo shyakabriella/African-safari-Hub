@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -76,23 +77,29 @@ function CardShell({
   children,
   href,
   className = "",
+  style,
 }: {
   children: React.ReactNode;
   href?: string;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   const base =
     "group block rounded-2xl bg-white/95 backdrop-blur ring-1 ring-black/5 shadow-[0_10px_22px_rgba(0,0,0,0.10)] hover:shadow-[0_14px_30px_rgba(0,0,0,0.14)] transition-all duration-300";
 
   if (href) {
     return (
-      <Link href={href} className={`${base} ${className}`}>
+      <Link href={href} className={`${base} ${className}`} style={style}>
         {children}
       </Link>
     );
   }
 
-  return <div className={`${base} ${className}`}>{children}</div>;
+  return (
+    <div className={`${base} ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
 
 export default function CategoryStrip({
@@ -106,7 +113,6 @@ export default function CategoryStrip({
 }) {
   return (
     <section className={`w-full ${className}`}>
-      {/* ✅ Normal flow (no absolute “band” that causes weird layout) */}
       <div
         className="relative w-full overflow-hidden"
         style={{
@@ -119,7 +125,7 @@ export default function CategoryStrip({
         <div className="absolute inset-0 bg-gradient-to-r from-[#7C2D12]/10 via-white/35 to-[#14532D]/10" />
 
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-7">
-          {/* ✅ Mobile: scroll cards | Desktop: grid cards */}
+          {/* Mobile: scroll cards */}
           <div className="lg:hidden">
             <div className="-mx-4 px-4">
               <div className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
@@ -128,8 +134,7 @@ export default function CategoryStrip({
                     key={`${it.category}-${idx}`}
                     href={it.href}
                     className="snap-start min-w-[285px] sm:min-w-[330px] stripItemIn"
-                    // ✅ uses your existing animation class
-                    style={{ animationDelay: `${idx * 120}ms` } as any}
+                    style={{ animationDelay: `${idx * 120}ms` }}
                   >
                     <div className="p-4">
                       <div className="flex items-start gap-4">
@@ -161,13 +166,14 @@ export default function CategoryStrip({
             </div>
           </div>
 
+          {/* Desktop: grid cards */}
           <div className="hidden lg:grid lg:grid-cols-4 lg:gap-6">
             {items.map((it, idx) => (
               <CardShell
                 key={`${it.category}-${idx}`}
                 href={it.href}
                 className="stripItemIn"
-                style={{ animationDelay: `${idx * 120}ms` } as any}
+                style={{ animationDelay: `${idx * 120}ms` }}
               >
                 <div className="p-5">
                   <div className="flex items-start gap-4">
