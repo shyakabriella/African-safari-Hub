@@ -1,0 +1,45 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* hide scrollbar for swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* CategoryStrip entrance */
+@keyframes stripItemIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stripItemIn {
+  opacity: 0;
+  animation: stripItemIn 650ms ease-out forwards;
+}
+
+/* ✅ FeaturedWithSidebar entrance (THIS was missing) */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
