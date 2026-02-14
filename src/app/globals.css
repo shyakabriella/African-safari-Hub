@@ -1,10 +1,17 @@
 /* app/globals.css */
 @import "tailwindcss";
 
+/* ✅ Prevent tiny horizontal overflow + avoid "cut" feeling */
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: clip; /* better than hidden for fixed headers */
+}
+
+/* ✅ Helps flex/grid children shrink instead of forcing overflow */
+* {
+  min-width: 0;
 }
 
 /* hide scrollbar for swipe */
@@ -32,7 +39,7 @@ body {
   animation: stripItemIn 650ms ease-out forwards;
 }
 
-/* ✅ FeaturedWithSidebar entrance (THIS was missing) */
+/* ✅ FeaturedWithSidebar entrance */
 @keyframes fadeUp {
   0% {
     opacity: 0;

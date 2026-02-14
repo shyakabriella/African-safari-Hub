@@ -2,21 +2,26 @@ import "./globals.css";
 import SiteHeader from "@/components/navigation/SiteHeader";
 import SiteFooter from "@/components/footer/SiteFooter";
 
+const HEADER_H = 88; // keep in sync with your header height
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full overflow-x-hidden">
-      <body className="min-h-screen bg-white antialiased overflow-x-hidden">
-        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white">
+    <html lang="en" className="h-full w-full">
+      <body className="min-h-screen w-full bg-white antialiased overflow-x-clip">
+        {/* fixed header */}
+        <header className="fixed inset-x-0 top-0 z-50 bg-white">
           <SiteHeader />
         </header>
 
-        <div className="h-[88px]" aria-hidden="true" />
+        {/* spacer for fixed header */}
+        <div style={{ height: HEADER_H }} aria-hidden="true" />
 
-        <main className="w-full">{children}</main>
+        {/* main */}
+        <main className="w-full min-w-0 overflow-x-clip">{children}</main>
 
         <SiteFooter />
       </body>
