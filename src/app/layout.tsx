@@ -1,6 +1,7 @@
 import "./globals.css";
 import SiteHeader from "@/components/navigation/SiteHeader";
 import SiteFooter from "@/components/footer/SiteFooter";
+import DebugErrorScript from "./debug-error-script";
 
 const HEADER_H = 88; // keep in sync with your header height
 
@@ -12,6 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full">
       <body className="min-h-screen w-full bg-white antialiased overflow-x-clip">
+        {/* ✅ Debug overlay (only shows when ?debug=1) */}
+        <DebugErrorScript />
+
         {/* fixed header */}
         <header className="fixed inset-x-0 top-0 z-50 bg-white">
           <SiteHeader />
