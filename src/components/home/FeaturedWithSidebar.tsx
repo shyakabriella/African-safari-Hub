@@ -36,7 +36,7 @@ const featuredPost: Post = {
   description:
     "A modern website + direct booking engine + payments + SEO + reviews — built to convert visitors into guests 24/7.",
   href: "/solutions/website-booking",
-  image: "/img1.png", // ✅ /public/img1.png
+  image: "/img1.png",
 };
 
 const topStory: Post = {
@@ -45,7 +45,7 @@ const topStory: Post = {
   description:
     "Connect Booking.com, Expedia, Airbnb, Agoda and more. Real-time updates, monitoring, retry queue, and clean reporting.",
   href: "/solutions/channel-manager",
-  image: "/img3.jpeg", // ✅ REPLACED (from /public/img3.jpeg)
+  image: "/img3.jpeg",
 };
 
 const sidebarTop: Post = {
@@ -54,7 +54,7 @@ const sidebarTop: Post = {
   description:
     "Guests search dates, choose rooms, add extras, pay online, and receive instant confirmation — while inventory updates everywhere.",
   href: "/solutions/booking-engine",
-  image: "/img2.png", // ✅ /public/img2.png
+  image: "/img2.png",
 };
 
 const sidebarList: Post[] = [
@@ -103,7 +103,7 @@ function FeaturedMain({ post }: { post: Post }) {
         {/* readability overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-6">
+        <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
           {post.tag ? (
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur"
@@ -114,17 +114,17 @@ function FeaturedMain({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          <h2 className="mt-3 text-3xl font-semibold leading-tight text-white drop-shadow">
+          <h2 className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-white drop-shadow">
             {post.title}
           </h2>
 
           {post.description ? (
-            <p className="mt-3 max-w-2xl text-white/90 leading-relaxed">
+            <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/90 leading-relaxed">
               {post.description}
             </p>
           ) : null}
 
-          <div className="mt-5 flex flex-wrap items-center gap-2">
+          <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-2">
             <span
               className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-white ring-1 ring-white/15"
               style={{ backgroundColor: "rgba(89,158,26,0.18)" }}
@@ -155,14 +155,14 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
           </div>
 
-          <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">
+          <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">
             Explore Solution
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
 
           {/* ✅ green accent bar like slide */}
           <div
-            className="mt-4 h-[5px] w-24 rounded-full"
+            className="mt-3 sm:mt-4 h-[5px] w-24 rounded-full"
             style={{ backgroundColor: BRAND.green }}
           />
         </div>
@@ -173,9 +173,9 @@ function FeaturedMain({ post }: { post: Post }) {
 
 function TopStoryRow({ post }: { post: Post }) {
   return (
-    <div className="mt-8 rounded-2xl bg-zinc-50 p-6 ring-1 ring-zinc-100">
+    <div className="mt-8 rounded-2xl bg-zinc-50 p-4 sm:p-6 ring-1 ring-zinc-100">
       <div className="flex items-center gap-4">
-        <h3 className="text-xl font-semibold" style={{ color: BRAND.orange }}>
+        <h3 className="text-lg sm:text-xl font-semibold" style={{ color: BRAND.orange }}>
           Top Highlight
         </h3>
         <div className="h-px flex-1 bg-zinc-200" />
@@ -197,9 +197,8 @@ function TopStoryRow({ post }: { post: Post }) {
         href={post.href}
         className="mt-6 grid gap-6 md:grid-cols-[360px_1fr] items-center group"
       >
-        {/* ✅ IMAGE: FIT like your screenshot (fills area, no empty space) */}
         <div className="relative w-full overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-200 shadow-sm">
-          <div className="relative h-[240px] w-full md:h-[260px]">
+          <div className="relative h-[200px] sm:h-[240px] w-full md:h-[260px]">
             <img
               src={post.image}
               alt={post.title}
@@ -208,7 +207,7 @@ function TopStoryRow({ post }: { post: Post }) {
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           {post.tag ? (
             <div
               className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ring-1"
@@ -222,11 +221,11 @@ function TopStoryRow({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          <h4 className="mt-3 text-3xl font-semibold leading-tight text-zinc-900 transition-colors duration-300 group-hover:text-[#AD6419]">
+          <h4 className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-zinc-900 transition-colors duration-300 group-hover:text-[#AD6419]">
             {post.title}
           </h4>
 
-          <p className="mt-3 text-zinc-600 leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
             {post.description ??
               "Connect OTAs, sync rates/availability, prevent overbookings, and track performance from one hub."}
           </p>
@@ -276,8 +275,8 @@ function TopStoryRow({ post }: { post: Post }) {
 
 export default function FeaturedWithSidebar() {
   return (
-    <section className="w-full">
-      {/* ✅ ensures fadeUp exists even if you didn't add it in globals */}
+    <section className="w-full overflow-x-hidden">
+      {/* ✅ Component-only responsiveness overrides */}
       <style jsx global>{`
         @keyframes fadeUp {
           from {
@@ -289,11 +288,22 @@ export default function FeaturedWithSidebar() {
             transform: translateY(0);
           }
         }
+
+        /* ✅ FORCE 1 column on mobile/touch devices (even if it renders "desktop-like") */
+        @media (pointer: coarse) {
+          [data-fws-grid="1"] {
+            grid-template-columns: 1fr !important;
+          }
+          [data-fws-sidebarwrap="1"] {
+            position: static !important;
+            top: auto !important;
+          }
+        }
       `}</style>
 
-      <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="min-w-0">
             <p className="text-sm font-semibold" style={{ color: BRAND.orange }}>
               <a
                 href="https://www.ashbhub.com"
@@ -306,17 +316,16 @@ export default function FeaturedWithSidebar() {
               </a>
             </p>
 
-            <h2 className="mt-1 text-2xl font-semibold text-zinc-900">
+            <h2 className="mt-1 text-xl sm:text-2xl font-semibold text-zinc-900">
               Everything hotels need to sell more rooms
             </h2>
 
-            {/* ✅ slide-like orange underline */}
             <div
               className="mt-2 h-[5px] w-24 rounded-full"
               style={{ backgroundColor: BRAND.orange }}
             />
 
-            <p className="mt-3 max-w-2xl text-zinc-600">
+            <p className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-600">
               Website + booking engine + payments + SEO + OTA distribution +
               channel manager + PMS + marketing + local support — one connected
               system.
@@ -326,10 +335,10 @@ export default function FeaturedWithSidebar() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/solutions"
-              className="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition"
               style={{ backgroundColor: BRAND.orange }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor = BRAND.orangeDark)
@@ -344,7 +353,7 @@ export default function FeaturedWithSidebar() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold transition ring-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold transition ring-1"
               style={{
                 color: BRAND.orange,
                 borderColor: "rgba(173,100,25,0.25)",
@@ -361,31 +370,31 @@ export default function FeaturedWithSidebar() {
           </div>
         </div>
 
-        {/* ✅ stretch both columns to same height */}
-        <div className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-stretch">
+        {/* ✅ Grid: desktop 2 columns, mobile forced 1 column via CSS above */}
+        <div
+          data-fws-grid="1"
+          className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-stretch"
+        >
           <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards]">
             <FeaturedMain post={featuredPost} />
             <TopStoryRow post={topStory} />
           </div>
 
-          {/* ✅ sidebar is full height + sticky */}
           <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards] [animation-delay:120ms] h-full">
-            <div className="h-full lg:sticky lg:top-[110px]">
+            <div data-fws-sidebarwrap="1" className="h-full lg:sticky lg:top-[110px]">
               <SidebarPosts top={sidebarTop} list={sidebarList} />
             </div>
           </div>
         </div>
 
-        {/* quick feature strip */}
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl bg-white p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Globe className="h-5 w-5" style={{ color: BRAND.orange }} />
               Fast website + SEO
             </div>
             <p className="mt-2 text-sm text-zinc-600">
-              Mobile-first pages designed to rank and convert visitors to
-              bookings.
+              Mobile-first pages designed to rank and convert visitors to bookings.
             </p>
             <div
               className="mt-3 h-[5px] w-20 rounded-full"
@@ -393,7 +402,7 @@ export default function FeaturedWithSidebar() {
             />
           </div>
 
-          <div className="rounded-2xl bg-white p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Megaphone className="h-5 w-5" style={{ color: BRAND.green }} />
               Marketing + reviews
@@ -407,14 +416,13 @@ export default function FeaturedWithSidebar() {
             />
           </div>
 
-          <div className="rounded-2xl bg-white p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Headset className="h-5 w-5" style={{ color: BRAND.orange }} />
               Support + monitoring
             </div>
             <p className="mt-2 text-sm text-zinc-600">
-              Ticketing + SLA + alerts for sync/payment failures — so nothing
-              breaks.
+              Ticketing + SLA + alerts for sync/payment failures — so nothing breaks.
             </p>
             <div
               className="mt-3 h-[5px] w-20 rounded-full"
