@@ -96,24 +96,25 @@ function FeaturedMain({ post }: { post: Post }) {
       href={post.href}
       className="group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-100 hover:shadow-md transition-shadow"
     >
-      <div className="relative aspect-[16/10] w-full">
+      {/* ✅ FIX 1: taller hero on mobile so text never gets cut */}
+      <div className="relative aspect-[4/5] sm:aspect-[16/10] w-full">
         <img
           src={post.image}
           alt={post.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
 
-        {/* ✅ LIGHT overlay so BLACK text is visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/60 to-transparent sm:from-white/85 sm:via-white/35" />
+        {/* ✅ FIX 2: stronger overlay on mobile (keeps black text readable) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/98 via-white/85 to-white/10 sm:from-white/85 sm:via-white/35 sm:to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
           {post.tag ? (
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur"
               style={{
-                backgroundColor: "rgba(255,255,255,0.75)",
+                backgroundColor: "rgba(255,255,255,0.78)",
                 borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827", // zinc-900
+                color: "#111827",
               }}
             >
               <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
@@ -121,8 +122,9 @@ function FeaturedMain({ post }: { post: Post }) {
             </div>
           ) : null}
 
+          {/* ✅ FIX 3: slightly smaller title on mobile to reduce height */}
           <h2
-            className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-zinc-900"
+            className="mt-2 sm:mt-3 text-xl sm:text-3xl font-semibold leading-snug sm:leading-tight text-zinc-900"
             style={{ textShadow: TEXT_SHADOW_LIGHT }}
           >
             {post.title}
@@ -130,18 +132,25 @@ function FeaturedMain({ post }: { post: Post }) {
 
           {post.description ? (
             <p
-              className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-800 leading-relaxed"
-              style={{ textShadow: TEXT_SHADOW_LIGHT }}
+              className="mt-2 sm:mt-3 max-w-2xl text-sm sm:text-base text-zinc-800 leading-relaxed"
+              style={{
+                textShadow: TEXT_SHADOW_LIGHT,
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 3, // ✅ keep visible & neat on small screens
+                overflow: "hidden",
+              }}
             >
               {post.description}
             </p>
           ) : null}
 
-          <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-2">
+          {/* ✅ FIX 4: chips become horizontal scroll on mobile so they don’t wrap + push content out */}
+          <div className="mt-4 sm:mt-5 flex items-center gap-2 overflow-x-auto sm:overflow-visible no-scrollbar pb-1 sm:pb-0">
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
-                backgroundColor: "rgba(255,255,255,0.70)",
+                backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
                 color: "#111827",
               }}
@@ -151,9 +160,9 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
-                backgroundColor: "rgba(255,255,255,0.70)",
+                backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
                 color: "#111827",
               }}
@@ -163,9 +172,9 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
-                backgroundColor: "rgba(255,255,255,0.70)",
+                backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
                 color: "#111827",
               }}
@@ -175,9 +184,9 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
-                backgroundColor: "rgba(255,255,255,0.70)",
+                backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
                 color: "#111827",
               }}
@@ -188,7 +197,7 @@ function FeaturedMain({ post }: { post: Post }) {
           </div>
 
           <div
-            className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900"
+            className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900"
             style={{ textShadow: TEXT_SHADOW_LIGHT }}
           >
             Explore Solution
