@@ -96,21 +96,22 @@ function FeaturedMain({ post }: { post: Post }) {
       href={post.href}
       className="group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-100 hover:shadow-md transition-shadow"
     >
-      {/* ✅ FIX 1: taller hero on mobile so text never gets cut */}
-      <div className="relative aspect-[4/5] sm:aspect-[16/10] w-full">
+      {/* ✅ MOBILE FIX: make it taller so title never gets clipped */}
+      <div className="relative w-full aspect-[3/4] sm:aspect-[16/10] min-h-[520px] sm:min-h-0">
         <img
           src={post.image}
           alt={post.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
 
-        {/* ✅ FIX 2: stronger overlay on mobile (keeps black text readable) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/98 via-white/85 to-white/10 sm:from-white/85 sm:via-white/35 sm:to-transparent" />
+        {/* ✅ MOBILE FIX: stronger overlay so black text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/98 via-white/82 to-white/15 sm:from-white/85 sm:via-white/35 sm:to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
+          {/* Tag */}
           {post.tag ? (
             <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur"
               style={{
                 backgroundColor: "rgba(255,255,255,0.78)",
                 borderColor: "rgba(0,0,0,0.12)",
@@ -122,22 +123,29 @@ function FeaturedMain({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          {/* ✅ FIX 3: slightly smaller title on mobile to reduce height */}
+          {/* ✅ MOBILE FIX: clamp title so it never pushes out of the card */}
           <h2
-            className="mt-2 sm:mt-3 text-xl sm:text-3xl font-semibold leading-snug sm:leading-tight text-zinc-900"
-            style={{ textShadow: TEXT_SHADOW_LIGHT }}
+            className="mt-2 text-[20px] sm:text-3xl font-semibold leading-snug sm:leading-tight text-zinc-900"
+            style={{
+              textShadow: TEXT_SHADOW_LIGHT,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2, // ✅ important
+              overflow: "hidden",
+            }}
           >
             {post.title}
           </h2>
 
+          {/* ✅ MOBILE FIX: keep description short on mobile (still show on desktop) */}
           {post.description ? (
             <p
-              className="mt-2 sm:mt-3 max-w-2xl text-sm sm:text-base text-zinc-800 leading-relaxed"
+              className="mt-2 max-w-2xl text-[13px] sm:text-base text-zinc-800 leading-relaxed"
               style={{
                 textShadow: TEXT_SHADOW_LIGHT,
                 display: "-webkit-box",
                 WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 3, // ✅ keep visible & neat on small screens
+                WebkitLineClamp: 2, // ✅ important
                 overflow: "hidden",
               }}
             >
@@ -145,10 +153,10 @@ function FeaturedMain({ post }: { post: Post }) {
             </p>
           ) : null}
 
-          {/* ✅ FIX 4: chips become horizontal scroll on mobile so they don’t wrap + push content out */}
+          {/* ✅ MOBILE FIX: chips scroll instead of wrapping */}
           <div className="mt-4 sm:mt-5 flex items-center gap-2 overflow-x-auto sm:overflow-visible no-scrollbar pb-1 sm:pb-0">
             <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
                 backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
@@ -160,7 +168,7 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
                 backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
@@ -172,7 +180,7 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
                 backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
@@ -184,7 +192,7 @@ function FeaturedMain({ post }: { post: Post }) {
             </span>
 
             <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
               style={{
                 backgroundColor: "rgba(255,255,255,0.72)",
                 borderColor: "rgba(0,0,0,0.12)",
@@ -204,7 +212,6 @@ function FeaturedMain({ post }: { post: Post }) {
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
 
-          {/* ✅ green accent bar like slide */}
           <div
             className="mt-3 sm:mt-4 h-[5px] w-24 rounded-full"
             style={{ backgroundColor: BRAND.green }}
