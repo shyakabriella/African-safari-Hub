@@ -4,9 +4,7 @@ import Link from "next/link";
 import SidebarPosts from "@/components/home/SidebarPosts";
 import {
   Globe,
-  CreditCard,
   Repeat2,
-  CalendarDays,
   Megaphone,
   Headset,
   ArrowRight,
@@ -21,20 +19,20 @@ type Post = {
   description?: string;
 };
 
-/** ✅ Brand colors (from your PMS slide) */
+/** ✅ Brand colors (logo vibe) */
 const BRAND = {
   orange: "#AD6419",
   orangeDark: "#8E4F13",
   orangeSoft: "rgba(173,100,25,0.10)",
+  orangeSoft2: "rgba(173,100,25,0.16)",
   green: "#599E1A",
   greenSoft: "rgba(89,158,26,0.12)",
 };
 
 const featuredPost: Post = {
   tag: "AI-ready hospitality platform",
-  title: "Connect Your Hotel to AI. Boost Direct Bookings. Grow Revenue.",
-  description:
-    "Website + booking engine + payments + SEO + reviews — plus AI (OpenAI/ChatGPT + other AI tools) to automate guest chat, upsells, support, and smarter decisions 24/7.",
+  title: "Connect Your Hotel to AI.",
+  description: "Get Booked Through AI.",
   href: "/solutions/website-booking",
   image: "/img1.png",
 };
@@ -87,8 +85,8 @@ const sidebarList: Post[] = [
   },
 ];
 
-/** ✅ shadow that helps BLACK text read on mixed photo areas */
-const TEXT_SHADOW_LIGHT = "0 2px 14px rgba(255,255,255,0.75)";
+/** ✅ Dark shadow for text on photos */
+const TEXT_SHADOW_DARK = "0 2px 14px rgba(0,0,0,0.55)";
 
 function FeaturedMain({ post }: { post: Post }) {
   return (
@@ -96,7 +94,7 @@ function FeaturedMain({ post }: { post: Post }) {
       href={post.href}
       className="group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-100 hover:shadow-md transition-shadow"
     >
-      {/* ✅ MOBILE FIX: make it taller so title never gets clipped */}
+      {/* ✅ MOBILE FIX: taller so title never clipped */}
       <div className="relative w-full aspect-[3/4] sm:aspect-[16/10] min-h-[520px] sm:min-h-0">
         <img
           src={post.image}
@@ -104,18 +102,18 @@ function FeaturedMain({ post }: { post: Post }) {
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
 
-        {/* ✅ MOBILE FIX: stronger overlay so black text stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/98 via-white/82 to-white/15 sm:from-white/85 sm:via-white/35 sm:to-transparent" />
+        {/* ✅ NO white wash overlay — use soft DARK gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent sm:from-black/45 sm:via-black/10" />
 
         <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
-          {/* Tag */}
+          {/* Tag (no blur) */}
           {post.tag ? (
             <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
               style={{
-                backgroundColor: "rgba(255,255,255,0.78)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
+                backgroundColor: "rgba(255,255,255,0.92)",
+                borderColor: "rgba(173,100,25,0.30)",
+                color: BRAND.orangeDark,
               }}
             >
               <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
@@ -123,11 +121,12 @@ function FeaturedMain({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          {/* ✅ MOBILE FIX: clamp title so it never pushes out of the card */}
+          {/* ✅ Title in logo orange */}
           <h2
-            className="mt-2 text-[20px] sm:text-3xl font-semibold leading-snug sm:leading-tight text-zinc-900"
+            className="mt-2 text-[22px] sm:text-4xl font-extrabold leading-snug sm:leading-tight"
             style={{
-              textShadow: TEXT_SHADOW_LIGHT,
+              color: BRAND.orange,
+              textShadow: TEXT_SHADOW_DARK,
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
               WebkitLineClamp: 2,
@@ -137,12 +136,13 @@ function FeaturedMain({ post }: { post: Post }) {
             {post.title}
           </h2>
 
-          {/* ✅ MOBILE FIX: keep description short on mobile */}
+          {/* Description (white for best readability on photo) */}
           {post.description ? (
             <p
-              className="mt-2 max-w-2xl text-[13px] sm:text-base text-zinc-800 leading-relaxed"
+              className="mt-2 max-w-2xl text-[13px] sm:text-base font-semibold leading-relaxed"
               style={{
-                textShadow: TEXT_SHADOW_LIGHT,
+                color: "rgba(255,255,255,0.92)",
+                textShadow: TEXT_SHADOW_DARK,
                 display: "-webkit-box",
                 WebkitBoxOrient: "vertical",
                 WebkitLineClamp: 2,
@@ -153,85 +153,205 @@ function FeaturedMain({ post }: { post: Post }) {
             </p>
           ) : null}
 
-          {/* ✅ MOBILE FIX: chips scroll instead of wrapping */}
-          <div className="mt-4 sm:mt-5 flex items-center gap-2 overflow-x-auto sm:overflow-visible no-scrollbar pb-1 sm:pb-0">
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <Globe className="h-4 w-4" style={{ color: BRAND.green }} />
-              Website + SEO
-            </span>
+          {/* ✅ AI chips:
+              - Mobile: swipe (overflow-x-auto)
+              - Desktop: auto-slide (marquee)
+          */}
+          <div
+            className="mt-4 sm:mt-5 overflow-x-auto sm:overflow-hidden no-scrollbar pb-1 sm:pb-0"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            }}
+          >
+            <div className="flex w-max items-center gap-2 motion-reduce:animate-none sm:animate-[aiMarquee_26s_linear_infinite]">
+              {/* ---------- SET 1 ---------- */}
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                ChatGPT
+              </span>
 
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <CreditCard className="h-4 w-4" style={{ color: BRAND.orange }} />
-              Online Payments
-            </span>
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Claude (Anthropic)
+              </span>
 
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <Repeat2 className="h-4 w-4" style={{ color: BRAND.green }} />
-              OTA Sync
-            </span>
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Google Gemini
+              </span>
 
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <CalendarDays className="h-4 w-4" style={{ color: BRAND.orange }} />
-              PMS + Reports
-            </span>
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Microsoft Copilot
+              </span>
 
-            {/* ✅ NEW: AI chips */}
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <Sparkles className="h-4 w-4" style={{ color: BRAND.green }} />
-              ChatGPT Assistant
-            </span>
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Perplexity AI
+              </span>
 
-            <span
-              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.72)",
-                borderColor: "rgba(0,0,0,0.12)",
-                color: "#111827",
-              }}
-            >
-              <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-              AI Automations
-            </span>
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Mistral (Le Chat)
+              </span>
+
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Meta AI (Llama)
+              </span>
+
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Grok (xAI)
+              </span>
+
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                Cohere Command
+              </span>
+
+              <span
+                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.90)",
+                  borderColor: "rgba(173,100,25,0.25)",
+                  color: BRAND.orangeDark,
+                }}
+              >
+                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                IBM watsonx Assistant
+              </span>
+
+              {/* ---------- SET 2 (desktop only) to create endless loop ---------- */}
+              <div className="hidden sm:flex items-center gap-2" aria-hidden="true">
+                <span
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.90)",
+                    borderColor: "rgba(173,100,25,0.25)",
+                    color: BRAND.orangeDark,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                  ChatGPT
+                </span>
+                <span
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.90)",
+                    borderColor: "rgba(173,100,25,0.25)",
+                    color: BRAND.orangeDark,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                  Claude (Anthropic)
+                </span>
+                <span
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.90)",
+                    borderColor: "rgba(173,100,25,0.25)",
+                    color: BRAND.orangeDark,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                  Google Gemini
+                </span>
+                <span
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.90)",
+                    borderColor: "rgba(173,100,25,0.25)",
+                    color: BRAND.orangeDark,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                  Microsoft Copilot
+                </span>
+                <span
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.90)",
+                    borderColor: "rgba(173,100,25,0.25)",
+                    color: BRAND.orangeDark,
+                  }}
+                >
+                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+                  Perplexity AI
+                </span>
+              </div>
+            </div>
           </div>
 
           <div
-            className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900"
-            style={{ textShadow: TEXT_SHADOW_LIGHT }}
+            className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold"
+            style={{ color: "rgba(255,255,255,0.95)", textShadow: TEXT_SHADOW_DARK }}
           >
             Explore Solution
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -239,7 +359,7 @@ function FeaturedMain({ post }: { post: Post }) {
 
           <div
             className="mt-3 sm:mt-4 h-[5px] w-24 rounded-full"
-            style={{ backgroundColor: BRAND.green }}
+            style={{ backgroundColor: BRAND.orange }}
           />
         </div>
       </div>
@@ -355,6 +475,15 @@ export default function FeaturedWithSidebar() {
           }
         }
 
+        @keyframes aiMarquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
         @media (pointer: coarse) {
           [data-fws-grid="1"] {
             grid-template-columns: 1fr !important;
@@ -390,8 +519,8 @@ export default function FeaturedWithSidebar() {
             <p className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-600">
               Website + booking engine + payments + SEO + OTA distribution + channel manager + PMS +
               marketing + local support — one connected system.
-              <span className="ml-2 font-semibold" style={{ color: BRAND.green }}>
-                Built for bookings ✅
+              <span className="ml-2 font-semibold" style={{ color: BRAND.orange }}>
+                Built for bookings
               </span>
             </p>
           </div>
@@ -445,12 +574,12 @@ export default function FeaturedWithSidebar() {
             <p className="mt-2 text-sm text-zinc-600">
               Mobile-first pages designed to rank and convert visitors to bookings.
             </p>
-            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.green }} />
+            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
           </div>
 
           <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
-              <Megaphone className="h-5 w-5" style={{ color: BRAND.green }} />
+              <Megaphone className="h-5 w-5" style={{ color: BRAND.orange }} />
               Marketing + reviews
             </div>
             <p className="mt-2 text-sm text-zinc-600">
@@ -467,7 +596,7 @@ export default function FeaturedWithSidebar() {
             <p className="mt-2 text-sm text-zinc-600">
               Ticketing + SLA + alerts for sync/payment failures — so nothing breaks.
             </p>
-            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.green }} />
+            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
           </div>
         </div>
       </div>
