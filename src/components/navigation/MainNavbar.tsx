@@ -32,6 +32,7 @@ import {
   BookMarked,
   Users,
   Award,
+  Brain, // ✅ added for "Connect All AI"
 } from "lucide-react";
 
 /* ---------------- Brand colors (from PMS slide) ---------------- */
@@ -114,14 +115,63 @@ const NAV_ITEMS: NavItem[] = [
     label: "Services",
     icon: Settings,
     children: [
-      { label: "Setup & Onboarding", href: "/services/onboarding", icon: ClipboardList, description: "Fast setup and training" },
-      { label: "OTA Setup & Sync", href: "/services/ota-setup", icon: PlugZap, description: "Accounts + connectivity" },
-      { label: "PMS Training", href: "/services/pms-training", icon: MonitorCog, description: "Team onboarding & support" },
-      { label: "Social Media Management", href: "/services/social-media", icon: Megaphone, description: "Content + growth strategy" },
-      { label: "Digital Marketing (Ads)", href: "/services/marketing", icon: Megaphone, description: "Google/Meta campaigns" },
-      { label: "Branding & Design", href: "/services/branding", icon: PenTool, description: "Logos, posters, brand kit" },
-      { label: "Review Management", href: "/services/reviews", icon: Star, description: "Boost reputation & trust" },
-      { label: "24/7 Support", href: "/services/support", icon: Headset, description: "Local help when needed" },
+      {
+        label: "Setup & Onboarding",
+        href: "/services/onboarding",
+        icon: ClipboardList,
+        description: "Fast setup and training",
+      },
+      {
+        label: "OTA Setup & Sync",
+        href: "/services/ota-setup",
+        icon: PlugZap,
+        description: "Accounts + connectivity",
+      },
+      {
+        label: "PMS Training",
+        href: "/services/pms-training",
+        icon: MonitorCog,
+        description: "Team onboarding & support",
+      },
+      {
+        label: "Social Media Management",
+        href: "/services/social-media",
+        icon: Megaphone,
+        description: "Content + growth strategy",
+      },
+      {
+        label: "Digital Marketing (Ads)",
+        href: "/services/marketing",
+        icon: Megaphone,
+        description: "Google/Meta campaigns",
+      },
+      {
+        label: "Branding & Design",
+        href: "/services/branding",
+        icon: PenTool,
+        description: "Logos, posters, brand kit",
+      },
+      {
+        label: "Review Management",
+        href: "/services/reviews",
+        icon: Star,
+        description: "Boost reputation & trust",
+      },
+
+      // ✅ NEW: Connect All AI (only addition requested)
+      {
+        label: "Connect All AI",
+        href: "/services/connect-all-ai",
+        icon: Brain,
+        description: "Integrate AI tools across your workflow",
+      },
+
+      {
+        label: "24/7 Support",
+        href: "/services/support",
+        icon: Headset,
+        description: "Local help when needed",
+      },
     ],
   },
 

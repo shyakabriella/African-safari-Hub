@@ -87,6 +87,9 @@ const sidebarList: Post[] = [
   },
 ];
 
+/** ✅ shadow that helps BLACK text read on mixed photo areas */
+const TEXT_SHADOW_LIGHT = "0 2px 14px rgba(255,255,255,0.75)";
+
 function FeaturedMain({ post }: { post: Post }) {
   return (
     <Link
@@ -100,62 +103,94 @@ function FeaturedMain({ post }: { post: Post }) {
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
 
-        {/* readability overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+        {/* ✅ LIGHT overlay so BLACK text is visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/60 to-transparent sm:from-white/85 sm:via-white/35" />
 
         <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
           {post.tag ? (
             <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur"
-              style={{ backgroundColor: "rgba(173,100,25,0.25)" }}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.75)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827", // zinc-900
+              }}
             >
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
               {post.tag}
             </div>
           ) : null}
 
-          <h2 className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-white drop-shadow">
+          <h2
+            className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-zinc-900"
+            style={{ textShadow: TEXT_SHADOW_LIGHT }}
+          >
             {post.title}
           </h2>
 
           {post.description ? (
-            <p className="mt-3 max-w-2xl text-sm sm:text-base text-white/90 leading-relaxed">
+            <p
+              className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-800 leading-relaxed"
+              style={{ textShadow: TEXT_SHADOW_LIGHT }}
+            >
               {post.description}
             </p>
           ) : null}
 
           <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-2">
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-white ring-1 ring-white/15"
-              style={{ backgroundColor: "rgba(89,158,26,0.18)" }}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.70)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
             >
-              <Globe className="h-4 w-4" />
+              <Globe className="h-4 w-4" style={{ color: BRAND.green }} />
               Website + SEO
             </span>
+
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-white ring-1 ring-white/15"
-              style={{ backgroundColor: "rgba(173,100,25,0.18)" }}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.70)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
             >
-              <CreditCard className="h-4 w-4" />
+              <CreditCard className="h-4 w-4" style={{ color: BRAND.orange }} />
               Online Payments
             </span>
+
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-white ring-1 ring-white/15"
-              style={{ backgroundColor: "rgba(89,158,26,0.18)" }}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.70)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
             >
-              <Repeat2 className="h-4 w-4" />
+              <Repeat2 className="h-4 w-4" style={{ color: BRAND.green }} />
               OTA Sync
             </span>
+
             <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium text-white ring-1 ring-white/15"
-              style={{ backgroundColor: "rgba(173,100,25,0.18)" }}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.70)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
             >
-              <CalendarDays className="h-4 w-4" />
+              <CalendarDays className="h-4 w-4" style={{ color: BRAND.orange }} />
               PMS + Reports
             </span>
           </div>
 
-          <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white">
+          <div
+            className="mt-5 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900"
+            style={{ textShadow: TEXT_SHADOW_LIGHT }}
+          >
             Explore Solution
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
@@ -239,10 +274,7 @@ function TopStoryRow({ post }: { post: Post }) {
               <p className="mt-1 text-sm text-zinc-600">
                 Inventory updates propagate to all channels quickly.
               </p>
-              <div
-                className="mt-3 h-[4px] w-16 rounded-full"
-                style={{ backgroundColor: BRAND.green }}
-              />
+              <div className="mt-3 h-[4px] w-16 rounded-full" style={{ backgroundColor: BRAND.green }} />
             </div>
 
             <div className="rounded-xl bg-white p-4 ring-1 ring-zinc-200">
@@ -253,17 +285,11 @@ function TopStoryRow({ post }: { post: Post }) {
               <p className="mt-1 text-sm text-zinc-600">
                 Alerts + retries when OTA updates fail.
               </p>
-              <div
-                className="mt-3 h-[4px] w-16 rounded-full"
-                style={{ backgroundColor: BRAND.orange }}
-              />
+              <div className="mt-3 h-[4px] w-16 rounded-full" style={{ backgroundColor: BRAND.orange }} />
             </div>
           </div>
 
-          <div
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
-            style={{ color: BRAND.orange }}
-          >
+          <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={{ color: BRAND.orange }}>
             Read details
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
@@ -276,7 +302,6 @@ function TopStoryRow({ post }: { post: Post }) {
 export default function FeaturedWithSidebar() {
   return (
     <section className="w-full overflow-x-hidden">
-      {/* ✅ Component-only responsiveness overrides */}
       <style jsx global>{`
         @keyframes fadeUp {
           from {
@@ -289,7 +314,6 @@ export default function FeaturedWithSidebar() {
           }
         }
 
-        /* ✅ FORCE 1 column on mobile/touch devices (even if it renders "desktop-like") */
         @media (pointer: coarse) {
           [data-fws-grid="1"] {
             grid-template-columns: 1fr !important;
@@ -320,15 +344,11 @@ export default function FeaturedWithSidebar() {
               Everything hotels need to sell more rooms
             </h2>
 
-            <div
-              className="mt-2 h-[5px] w-24 rounded-full"
-              style={{ backgroundColor: BRAND.orange }}
-            />
+            <div className="mt-2 h-[5px] w-24 rounded-full" style={{ backgroundColor: BRAND.orange }} />
 
             <p className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-600">
-              Website + booking engine + payments + SEO + OTA distribution +
-              channel manager + PMS + marketing + local support — one connected
-              system.
+              Website + booking engine + payments + SEO + OTA distribution + channel manager + PMS +
+              marketing + local support — one connected system.
               <span className="ml-2 font-semibold" style={{ color: BRAND.green }}>
                 Built for bookings ✅
               </span>
@@ -340,12 +360,8 @@ export default function FeaturedWithSidebar() {
               href="/solutions"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition"
               style={{ backgroundColor: BRAND.orange }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = BRAND.orangeDark)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = BRAND.orange)
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BRAND.orangeDark)}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND.orange)}
             >
               View Solutions
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -358,23 +374,15 @@ export default function FeaturedWithSidebar() {
                 color: BRAND.orange,
                 borderColor: "rgba(173,100,25,0.25)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "rgba(173,100,25,0.06)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "white")
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(173,100,25,0.06)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "white")}
             >
               Talk to us
             </Link>
           </div>
         </div>
 
-        {/* ✅ Grid: desktop 2 columns, mobile forced 1 column via CSS above */}
-        <div
-          data-fws-grid="1"
-          className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-stretch"
-        >
+        <div data-fws-grid="1" className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-stretch">
           <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards]">
             <FeaturedMain post={featuredPost} />
             <TopStoryRow post={topStory} />
@@ -396,10 +404,7 @@ export default function FeaturedWithSidebar() {
             <p className="mt-2 text-sm text-zinc-600">
               Mobile-first pages designed to rank and convert visitors to bookings.
             </p>
-            <div
-              className="mt-3 h-[5px] w-20 rounded-full"
-              style={{ backgroundColor: BRAND.green }}
-            />
+            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.green }} />
           </div>
 
           <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
@@ -410,10 +415,7 @@ export default function FeaturedWithSidebar() {
             <p className="mt-2 text-sm text-zinc-600">
               Content, ads tracking, review management, and monthly reports.
             </p>
-            <div
-              className="mt-3 h-[5px] w-20 rounded-full"
-              style={{ backgroundColor: BRAND.orange }}
-            />
+            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
           </div>
 
           <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
@@ -424,10 +426,7 @@ export default function FeaturedWithSidebar() {
             <p className="mt-2 text-sm text-zinc-600">
               Ticketing + SLA + alerts for sync/payment failures — so nothing breaks.
             </p>
-            <div
-              className="mt-3 h-[5px] w-20 rounded-full"
-              style={{ backgroundColor: BRAND.green }}
-            />
+            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.green }} />
           </div>
         </div>
       </div>
