@@ -31,10 +31,10 @@ const BRAND = {
 };
 
 const featuredPost: Post = {
-  tag: "All-in-one hospitality platform",
-  title: "Transform Your Hotel Online. Boost Direct Bookings. Grow Revenue.",
+  tag: "AI-ready hospitality platform",
+  title: "Connect Your Hotel to AI. Boost Direct Bookings. Grow Revenue.",
   description:
-    "A modern website + direct booking engine + payments + SEO + reviews — built to convert visitors into guests 24/7.",
+    "Website + booking engine + payments + SEO + reviews — plus AI (OpenAI/ChatGPT + other AI tools) to automate guest chat, upsells, support, and smarter decisions 24/7.",
   href: "/solutions/website-booking",
   image: "/img1.png",
 };
@@ -130,14 +130,14 @@ function FeaturedMain({ post }: { post: Post }) {
               textShadow: TEXT_SHADOW_LIGHT,
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 2, // ✅ important
+              WebkitLineClamp: 2,
               overflow: "hidden",
             }}
           >
             {post.title}
           </h2>
 
-          {/* ✅ MOBILE FIX: keep description short on mobile (still show on desktop) */}
+          {/* ✅ MOBILE FIX: keep description short on mobile */}
           {post.description ? (
             <p
               className="mt-2 max-w-2xl text-[13px] sm:text-base text-zinc-800 leading-relaxed"
@@ -145,7 +145,7 @@ function FeaturedMain({ post }: { post: Post }) {
                 textShadow: TEXT_SHADOW_LIGHT,
                 display: "-webkit-box",
                 WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 2, // ✅ important
+                WebkitLineClamp: 2,
                 overflow: "hidden",
               }}
             >
@@ -201,6 +201,31 @@ function FeaturedMain({ post }: { post: Post }) {
             >
               <CalendarDays className="h-4 w-4" style={{ color: BRAND.orange }} />
               PMS + Reports
+            </span>
+
+            {/* ✅ NEW: AI chips */}
+            <span
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.72)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
+            >
+              <Sparkles className="h-4 w-4" style={{ color: BRAND.green }} />
+              ChatGPT Assistant
+            </span>
+
+            <span
+              className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1 backdrop-blur-sm"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.72)",
+                borderColor: "rgba(0,0,0,0.12)",
+                color: "#111827",
+              }}
+            >
+              <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
+              AI Automations
             </span>
           </div>
 
