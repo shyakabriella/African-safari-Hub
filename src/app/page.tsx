@@ -12,7 +12,6 @@ export default function Home() {
       <WhatsNewSection />
       <NewsletterHero />
       <LatestNews />
-      
     </div>
   );
 }
