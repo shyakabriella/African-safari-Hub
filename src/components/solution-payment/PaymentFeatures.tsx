@@ -15,7 +15,7 @@ export default function PaymentFeatures() {
               </div>
               <div className="w-full h-14 flex justify-center items-center">
                 <span className="text-[#475569] text-[18px] text-center">
-                  Everything you need to manage your hotel&#39;s finances efficiently and securely on a single dashboard.
+                  Everything you need to manage your hotel&apos;s finances efficiently and securely on a single dashboard.
                 </span>
               </div>
             </div>
@@ -23,43 +23,43 @@ export default function PaymentFeatures() {
             <div className="w-full h-28 flex justify-center items-center gap-7 mt-29">
               <InfoPaymentCard
                 icon={
-                  <Zap className="text-[#1152D4] w-5 h-6.25" />
+                  <Zap className="text-[#8B4513] w-5 h-6.25" />
                 }
                 title="Real-time Processing"
                 description="
-                Instant verification and processing of
-                guest payments to secure bookings
-                immediately without manual intervention.
-              "
-              classNameIcon="bg-[#1152D4]/10"
-              className="w-[384px] h-70.5 rounded-2xl bg-[#F6F6F8] border border-[#E2E8F0]"
+                  Instant verification and processing of
+                  guest payments to secure bookings
+                  immediately without manual intervention.
+                "
+                classNameIcon="bg-[#8B4513]/10"
+                className="w-[384px] h-70.5 rounded-2xl bg-[#F3E8DE] border border-[#D9BFA8]"
               />
               <InfoPaymentCard
                 icon={
-                  <Globe className="text-[#1152D4] w-6.25 h-6.25" />
+                  <Globe className="text-[#8B4513] w-6.25 h-6.25" />
                 }
                 title="Global & Local Gateways"
                 description="
-                Accept Visa, Mastercard, AMEX, and local
-                mobile money providers to cater to every
-                guest regardless of where they are from.
-              "
-              classNameIcon="bg-[#1152D4]/10"
-              className="w-[384px] h-70.5 rounded-2xl bg-[#F6F6F8] border border-[#E2E8F0]"
+                  Accept Visa, Mastercard, AMEX, and local
+                  mobile money providers to cater to every
+                  guest regardless of where they are from.
+                "
+                classNameIcon="bg-[#8B4513]/10"
+                className="w-[384px] h-70.5 rounded-2xl bg-[#F3E8DE] border border-[#D9BFA8]"
               />
               <InfoPaymentCard
                 icon={
-                  <FileText className="text-[#1152D4] w-5 h-6.25" />
+                  <FileText className="text-[#8B4513] w-5 h-6.25" />
                 }
                 title="Automated Invoicing"
                 description="
-                Generate and send professional, branded
-                invoices automatically upon successful
-                payment. Sync directly with your
-                accounting software.
-              "
-              classNameIcon="bg-[#1152D4]/10"
-              className="w-[384px] h-70.5 rounded-2xl bg-[#F6F6F8] border border-[#E2E8F0]"
+                  Generate and send professional, branded
+                  invoices automatically upon successful
+                  payment. Sync directly with your
+                  accounting software.
+                "
+                classNameIcon="bg-[#8B4513]/10"
+                className="w-[384px] h-70.5 rounded-2xl bg-[#F3E8DE] border border-[#D9BFA8]"
               />
             </div>
           </div>

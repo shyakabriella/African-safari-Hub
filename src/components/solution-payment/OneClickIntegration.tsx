@@ -20,41 +20,41 @@ export default function OneClickIntegration() {
 
         <div className='w-[1216px] h-[108px] flex justify-center items-center gap-[48px]'>
           <div className='w-[99.92px] h-[92px] flex justify-center items-center flex-col gap-[12px]'>
-            <div className='w-[64px] h-[64px] rounded-[9999px] bg-[#F1F5F9] flex justify-center items-center'>
+            <div className='w-[64px] h-[64px] rounded-[9999px] bg-[#F5E6D3] flex justify-center items-center'>
               <div className='w-[22.5px] h-[25px]'>
-                <Calendar className='w-[22.5px] h-[25px] text-[#0F172A]' />
+                <Calendar className='w-[22.5px] h-[25px] text-[#8B4513]' />
               </div>
             </div>
             <div className='w-[99.92px] h-[16px]'>
-              <span className='w-[99.92px] h-[16px] text-[#64748B] text-[12px] font-bold'>
+              <span className='w-[99.92px] h-[16px] text-[#8B4513]/70 text-[12px] font-bold'>
                 Booking Engine
               </span>
             </div>
           </div>
 
-          <div className='w-[96px] h-[1px] bg-[#E2E8F0]'></div>
+          <div className='w-[96px] h-[1px] bg-[#D9C5B3]'></div>
 
           <div className='w-[80px] h-[108px] flex items-center flex-col gap-[6px]'>
-            <div className='w-[80px] h-[80px] flex justify-center items-center rounded-[16px] bg-[#1152D4]'>
+            <div className='w-[80px] h-[80px] flex justify-center items-center rounded-[16px] bg-[#8B4513]'>
               <div className='w-[24px] h-[24px]'>
-                <RefreshCw className='w-full h-full text-white' />
+                <RefreshCw className='w-full h-full text-[#F5E6D3]' />
               </div>
             </div>
             <div className='w-[62.8px] h-[16px]'>
-              <span className='w-full h-full text-[12px] font-bold text-[#1152D4]'>Payments</span>
+              <span className='w-full h-full text-[12px] font-bold text-[#8B4513]'>Payments</span>
             </div>
           </div>
 
-          <div className='w-[96px] h-[1px] bg-[#E2E8F0]'></div>
+          <div className='w-[96px] h-[1px] bg-[#D9C5B3]'></div>
 
           <div className='w-[75.17px] h-[92px] flex flex-col items-center gap-[12px]'>
-            <div className='w-[64px] h-[64px] flex justify-center items-center rounded-[9999px] bg-[#F1F5F9]'>
+            <div className='w-[64px] h-[64px] flex justify-center items-center rounded-[9999px] bg-[#F5E6D3]'>
               <div className='w-[27.5px] h-[18.75px]'>
-                <Bed className='w-[27.5px] h-[18.75px] text-[#0F172A]' />
+                <Bed className='w-[27.5px] h-[18.75px] text-[#8B4513]' />
               </div>
             </div>
             <div className='w-[75.17px] h-[16px]'>
-              <span className='text-[#64748B] text-[12px] font-bold'>PMS System</span>
+              <span className='text-[#8B4513]/70 text-[12px] font-bold'>PMS System</span>
             </div>
           </div>
         </div>
