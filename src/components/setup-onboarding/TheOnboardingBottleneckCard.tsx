@@ -4,23 +4,24 @@ interface TheOnboardingBottleneckCardProps {
   description: string;
 }
 
-export default function TheOnboardingBottleneckCard({ icon, title, description }: TheOnboardingBottleneckCardProps) {
+export default function TheOnboardingBottleneckCard({
+  icon,
+  title,
+  description,
+}: TheOnboardingBottleneckCardProps) {
   return (
-    <div className="w-[298.66px] h-[312px] flex flex-col gap-[20px] p-[32px] rounded-[16px] bg-[#FFFFFF]/50 border border-[#E2E8F0]">
-      <div className="w-[48px] h-[48px] rounded-[12px] bg-[#FFFFFF]/70">
-        <div className="w-[40px] h-[40px] flex justify-center items-center">
-          <span className="w-full h-full bg-[#8B4513]/10 text-[#8B4513] rounded-md flex justify-center items-center">{icon}</span>
-        </div>
+    <div className="w-[384px] h-[230px] pt-9 pl-4 rounded-[16px] bg-[#FFFFFF]/50 border border-[#F1F5F9]">
+      {icon}
+      <div className="w-[318px] h-[28px] mt-3">
+        <span className="w-[200.17px] h-[28px] font-bold text-[20px] text-[#0F172A]">
+          {title}
+        </span>
       </div>
-      
-      <div className="w-[232.66px] h-[28px]">
-        <span className="w-full h-full font-bold leading-[28px] text-[20px] text-[#0F172A]">{title}</span>
-      </div>
-      <div className="w-[232.66px] h-[104px]">
-        <span className="w-full h-full font-normal text-[16px] leading-[26px] text-[#475569]/50">
+      <div className="w-[318px] h-[72px] mt-3">
+        <span className="w-[284.86px] h-full text-[16px] text-[#64748B] font-normal">
           {description}
         </span>
       </div>
     </div>
-  )
+  );
 }

@@ -21,25 +21,25 @@ export default function FeaturesSectionCard({
 }: FeaturesSectionCardProps) {
   return (
     <div
-      className={`flex justify-evenly md:flex-row items-center ${
+      className={`flex justify-between md:flex-row items-start ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
-      } gap-4 md:gap-6`}
+      } gap-12 md:gap-16`}
     >
       {/* Text Column */}
-      <div className="max-w-[440px] flex flex-col gap-6">
-        <h2 className="font-bold text-[36px] leading-[40px] text-[#0F172A]">
+      <div className="max-w-[600px] flex flex-col gap-8">
+        <h2 className="font-extrabold text-[48px] leading-[1.1] text-[#0F172A]">
           {header}
         </h2>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              <span className="text-[#8B4513] mr-3">{feature.icon}</span>
+            <div key={index} className="flex items-start gap-4">
+              <span className="text-[#8B4513] mt-1">{feature.icon}</span>
               <div className="flex flex-col">
-                <span className="font-bold text-[16px] text-[#0F172A]">
+                <span className="font-bold text-[18px] text-[#0F172A]">
                   {feature.title}
                 </span>
-                <span className="text-[16px] text-[#475569]">
+                <span className="text-[18px] text-[#475569]">
                   {feature.description}
                 </span>
               </div>
@@ -50,11 +50,11 @@ export default function FeaturesSectionCard({
 
       {/* Image */}
       {imageSrc && (
-        <div className="w-[420px] h-[300px] flex-shrink-0 relative">
+        <div className="w-[540px] h-[360px] flex-shrink-0 relative">
           <img
             src={imageSrc}
             alt={header}
-            className="w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-2xl"
           />
         </div>
       )}
