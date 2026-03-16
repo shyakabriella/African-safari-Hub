@@ -22,7 +22,7 @@ const ITEMS: Item[] = [
     avatarSrc:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=200&q=70",
     badge: "24/7",
-    href: "/solutions/website",
+    href: "/core-solutions/website",
   },
   {
     category: "450+ OTA DISTRIBUTION",
@@ -31,7 +31,7 @@ const ITEMS: Item[] = [
     avatarSrc:
       "https://images.unsplash.com/photo-1551887373-6e07aa1e7b47?auto=format&fit=crop&w=200&q=70",
     badge: "450+",
-    href: "/solutions/otas",
+    href: "/core-solutions/otas",
   },
   {
     category: "CHANNEL MANAGER",
@@ -40,7 +40,7 @@ const ITEMS: Item[] = [
     avatarSrc:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=200&q=70",
     badge: "SYNC",
-    href: "/solutions/channel-manager",
+    href: "/core-solutions/channel-manager",
   },
   {
     category: "PMS + MARKETING",
@@ -49,7 +49,7 @@ const ITEMS: Item[] = [
     avatarSrc:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=200&q=70",
     badge: "GROW",
-    href: "/services/digital-marketing",
+    href: "/core-solutions/digital-marketing",
   },
 
   // ✅ NEW CARD: AI integrations
@@ -61,7 +61,7 @@ const ITEMS: Item[] = [
     avatarSrc:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=200&q=70",
     badge: "AI",
-    href: "/solutions/ai",
+    href: "/core-solutions/ai",
   },
 ];
 
