@@ -5,8 +5,8 @@ import { Mail, Phone, MessageCircle, CalendarCheck } from "lucide-react";
 
 const PHONE = "+250788471880";
 const EMAIL = "hotelandsafari@gmail.com";
-const WHATSAPP = "+250788471880"; 
-const BOOKING_URL = "/contact";
+const WHATSAPP = "+250788471880";
+const BOOKING_URL = "https://www.d.ashbhub.com/login";
 
 export default function TopBar({ compact = false }: { compact?: boolean }) {
   return (
@@ -94,8 +94,8 @@ export default function TopBar({ compact = false }: { compact?: boolean }) {
             ].join(" ")}
           >
             <CalendarCheck className="h-4 w-4" />
-            <span className="hidden sm:inline">Book Now</span>
-            <span className="sm:hidden">Book</span>
+            <span className="hidden sm:inline">Get Started</span>
+            <span className="sm:hidden">Start</span>
           </Link>
         </div>
       </div>
