@@ -19,7 +19,7 @@ type Post = {
   description?: string;
 };
 
-/** ✅ Brand colors (logo vibe) */
+/** ✅ Brand colors */
 const BRAND = {
   orange: "#AD6419",
   orangeDark: "#8E4F13",
@@ -48,7 +48,8 @@ const topStory: Post = {
 
 const sidebarTop: Post = {
   tag: "Direct Booking Engine",
-  title: "Turn Your Website Into a 24/7 Booking Machine (Payments + Confirmations).",
+  title:
+    "Turn Your Website Into a 24/7 Booking Machine (Payments + Confirmations).",
   description:
     "Guests search dates, choose rooms, add extras, pay online, and receive instant confirmation — while inventory updates everywhere.",
   href: "/solutions/booking-engine",
@@ -85,31 +86,27 @@ const sidebarList: Post[] = [
   },
 ];
 
-/** ✅ Dark shadow for text on photos */
 const TEXT_SHADOW_DARK = "0 2px 14px rgba(0,0,0,0.55)";
 
 function FeaturedMain({ post }: { post: Post }) {
   return (
     <Link
       href={post.href}
-      className="group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-100 hover:shadow-md transition-shadow"
+      className="group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-100 transition-shadow hover:shadow-md"
     >
-      {/* ✅ MOBILE FIX: taller so title never clipped */}
-      <div className="relative w-full aspect-[3/4] sm:aspect-[16/10] min-h-[520px] sm:min-h-0">
+      <div className="relative min-h-[520px] w-full aspect-[3/4] sm:aspect-[16/10] sm:min-h-0">
         <img
           src={post.image}
           alt={post.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
 
-        {/* ✅ NO white wash overlay — use soft DARK gradient for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent sm:from-black/45 sm:via-black/10" />
 
-        <div className="absolute inset-x-0 bottom-0 px-4 sm:px-6 pb-4 sm:pb-6">
-          {/* Tag (no blur) */}
+        <div className="absolute inset-x-0 bottom-0 px-4 pb-4 sm:px-6 sm:pb-6">
           {post.tag ? (
             <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold ring-1 sm:text-xs"
               style={{
                 backgroundColor: "rgba(255,255,255,0.92)",
                 borderColor: "rgba(173,100,25,0.30)",
@@ -121,9 +118,8 @@ function FeaturedMain({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          {/* ✅ Title in logo orange */}
           <h2
-            className="mt-2 text-[22px] sm:text-4xl font-extrabold leading-snug sm:leading-tight"
+            className="mt-2 text-[22px] font-extrabold leading-snug sm:text-4xl sm:leading-tight"
             style={{
               color: BRAND.orange,
               textShadow: TEXT_SHADOW_DARK,
@@ -136,10 +132,9 @@ function FeaturedMain({ post }: { post: Post }) {
             {post.title}
           </h2>
 
-          {/* Description (white for best readability on photo) */}
           {post.description ? (
             <p
-              className="mt-2 max-w-2xl text-[13px] sm:text-base font-semibold leading-relaxed"
+              className="mt-2 max-w-2xl text-[13px] font-semibold leading-relaxed sm:text-base"
               style={{
                 color: "rgba(255,255,255,0.92)",
                 textShadow: TEXT_SHADOW_DARK,
@@ -153,12 +148,8 @@ function FeaturedMain({ post }: { post: Post }) {
             </p>
           ) : null}
 
-          {/* ✅ AI chips:
-              - Mobile: swipe (overflow-x-auto)
-              - Desktop: auto-slide (marquee)
-          */}
           <div
-            className="mt-4 sm:mt-5 overflow-x-auto sm:overflow-hidden no-scrollbar pb-1 sm:pb-0"
+            className="no-scrollbar mt-4 overflow-x-auto pb-1 sm:mt-5 sm:overflow-hidden sm:pb-0"
             style={{
               maskImage:
                 "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -167,198 +158,76 @@ function FeaturedMain({ post }: { post: Post }) {
             }}
           >
             <div className="flex w-max items-center gap-2 motion-reduce:animate-none sm:animate-[aiMarquee_26s_linear_infinite]">
-              {/* ---------- SET 1 ---------- */}
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                ChatGPT
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Claude (Anthropic)
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Google Gemini
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Microsoft Copilot
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Perplexity AI
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Mistral (Le Chat)
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Meta AI (Llama)
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Grok (xAI)
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                Cohere Command
-              </span>
-
-              <span
-                className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold ring-1"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.90)",
-                  borderColor: "rgba(173,100,25,0.25)",
-                  color: BRAND.orangeDark,
-                }}
-              >
-                <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                IBM watsonx Assistant
-              </span>
-
-              {/* ---------- SET 2 (desktop only) to create endless loop ---------- */}
-              <div className="hidden sm:flex items-center gap-2" aria-hidden="true">
+              {[
+                "ChatGPT",
+                "Claude (Anthropic)",
+                "Google Gemini",
+                "Microsoft Copilot",
+                "Perplexity AI",
+                "Mistral (Le Chat)",
+                "Meta AI (Llama)",
+                "Grok (xAI)",
+                "Cohere Command",
+                "IBM watsonx Assistant",
+              ].map((name) => (
                 <span
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                  key={name}
+                  className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-semibold ring-1 sm:text-xs"
                   style={{
                     backgroundColor: "rgba(255,255,255,0.90)",
                     borderColor: "rgba(173,100,25,0.25)",
                     color: BRAND.orangeDark,
                   }}
                 >
-                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                  ChatGPT
+                  <Sparkles
+                    className="h-4 w-4"
+                    style={{ color: BRAND.orange }}
+                  />
+                  {name}
                 </span>
-                <span
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.90)",
-                    borderColor: "rgba(173,100,25,0.25)",
-                    color: BRAND.orangeDark,
-                  }}
-                >
-                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                  Claude (Anthropic)
-                </span>
-                <span
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.90)",
-                    borderColor: "rgba(173,100,25,0.25)",
-                    color: BRAND.orangeDark,
-                  }}
-                >
-                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                  Google Gemini
-                </span>
-                <span
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.90)",
-                    borderColor: "rgba(173,100,25,0.25)",
-                    color: BRAND.orangeDark,
-                  }}
-                >
-                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                  Microsoft Copilot
-                </span>
-                <span
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.90)",
-                    borderColor: "rgba(173,100,25,0.25)",
-                    color: BRAND.orangeDark,
-                  }}
-                >
-                  <Sparkles className="h-4 w-4" style={{ color: BRAND.orange }} />
-                  Perplexity AI
-                </span>
+              ))}
+
+              <div className="hidden items-center gap-2 sm:flex" aria-hidden="true">
+                {[
+                  "ChatGPT",
+                  "Claude (Anthropic)",
+                  "Google Gemini",
+                  "Microsoft Copilot",
+                  "Perplexity AI",
+                ].map((name) => (
+                  <span
+                    key={`duplicate-${name}`}
+                    className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold ring-1"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.90)",
+                      borderColor: "rgba(173,100,25,0.25)",
+                      color: BRAND.orangeDark,
+                    }}
+                  >
+                    <Sparkles
+                      className="h-4 w-4"
+                      style={{ color: BRAND.orange }}
+                    />
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
           <div
-            className="mt-4 sm:mt-6 inline-flex items-center gap-2 text-sm font-semibold"
-            style={{ color: "rgba(255,255,255,0.95)", textShadow: TEXT_SHADOW_DARK }}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold sm:mt-6"
+            style={{
+              color: "rgba(255,255,255,0.95)",
+              textShadow: TEXT_SHADOW_DARK,
+            }}
           >
             Explore Solution
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
 
           <div
-            className="mt-3 sm:mt-4 h-[5px] w-24 rounded-full"
+            className="mt-3 h-[5px] w-24 rounded-full sm:mt-4"
             style={{ backgroundColor: BRAND.orange }}
           />
         </div>
@@ -369,15 +238,19 @@ function FeaturedMain({ post }: { post: Post }) {
 
 function TopStoryRow({ post }: { post: Post }) {
   return (
-    <div className="mt-8 rounded-2xl bg-zinc-50 p-4 sm:p-6 ring-1 ring-zinc-100">
+    <div className="mt-8 rounded-2xl bg-zinc-50 p-4 ring-1 ring-zinc-100 sm:p-6">
       <div className="flex items-center gap-4">
-        <h3 className="text-lg sm:text-xl font-semibold" style={{ color: BRAND.orange }}>
+        <h3
+          className="text-lg font-semibold sm:text-xl"
+          style={{ color: BRAND.orange }}
+        >
           Top Highlight
         </h3>
+
         <div className="h-px flex-1 bg-zinc-200" />
 
         <span
-          className="hidden sm:inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1"
+          className="hidden items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ring-1 sm:inline-flex"
           style={{
             backgroundColor: BRAND.greenSoft,
             color: BRAND.green,
@@ -391,10 +264,10 @@ function TopStoryRow({ post }: { post: Post }) {
 
       <Link
         href={post.href}
-        className="mt-6 grid gap-6 md:grid-cols-[360px_1fr] items-center group"
+        className="group mt-6 grid items-center gap-6 md:grid-cols-[400px_1fr] xl:grid-cols-[430px_1fr]"
       >
-        <div className="relative w-full overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-200 shadow-sm">
-          <div className="relative h-[200px] sm:h-[240px] w-full md:h-[260px]">
+        <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-200">
+          <div className="relative h-[200px] w-full sm:h-[240px] md:h-[260px] xl:h-[285px]">
             <img
               src={post.image}
               alt={post.title}
@@ -417,11 +290,11 @@ function TopStoryRow({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          <h4 className="mt-3 text-2xl sm:text-3xl font-semibold leading-tight text-zinc-900 transition-colors duration-300 group-hover:text-[#AD6419]">
+          <h4 className="mt-3 text-2xl font-semibold leading-tight text-zinc-900 transition-colors duration-300 group-hover:text-[#AD6419] sm:text-3xl">
             {post.title}
           </h4>
 
-          <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
             {post.description ??
               "Connect OTAs, sync rates/availability, prevent overbookings, and track performance from one hub."}
           </p>
@@ -432,25 +305,41 @@ function TopStoryRow({ post }: { post: Post }) {
                 <Repeat2 className="h-4 w-4" style={{ color: BRAND.green }} />
                 Prevent overbookings
               </div>
+
               <p className="mt-1 text-sm text-zinc-600">
                 Inventory updates propagate to all channels quickly.
               </p>
-              <div className="mt-3 h-[4px] w-16 rounded-full" style={{ backgroundColor: BRAND.green }} />
+
+              <div
+                className="mt-3 h-[4px] w-16 rounded-full"
+                style={{ backgroundColor: BRAND.green }}
+              />
             </div>
 
             <div className="rounded-xl bg-white p-4 ring-1 ring-zinc-200">
               <div className="flex items-center gap-2 text-sm font-semibold text-zinc-900">
-                <Headset className="h-4 w-4" style={{ color: BRAND.orange }} />
+                <Headset
+                  className="h-4 w-4"
+                  style={{ color: BRAND.orange }}
+                />
                 Sync health monitoring
               </div>
+
               <p className="mt-1 text-sm text-zinc-600">
                 Alerts + retries when OTA updates fail.
               </p>
-              <div className="mt-3 h-[4px] w-16 rounded-full" style={{ backgroundColor: BRAND.orange }} />
+
+              <div
+                className="mt-3 h-[4px] w-16 rounded-full"
+                style={{ backgroundColor: BRAND.orange }}
+              />
             </div>
           </div>
 
-          <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={{ color: BRAND.orange }}>
+          <div
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
+            style={{ color: BRAND.orange }}
+          >
             Read details
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </div>
@@ -488,6 +377,7 @@ export default function FeaturedWithSidebar() {
           [data-fws-grid="1"] {
             grid-template-columns: 1fr !important;
           }
+
           [data-fws-sidebarwrap="1"] {
             position: static !important;
             top: auto !important;
@@ -495,7 +385,8 @@ export default function FeaturedWithSidebar() {
         }
       `}</style>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      {/* ✅ balanced container: wider than old, but not too stretched */}
+      <div className="mx-auto w-full max-w-[1480px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
             <p className="text-sm font-semibold" style={{ color: BRAND.orange }}>
@@ -510,16 +401,23 @@ export default function FeaturedWithSidebar() {
               </a>
             </p>
 
-            <h2 className="mt-1 text-xl sm:text-2xl font-semibold text-zinc-900">
+            <h2 className="mt-1 text-xl font-semibold text-zinc-900 sm:text-2xl">
               Everything hotels need to sell more rooms
             </h2>
 
-            <div className="mt-2 h-[5px] w-24 rounded-full" style={{ backgroundColor: BRAND.orange }} />
+            <div
+              className="mt-2 h-[5px] w-24 rounded-full"
+              style={{ backgroundColor: BRAND.orange }}
+            />
 
-            <p className="mt-3 max-w-2xl text-sm sm:text-base text-zinc-600">
-              Website + booking engine + payments + SEO + OTA distribution + channel manager + PMS +
-              marketing + local support — one connected system.
-              <span className="ml-2 font-semibold" style={{ color: BRAND.orange }}>
+            <p className="mt-3 max-w-3xl text-sm text-zinc-600 sm:text-base">
+              Website + booking engine + payments + SEO + OTA distribution +
+              channel manager + PMS + marketing + local support — one connected
+              system.
+              <span
+                className="ml-2 font-semibold"
+                style={{ color: BRAND.orange }}
+              >
                 Built for bookings
               </span>
             </p>
@@ -528,10 +426,14 @@ export default function FeaturedWithSidebar() {
           <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
             <Link
               href="/solutions"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition"
+              className="inline-flex w-full items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white transition sm:w-auto"
               style={{ backgroundColor: BRAND.orange }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BRAND.orangeDark)}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND.orange)}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = BRAND.orangeDark)
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = BRAND.orange)
+              }
             >
               View Solutions
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -539,64 +441,92 @@ export default function FeaturedWithSidebar() {
 
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold transition ring-1"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold ring-1 transition sm:w-auto"
               style={{
                 color: BRAND.orange,
                 borderColor: "rgba(173,100,25,0.25)",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(173,100,25,0.06)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "white")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "rgba(173,100,25,0.06)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "white")
+              }
             >
               Talk to us
             </Link>
           </div>
         </div>
 
-        <div data-fws-grid="1" className="grid gap-8 lg:grid-cols-[1.6fr_0.9fr] lg:items-stretch">
+        <div
+          data-fws-grid="1"
+          className="grid gap-8 lg:grid-cols-[minmax(0,1.55fr)_minmax(340px,0.85fr)] xl:grid-cols-[minmax(0,1.6fr)_minmax(390px,0.9fr)] lg:items-stretch"
+        >
           <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards]">
             <FeaturedMain post={featuredPost} />
             <TopStoryRow post={topStory} />
           </div>
 
-          <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards] [animation-delay:120ms] h-full">
-            <div data-fws-sidebarwrap="1" className="h-full lg:sticky lg:top-[110px]">
+          <div className="h-full opacity-0 animate-[fadeUp_650ms_ease-out_forwards] [animation-delay:120ms]">
+            <div
+              data-fws-sidebarwrap="1"
+              className="h-full lg:sticky lg:top-[110px]"
+            >
               <SidebarPosts top={sidebarTop} list={sidebarList} />
             </div>
           </div>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 ring-1 ring-zinc-200 sm:p-5">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Globe className="h-5 w-5" style={{ color: BRAND.orange }} />
               Fast website + SEO
             </div>
+
             <p className="mt-2 text-sm text-zinc-600">
-              Mobile-first pages designed to rank and convert visitors to bookings.
+              Mobile-first pages designed to rank and convert visitors to
+              bookings.
             </p>
-            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
+
+            <div
+              className="mt-3 h-[5px] w-20 rounded-full"
+              style={{ backgroundColor: BRAND.orange }}
+            />
           </div>
 
-          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 ring-1 ring-zinc-200 sm:p-5">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Megaphone className="h-5 w-5" style={{ color: BRAND.orange }} />
               Marketing + reviews
             </div>
+
             <p className="mt-2 text-sm text-zinc-600">
               Content, ads tracking, review management, and monthly reports.
             </p>
-            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
+
+            <div
+              className="mt-3 h-[5px] w-20 rounded-full"
+              style={{ backgroundColor: BRAND.orange }}
+            />
           </div>
 
-          <div className="rounded-2xl bg-white p-4 sm:p-5 ring-1 ring-zinc-200">
+          <div className="rounded-2xl bg-white p-4 ring-1 ring-zinc-200 sm:p-5">
             <div className="flex items-center gap-2 font-semibold text-zinc-900">
               <Headset className="h-5 w-5" style={{ color: BRAND.orange }} />
               Support + monitoring
             </div>
+
             <p className="mt-2 text-sm text-zinc-600">
-              Ticketing + SLA + alerts for sync/payment failures — so nothing breaks.
+              Ticketing + SLA + alerts for sync/payment failures — so nothing
+              breaks.
             </p>
-            <div className="mt-3 h-[5px] w-20 rounded-full" style={{ backgroundColor: BRAND.orange }} />
+
+            <div
+              className="mt-3 h-[5px] w-20 rounded-full"
+              style={{ backgroundColor: BRAND.orange }}
+            />
           </div>
         </div>
       </div>

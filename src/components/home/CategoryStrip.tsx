@@ -51,8 +51,6 @@ const ITEMS: Item[] = [
     badge: "GROW",
     href: "/core-solutions/digital-marketing",
   },
-
-  // ✅ NEW CARD: AI integrations
   {
     category: "AI INTEGRATIONS",
     title: "Connect your hotel to AI\n(chatbots, smart replies, insights)",
@@ -70,14 +68,14 @@ function Avatar({ src, alt }: { src: string; alt: string }) {
 
   if (failed) {
     return (
-      <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-white ring-2 ring-white grid place-items-center text-zinc-700 text-sm font-semibold shadow-sm">
+      <div className="grid h-11 w-11 place-items-center rounded-full bg-white text-sm font-semibold text-zinc-700 shadow-sm ring-2 ring-white sm:h-12 sm:w-12">
         {alt.slice(0, 1)}
       </div>
     );
   }
 
   return (
-    <div className="h-11 w-11 sm:h-12 sm:w-12 overflow-hidden rounded-full ring-2 ring-white shadow-sm">
+    <div className="h-11 w-11 overflow-hidden rounded-full shadow-sm ring-2 ring-white sm:h-12 sm:w-12">
       <Image
         src={src}
         alt={alt}
@@ -92,7 +90,9 @@ function Avatar({ src, alt }: { src: string; alt: string }) {
 
 function badgeClass(badge?: string | number) {
   const b = String(badge ?? "").toUpperCase();
+
   if (b === "AI") return "bg-indigo-600";
+
   return "bg-[#2E7D32]";
 }
 
@@ -142,7 +142,6 @@ export default function CategoryStrip({
 
   const count = items.length;
 
-  // --- helpers (measure step = card width + gap) ---
   const getStep = () => {
     const el = scrollerRef.current;
     if (!el) return 0;
@@ -151,6 +150,7 @@ export default function CategoryStrip({
     if (!first) return 0;
 
     const styles = window.getComputedStyle(el);
+
     const gap =
       parseFloat(styles.columnGap || "") ||
       parseFloat(styles.gap || "") ||
@@ -177,12 +177,19 @@ export default function CategoryStrip({
 
   const pauseNow = () => {
     setPaused(true);
-    if (resumeTimeoutRef.current) window.clearTimeout(resumeTimeoutRef.current);
+
+    if (resumeTimeoutRef.current) {
+      window.clearTimeout(resumeTimeoutRef.current);
+    }
+
     resumeTimeoutRef.current = null;
   };
 
   const resumeLater = (ms = 3500) => {
-    if (resumeTimeoutRef.current) window.clearTimeout(resumeTimeoutRef.current);
+    if (resumeTimeoutRef.current) {
+      window.clearTimeout(resumeTimeoutRef.current);
+    }
+
     resumeTimeoutRef.current = window.setTimeout(() => {
       setPaused(false);
       resumeTimeoutRef.current = null;
@@ -192,27 +199,26 @@ export default function CategoryStrip({
   const next = () => setActive((p) => (p + 1) % count);
   const prev = () => setActive((p) => (p - 1 + count) % count);
 
-  // ✅ Auto-slide (mobile + desktop)
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
     if (reduceMotion.matches) return;
     if (count <= 1) return;
 
     const id = window.setInterval(() => {
       if (paused) return;
+
       setActive((p) => (p + 1) % count);
     }, 3200);
 
     return () => window.clearInterval(id);
   }, [count, paused]);
 
-  // When active changes, scroll there (all sizes)
   useEffect(() => {
     scrollToIndex(active, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  // Keep active index in sync when user scrolls manually
   useEffect(() => {
     const el = scrollerRef.current;
     if (!el) return;
@@ -224,28 +230,32 @@ export default function CategoryStrip({
       resumeLater(4000);
 
       if (t) window.clearTimeout(t);
+
       t = window.setTimeout(() => {
         const step = getStep();
         if (!step) return;
 
         const nextIdx = Math.round(el.scrollLeft / step);
         const clamped = Math.max(0, Math.min(count - 1, nextIdx));
+
         setActive(clamped);
       }, 80);
     };
 
-    el.addEventListener("scroll", onScroll, { passive: true });
-
     const onResize = () => {
       scrollToIndex(active, false);
     };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
 
     return () => {
       el.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+
       if (t) window.clearTimeout(t);
     };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, active]);
 
@@ -268,21 +278,20 @@ export default function CategoryStrip({
           backgroundPosition: "center",
         }}
       >
-        {/* overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#7C2D12]/10 via-white/35 to-[#14532D]/10" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-7">
-          {/* Top row: title + controls */}
+        {/* ✅ balanced container: wider than max-w-7xl, but not too wide */}
+        <div className="relative mx-auto w-full max-w-[1480px] px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div className="min-w-0">
               <p className="text-xs font-semibold tracking-[0.16em] text-zinc-600">
                 CORE SOLUTIONS
               </p>
+
               <div className="mt-2 h-[4px] w-16 rounded-full bg-[#F59E0B]" />
             </div>
 
-            {/* ✅ Desktop controls */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden items-center gap-2 lg:flex">
               <button
                 type="button"
                 onClick={() => {
@@ -290,10 +299,11 @@ export default function CategoryStrip({
                   prev();
                   resumeLater(3500);
                 }}
-                className="rounded-xl bg-white/90 ring-1 ring-black/10 px-3 py-2 text-sm font-semibold text-zinc-800 hover:bg-white transition"
+                className="rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold text-zinc-800 ring-1 ring-black/10 transition hover:bg-white"
               >
                 ← Prev
               </button>
+
               <button
                 type="button"
                 onClick={() => {
@@ -301,18 +311,17 @@ export default function CategoryStrip({
                   next();
                   resumeLater(3500);
                 }}
-                className="rounded-xl bg-white/90 ring-1 ring-black/10 px-3 py-2 text-sm font-semibold text-zinc-800 hover:bg-white transition"
+                className="rounded-xl bg-white/90 px-3 py-2 text-sm font-semibold text-zinc-800 ring-1 ring-black/10 transition hover:bg-white"
               >
                 Next →
               </button>
             </div>
           </div>
 
-          {/* ✅ One slider for ALL sizes */}
-          <div className="-mx-4 px-4 overflow-x-hidden">
+          <div className="-mx-4 overflow-x-hidden px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div
               ref={scrollerRef}
-              className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-3 pr-4 touch-pan-x"
+              className="no-scrollbar flex touch-pan-x snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-4 lg:gap-6"
               onPointerDown={() => pauseNow()}
               onPointerUp={() => resumeLater(3000)}
               onPointerCancel={() => resumeLater(3000)}
@@ -324,11 +333,13 @@ export default function CategoryStrip({
                   key={`${it.category}-${idx}`}
                   href={it.href}
                   className={[
-                    // ✅ width rules: mobile big, desktop compact (shows ~4 cards)
-                    "snap-start flex-none w-[82vw] max-w-[360px] min-w-[260px]",
-                    "lg:w-[260px] xl:w-[280px]",
+                    "snap-start flex-none",
+                    "w-[82vw] min-w-[270px] max-w-[380px]",
+                    "lg:w-[285px] xl:w-[300px] 2xl:w-[315px]",
                     "stripItemIn transition-transform duration-500 will-change-transform",
-                    idx === active ? "ring-2 ring-[#F59E0B]/25 -translate-y-0.5" : "",
+                    idx === active
+                      ? "ring-2 ring-[#F59E0B]/25 -translate-y-0.5"
+                      : "",
                   ].join(" ")}
                   style={{ animationDelay: `${idx * 120}ms` }}
                 >
@@ -336,11 +347,12 @@ export default function CategoryStrip({
                     <div className="flex items-start gap-4">
                       <div className="relative shrink-0">
                         <Avatar src={it.avatarSrc} alt={it.category} />
+
                         {!!it.badge && (
                           <span
                             className={[
-                              "absolute -top-2 -right-2 inline-flex h-6 sm:h-7 items-center justify-center rounded-full px-2",
-                              "text-[11px] sm:text-[12px] font-semibold text-white ring-2 ring-white shadow-sm",
+                              "absolute -right-2 -top-2 inline-flex h-6 items-center justify-center rounded-full px-2 sm:h-7",
+                              "text-[11px] font-semibold text-white shadow-sm ring-2 ring-white sm:text-[12px]",
                               badgeClass(it.badge),
                             ].join(" ")}
                           >
@@ -350,21 +362,21 @@ export default function CategoryStrip({
                       </div>
 
                       <div className="min-w-0">
-                        <p className="text-[10px] sm:text-[11px] tracking-[0.16em] sm:tracking-[0.18em] text-zinc-500 truncate">
+                        <p className="truncate text-[10px] tracking-[0.16em] text-zinc-500 sm:text-[11px] sm:tracking-[0.18em]">
                           {it.category}
                         </p>
 
-                        <h3 className="mt-1 whitespace-pre-line text-[15px] sm:text-[16px] font-semibold leading-[1.2] text-zinc-900 group-hover:text-[#B45309] transition-colors">
+                        <h3 className="mt-1 whitespace-pre-line text-[15px] font-semibold leading-[1.2] text-zinc-900 transition-colors group-hover:text-[#B45309] sm:text-[16px]">
                           {it.title}
                         </h3>
 
                         {it.description && (
-                          <p className="mt-1.5 text-[12px] sm:text-[13px] leading-snug text-zinc-600">
+                          <p className="mt-1.5 text-[12px] leading-snug text-zinc-600 sm:text-[13px]">
                             {it.description}
                           </p>
                         )}
 
-                        <div className="mt-3 h-[3px] w-9 sm:w-10 rounded-full bg-[#F59E0B] group-hover:w-16 transition-all" />
+                        <div className="mt-3 h-[3px] w-9 rounded-full bg-[#F59E0B] transition-all group-hover:w-16 sm:w-10" />
                       </div>
                     </div>
                   </div>
@@ -373,7 +385,6 @@ export default function CategoryStrip({
             </div>
           </div>
 
-          {/* ✅ Dots indicator */}
           <div className="mt-2 flex items-center justify-center gap-2">
             {items.map((_, i) => (
               <button
