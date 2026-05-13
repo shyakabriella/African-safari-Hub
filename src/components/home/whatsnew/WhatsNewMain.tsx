@@ -32,9 +32,6 @@ const TABS = [
   "Pricing",
 ];
 
-/**
- * ✅ Colors inspired by your PMS slide
- */
 const C = {
   orange: "#AD6419",
   green: "#599E1A",
@@ -325,7 +322,7 @@ export default function WhatsNewMain() {
 
   return (
     <section className="w-full overflow-x-hidden">
-      {/* ✅ balanced container */}
+      {/* ✅ Same balanced homepage margin */}
       <div className="mx-auto w-full max-w-[1480px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {/* Header + tabs */}
         <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
@@ -611,6 +608,7 @@ export default function WhatsNewMain() {
 
                     <div className="mt-4 flex items-center justify-between gap-3 text-sm text-white/85">
                       <span>By {p.author}</span>
+
                       <span className="shrink-0 font-semibold text-white">
                         Learn more →
                       </span>
