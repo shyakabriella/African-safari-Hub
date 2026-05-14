@@ -5,8 +5,8 @@ import WhatsNewSidebar from "./WhatsNewSidebar";
 
 export default function WhatsNewSection() {
   return (
-    <section className="w-full">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+    <section className="w-full overflow-x-hidden">
+      <div className="mx-auto max-w-[1480px] px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
           <div>
             <WhatsNewMain />

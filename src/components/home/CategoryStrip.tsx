@@ -318,7 +318,7 @@ export default function CategoryStrip({
             </div>
           </div>
 
-          <div className="-mx-4 overflow-x-hidden px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+          <div className="overflow-x-hidden">
             <div
               ref={scrollerRef}
               className="no-scrollbar flex touch-pan-x snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-4 lg:gap-6"

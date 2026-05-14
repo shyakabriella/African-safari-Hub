@@ -6,7 +6,7 @@ import NewsletterHero from "@/components/home/NewsletterHero";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <CategoryStrip className="mt-8" />
       <FeaturedWithSidebar />
       <WhatsNewSection />

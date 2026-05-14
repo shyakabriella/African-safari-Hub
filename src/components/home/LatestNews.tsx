@@ -125,7 +125,7 @@ export default function LatestNews() {
       className="w-full overflow-x-hidden"
       style={{ backgroundColor: C.cream }}
     >
-      <div className="mx-auto max-w-7xl px-6 py-14">
+      <div className="mx-auto max-w-[1480px] px-4 py-14 sm:px-6 lg:px-8">
         {/* Header row */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div
