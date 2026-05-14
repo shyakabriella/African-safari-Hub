@@ -1,3 +1,51 @@
+// interface PowerfulAICardProps {
+//   icon: React.ReactNode;
+//   title: string;
+//   description: string;
+// }
+
+// export default function PowerfulAICard({ icon, title, description }: PowerfulAICardProps) {
+//   return (
+//     <div className="w-[352px] h-[290px] pt-5 pl-6 rounded-[16px] bg-white border border-[#E2E8F0] flex flex-col gap-[20px]">
+//       <div className="w-[56px] h-[56px] rounded-[12px] bg-[#8B4513]/10 flex justify-center items-center">
+//         <div className="w-[25px] h-[25px]">
+//           <span className="w-full h-full text-[#8B4513] flex justify-center items-center">
+//             {icon}
+//           </span>
+//         </div>
+//       </div> 
+
+//       <div className="w-[286px] h-[28px]">
+//         <span className="w-[189px] h-full font-bold text-[20px] leading-[28px] text-[#0F172A]">
+//           {title}
+//         </span>
+//       </div>
+
+//       <div className="w-[286px] h-[78px]">
+//         <span className="w-[284.55px] h-full font-normal text-[16px] leading-[26px] text-[#475569]">
+//           {description}
+//         </span>
+//       </div>
+//     </div>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// src/components/core-solutions/ai/PowerfulAICard.tsx
 interface PowerfulAICardProps {
   icon: React.ReactNode;
   title: string;
@@ -6,26 +54,20 @@ interface PowerfulAICardProps {
 
 export default function PowerfulAICard({ icon, title, description }: PowerfulAICardProps) {
   return (
-    <div className="w-[352px] h-[290px] pt-5 pl-6 rounded-[16px] bg-white border border-[#E2E8F0] flex flex-col gap-[20px]">
-      <div className="w-[56px] h-[56px] rounded-[12px] bg-[#8B4513]/10 flex justify-center items-center">
-        <div className="w-[25px] h-[25px]">
-          <span className="w-full h-full text-[#8B4513] flex justify-center items-center">
-            {icon}
-          </span>
+    <div className="group p-6 rounded-2xl bg-white border border-[#E2E8F0] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div className="w-14 h-14 rounded-xl bg-[#8B4513]/10 flex items-center justify-center mb-5 group-hover:bg-[#8B4513]/20 transition">
+        <div className="text-[#8B4513]">
+          {icon}
         </div>
       </div> 
 
-      <div className="w-[286px] h-[28px]">
-        <span className="w-[189px] h-full font-bold text-[20px] leading-[28px] text-[#0F172A]">
-          {title}
-        </span>
-      </div>
+      <h3 className="font-bold text-xl text-[#0F172A] mb-3">
+        {title}
+      </h3>
 
-      <div className="w-[286px] h-[78px]">
-        <span className="w-[284.55px] h-full font-normal text-[16px] leading-[26px] text-[#475569]">
-          {description}
-        </span>
-      </div>
+      <p className="text-[#475569] leading-relaxed">
+        {description}
+      </p>
     </div>
-  )
+  );
 }
