@@ -4,10 +4,10 @@ import WhyHotelBoostCard from "./WhyHotelBoostCard";
 export default function WhyHotelBoost() {
   return (
     <section className="w-full flex justify-center items-center">
-      <div className="w-[1280px] h-[412px] flex flex-col justify-center items-center gap-[48px] pt-[96px] pb-[96px] pr-[160px] pl-[160px]">
+      <div className="w-[1280px] h-[312px] flex flex-col justify-center items-center gap-[48px] pt-[60px] pb-[60px] pr-[160px] pl-[160px]">
         <div className="w-[960px] h-[40px] text-center">
-          <span className="w-[306.16px] h-[40px] text-[36px] font-extrabold text-[#4A3B2A]">
-            Why HotelBoost?
+          <span className="w-[306.16px] h-[40px] text-[20px] font-extrabold text-[#4A3B2A]">
+            Why Hotel Boost?
           </span>
         </div>
         <div className="w-[960px] h-[132px] flex justify-between items-center gap-[48px]">

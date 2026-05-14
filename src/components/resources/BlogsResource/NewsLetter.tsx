@@ -9,7 +9,7 @@ export default function NewsLetter() {
             </span>
           </div>
           <div className="w-full h-[56px]">
-            <span className="w-full h-full text-[18px] text-[#475569] font-normal leading-[28px]">
+            <span className="w-full h-full text-[15px] text-[#475569] font-normal leading-[28px]">
               Subscribe to our weekly newsletter for curated hospitality
               technology news and expert strategies.
             </span>

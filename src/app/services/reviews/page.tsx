@@ -16,14 +16,13 @@ function Hero() {
     <section className="border-b border-slate-100 bg-gradient-to-b from-white to-amber-50/40">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-14 sm:px-6 lg:flex-row lg:items-center lg:py-20 lg:px-8">
         <div className="flex-1 space-y-6">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#AD6419]">
+          <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-[#AD6419]">
             Elevate Your Reputation
           </p>
-          <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-            Boost Your Hotel's Reputation with Expert Review
-            <span className="block">Management</span>
+          <h1 className="max-w-xl text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Boost Your Hotel&apos;s Reputation <br /> <span className="text-[#AD6419]"> with </span> <br /> Expert Review Management
           </h1>
-          <p className="max-w-lg text-sm leading-relaxed text-slate-500">
+          <p className="max-w-lg text-[12px] leading-relaxed text-slate-500">
             Build guest trust, increase bookings, and master your online presence
             with our all-in-one reputation platform.
           </p>

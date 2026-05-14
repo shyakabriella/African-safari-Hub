@@ -26,7 +26,7 @@ export default function TheFrictionCard({
       </div>
 
       <div className="w-full h-[96px]">
-        <span className="w-full h-full font-normal text-[16px] leading-[24px] text-[#475569]">
+        <span className="w-full h-full font-normal text-[12px] leading-[24px] text-[#475569]">
           {description}
         </span>
       </div>

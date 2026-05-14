@@ -3,41 +3,43 @@ import WhyChooseUsCard from "./WhyChooseUsCard";
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full min-h-[602px] pt-[96px] pb-[96px]">
-      <div className="h-[410px] pr-[40px] pl-[40px] flex flex-col gap-[64px]">
-        <div className="h-[112px] flex flex-col justify-center items-center gap-[16px]">
-          <div className="">
-            <span className="text-[36px] font-extrabold text-[#5C3317]">
-              Why Choose Us?
-            </span>
-          </div>
-          <div className="h-[112px] text-center">
-            <span className="font-normal text-[18px] text-[#8B4513]/80">
-              We aren&apos;t just another tech company. We are hospitality
-              experts focused on the <br />
-              Local and International market.
-            </span>
-          </div>
+    <section className="w-full py-14">
+      
+      <div className="max-w-6xl mx-auto px-4">
+        
+        {/* Header */}
+        <div className="text-center mb-10">
+          
+          <h2 className="text-[28px] md:text-[34px] font-extrabold text-[#5C3317] mb-2">
+            Why Choose Us?
+          </h2>
+
+          <p className="text-sm md:text-base text-[#8B4513]/80 max-w-2xl mx-auto">
+            We’re not just a tech company — we’re hospitality experts focused on local and international markets.
+          </p>
         </div>
 
-        <div className="w-full h-[234px] flex gap-[32px] justify-center mt-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
           <WhyChooseUsCard
-            icon={<Globe className="w-7 h-7 text-[#8B4513]" />}
+            icon={<Globe className="w-5 h-5 text-[#8B4513]" />}
             title="Local Market Expertise"
-            description="Deep understanding of the Rwanda and East Africa hospitality landscape, including local payment trends."
+            description="Deep understanding of Rwanda & East Africa hospitality and payment trends."
           />
 
           <WhyChooseUsCard
-            icon={<Shield className="w-7 h-7 text-[#A0522D]" />}
+            icon={<Shield className="w-5 h-5 text-[#A0522D]" />}
             title="Enterprise Security"
-            description="Bank-level encryption for all transactions and guest data protection compliant with global standards."
+            description="Bank-level encryption and global compliance standards."
           />
 
           <WhyChooseUsCard
-            icon={<Headset className="w-7 h-7 text-[#8B4513]/90" />}
+            icon={<Headset className="w-5 h-5 text-[#8B4513]/90" />}
             title="24/7 Local Support"
-            description="Dedicated account managers available on-the-ground to help you optimize your digital strategy."
+            description="On-the-ground support to optimize your hotel operations."
           />
+
         </div>
       </div>
     </section>

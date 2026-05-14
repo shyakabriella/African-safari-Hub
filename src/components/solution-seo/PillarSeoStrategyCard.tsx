@@ -38,7 +38,7 @@ export default function PillarSeoStrategyCard({
         </div>
 
         {/* DESCRIPTION */}
-        <p className="text-[18px] text-[#7B6B5A] leading-relaxed">
+        <p className="text-[14px] text-[#7B6B5A] leading-relaxed">
           {description}
         </p>
 
@@ -47,7 +47,7 @@ export default function PillarSeoStrategyCard({
           {bullets.map((item, index) => (
             <div key={index} className="flex items-center gap-[12px]">
               <CheckCircle className="w-[16px] h-[16px] text-[#8F7E6D]" />
-              <span className="text-[#4A3B2A] text-[16px]">{item}</span>
+              <span className="text-[#4A3B2A] text-[13px]">{item}</span>
             </div>
           ))}
         </div>

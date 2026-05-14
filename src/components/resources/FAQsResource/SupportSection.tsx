@@ -4,14 +4,14 @@ import { Mail, MessageSquare, HelpCircle } from "lucide-react";
 
 export default function SupportSection() {
   return (
-    <div className="mt-20 mb-16 px-4">
+    <div className="mt-20 px-4">
       <div className="max-w-4xl mx-auto bg-[#8B4513] rounded-3xl p-12 text-center text-white relative overflow-hidden shadow-2xl">
         
         <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none" />
 
         <div className="relative z-10">
 
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 backdrop-blur-sm">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
 
@@ -19,7 +19,7 @@ export default function SupportSection() {
             Still have questions?
           </h2>
 
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-lg mb-7 max-w-2xl mx-auto leading-relaxed">
             Can&apos;t find what you&apos;re looking for? Our support team is available 24/7.
           </p>
 

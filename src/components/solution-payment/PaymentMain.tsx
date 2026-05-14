@@ -3,54 +3,71 @@ import Image from "next/image";
 
 export default function PaymentMain() {
   return (
-    <section className="min-h-screen w-full flex justify-center mt-20">
-      <div className="bg-[#F5E6D3] w-[90%] rounded-3xl px-6 py-8">
-        <div className="flex justify-center items-center gap-15 mt-20">
-          <div className="min-h-145.5">
+    <section className="w-full flex justify-center mt-14">
+      
+      <div className="bg-[#F5E6D3] w-[90%] rounded-[28px] px-6 py-10">
+        
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+          
+          {/* Left Content */}
+          <div className="max-w-[520px]">
 
-            {/* PCI-DSS Badge */}
-            <div className="w-[257.11px] h-6 pt-1.25 pb-1.25 pl-3 pr-3 rounded-[9999px] bg-[#8B4513]/10 flex items-center gap-1">
-              <ShieldCheck className="h-[14.67px] w-[12.33px] text-[#8B4513]" />
-              <span className="text-[#8B4513] font-bold text-[12px]">
+            {/* PCI Badge */}
+            <div className="w-fit h-9 px-3 rounded-full bg-[#8B4513]/10 flex items-center gap-2 mb-5">
+              <ShieldCheck className="w-4 h-4 text-[#8B4513]" />
+
+              <span className="text-[#8B4513] font-bold text-[10px] tracking-wide">
                 PCI-DSS CERTIFIED PLATFORM
               </span>
             </div>
 
             {/* Heading */}
-            <div className="min-h-72">
-              <h1 className="font-extrabold text-[72px]">
-                <span className="text-[#5C3317]">Secure, Seamless</span> <br />
-                <span className="text-[#8B4513]">Payments</span>{" "}
+            <div className="mb-6">
+              <h1 className="font-extrabold text-[32px] leading-tight tracking-tight">
+                
                 <span className="text-[#5C3317]">
-                  For your <br /> Hotel
+                  Secure, Seamless
+                </span>
+
+                <br />
+
+                <span className="text-[#8B4513]">
+                  Payments
+                </span>
+
+                <span className="text-[#5C3317]">
+                  {" "}For your Hotel
                 </span>
               </h1>
             </div>
 
             {/* Description */}
-            <div className="w-[584px] min-h-28 pb-8.25">
-              <span className="font-normal text-[#8B4513]/80 text-[20px]">
+            <div className="max-w-[500px] mb-8">
+              <p className="text-[#8B4513]/80 text-[12px] leading-relaxed font-medium">
                 Increase direct revenue and reduce manual processing with our
                 integrated payment solutions designed specifically for
-                hoteliers. Automate your front desk and get paid faster.
-              </span>
+                hoteliers.
+              </p>
             </div>
 
             {/* Buttons */}
-            <div className="w-xl min-h-15.5 flex gap-4">
-              <button className="w-[205.36px] h-15.5 rounded-xl bg-[#8B4513] text-white cursor-pointer">
+            <div className="flex flex-col sm:flex-row gap-3">
+              
+              <button className="w-[170px] h-12 rounded-xl bg-[#8B4513] text-white text-sm font-semibold cursor-pointer">
                 Start Free Trial
               </button>
-              <button className="w-[205.36px] h-15.5 rounded-xl bg-[#F5E6D3] border border-[#d4a567] cursor-pointer">
+
+              <button className="w-[170px] h-12 rounded-xl bg-[#F5E6D3] border border-[#d4a567] text-sm font-semibold cursor-pointer">
                 Book a Demo
               </button>
-            </div>
 
+            </div>
           </div>
 
-          {/* Image */}
-          <div className="w-[40%] h-[611.74px] relative bg-[#FFFFFF]/0.2">
-            <div className="border-3 border-white rounded-xl w-full h-full">
+          {/* Right Image */}
+          <div className="w-full max-w-[420px] h-[420px] relative bg-white/20 rounded-2xl overflow-hidden">
+            
+            <div className="border-2 border-white rounded-2xl w-full h-full overflow-hidden">
               <Image
                 src={"/secure-payment-pic.png"}
                 alt="Secure Payment For Services"
@@ -58,8 +75,8 @@ export default function PaymentMain() {
                 className="object-cover"
               />
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>

@@ -7,10 +7,10 @@ export default function DesignedDistinction() {
 
         {/* Heading */}
         <div className="w-full max-w-[960px] flex flex-col gap-[12px]">
-          <h2 className="text-[#0F172A] font-bold text-[40px] leading-[48px]">
+          <h2 className="text-[#0F172A] font-bold text-[30px] leading-[48px]">
             Designed for Distinction
           </h2>
-          <p className="text-[18px] leading-[28px] text-[#475569]">
+          <p className="text-[13px] leading-[19px] text-[#475569]">
             Achieve operational excellence that translates directly into guest loyalty <br />
             and property prestige.
           </p>

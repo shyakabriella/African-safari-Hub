@@ -29,11 +29,11 @@ export default function WhyUs() {
 
           <div className="w-1/2 h-[376px] flex flex-col gap-[32px]">
             <div className="w-full h-[80px]">
-              <span className="font-bold text-[36px] text-white leading-[40px]">
+              <span className="font-bold text-[30px] text-white leading-[40px]">
                 Why Top Hosts Choose StaySync
               </span>
             </div>
-            <div className="w-full h-[264px] flex flex-col gap-[24px]">
+            <div className="w-full h-[264px] flex flex-col gap-[30px]">
               <WhyUsCard
                 icon={<Star />}
                 title="Higher Occupancy"

@@ -3,7 +3,7 @@ import TailoredTechnologyCard from './TailoredTechnologyCard'
 export default function TailoredTechnology() {
   return (
     <section className="w-full flex justify-center items-center mb-30">
-      <div className="w-[1280px] h-[625px] flex flex-col pt-[80px] pb-[80px] pr-[160px] pl-[160px]">
+      <div className="w-[1280px] h-[625px] flex flex-col pt-[50px] pb-[80px] pr-[160px] pl-[160px]">
         <div className="w-[960px] h-[465px] flex flex-col gap-[48px]">
           
           <div className="w-[768px] h-[117px] flex flex-col gap-[16px]">
@@ -13,18 +13,18 @@ export default function TailoredTechnology() {
               </span>
             </div>
             <div className="w-full h-[45px]">
-              <span className="font-extrabold text-[36px] leading-[45px] text-[#0F172A]">
+              <span className="font-extrabold text-[30px] leading-[30px] text-[#0F172A]">
                 Tailored Technology for Mid-Market Excellence
               </span>
             </div>
-            <div className="w-full h-[56px] mt-12">
-              <span className="font-normal text-[18px] leading-[28px] text-[#475569]">
+            <div className="w-full h-[50px]">
+              <span className="font-normal text-[18px] leading-[20px] text-[#475569]">
                 We&apos;ve built a suite of tools specifically for the unique rhythm of mid-size hotel <br /> operations.
               </span>
             </div>
           </div>
 
-          <div className="w-[960px] h-[300px] flex gap-[40px] mt-12">
+          <div className="w-[960px] h-[300px] flex gap-[20px]">
             <TailoredTechnologyCard
               image="/trailored-tech-one.png"
               title="Scalable PMS"

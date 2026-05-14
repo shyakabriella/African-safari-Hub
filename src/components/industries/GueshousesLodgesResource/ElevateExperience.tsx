@@ -7,9 +7,9 @@ export default function ElevateExperience() {
     <section className="w-full flex justify-center items-center">
       <div className="w-[1280px] h-[736px] pl-[80px] pr-[80px] pt-[112px] pb-[96px] bg-[#1A120B] flex justify-center items-center">
         <div className="w-[1120px] h-[528px] flex items-center gap-[64px]">
-          <div className="w-[528px] h-[488px] flex flex-col gap-[40px]">
+          <div className="w-[528px] h-[488px] flex flex-col gap-[20px]">
             <div className="w-[528px] h-[80px]">
-              <span className="font-bold text-[36px] text-white leading-[40px]">
+              <span className="font-bold text-[30px] text-white leading-[40px]">
                 Elevate Your Guest Experience
               </span>
             </div>

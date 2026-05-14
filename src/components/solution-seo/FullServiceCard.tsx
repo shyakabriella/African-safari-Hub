@@ -14,8 +14,8 @@ export default function FullServiceCard({ icon, title, description }: FullServic
         <div className="w-[154.75px] h-[24px]">
           <span className="w-[142.83px] h-full text-[16px] text-[#D9BFA8] font-bold">{title}</span>
         </div>
-        <div className="w-[154.75px] h-[60px]">
-          <span className="w-[154.75px] h-[60px] text-[14px] font-normal text-[#D9BFA8]/70">
+        <div className="w-[154.75px] h-[60px] text-center">
+          <span className="w-[154.75px] h-[60px] text-[9px] font-normal text-[#D9BFA8]/70">
             {description}
           </span>
         </div>

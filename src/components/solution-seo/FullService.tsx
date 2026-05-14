@@ -5,17 +5,17 @@ export default function FullService() {
   return (
     <section className="w-full flex justify-center items-center">
       <div className="w-[1280px] h-[744px] p-[40px] bg-[#D9BFA8]/30">
-        <div className="relative w-[1200px] h-[664px] flex flex-col gap-[64px] pr-[160px] pl-[160px] pt-[96px] pb-[96px] rounded-[24px] bg-[#8B5E3C]">
+        <div className="relative w-[1200px] h-[664px] flex flex-col gap-[34px] pr-[160px] pl-[160px] pt-[96px] pb-[96px] rounded-[24px] bg-[#8B5E3C]">
           <div className="absolute -top-5 -right-8 rotate-6 w-60 h-[720.42px] bg-[#D9BFA8]/5 z-50"></div>
           
-          <div className="w-[880px] h-[92px] flex flex-col gap-[20px]">
+          <div className="w-[880px] h-[92px] flex flex-col gap-[5px]">
             <div className="w-[880px] h-[48px]">
-              <span className="text-[#FFFFFF] text-[48px] font-extrabold">
+              <span className="text-[#FFFFFF] text-[32px] font-extrabold">
                 Full-Service SEO Features
               </span>
             </div>
             <div className="w-[672px] h-[28px]">
-              <span className="text-[18px] text-[#FFFFFF]/80 font-normal">
+              <span className="text-[13px] text-[#FFFFFF]/80 font-normal">
                 Everything you need to outpace the competition and own your search results.
               </span>
             </div>

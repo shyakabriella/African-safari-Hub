@@ -14,13 +14,16 @@ export default function FocusOnGrowthGrid({
   textClassName = "text-[#8B4513]/80",
 }: FocusOnGrowthProp) {
   return (
-    <div className={`w-[276px] h-[250px] pt-[120px] pl-[32px] pr-[32px] pb-[32px] rounded-2xl shadow-md ${bgClassName}`}>
-      <h3 className={`text-xl font-bold mb-3 ${titleClassName}`}>
+    <div
+      className={`p-5 rounded-2xl shadow-sm flex flex-col justify-between gap-2 min-h-[140px] ${bgClassName}`}
+    >
+      <h3 className={`text-lg font-bold ${titleClassName}`}>
         {title}
       </h3>
-      <p className={`text-sm ${textClassName}`}>
+
+      <p className={`text-xs leading-relaxed ${textClassName}`}>
         {description}
       </p>
     </div>
-  )
+  );
 }

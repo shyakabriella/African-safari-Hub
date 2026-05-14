@@ -3,17 +3,17 @@ import FocusOnHospitalityCard from "./FocusOnHospitalityCard";
 
 export default function FocusOnHospitality() {
   return (
-    <section className="w-full flex justify-center items-center py-25 bg-[#F6F6F8]/20">
+    <section className="w-full flex justify-center items-center py-18 bg-[#F6F6F8]/20 mt-8">
       <div className="w-[1280px] flex flex-col justify-center items-center text-center gap-32 px-16 bg-[#ffffff3d]">
         {/* Header */}
-        <div className="w-[768px] h-[56px]">
-          <span className="w-full h-full font-extrabold text-[48px] leading-[52px] text-[#0F172A]">
+        <div className="w-[768px] h-10">
+          <span className="w-full h-full font-extrabold text-[28px] leading-[52px] text-[#0F172A]">
             Focus on Hospitality, We&apos;ll Handle the Rest
           </span>
         </div>
 
         {/* Cards */}
-        <div className="w-[1216px] h-[230px] flex justify-between items-center gap-12">
+        <div className="w-[1216px] h-[80px] flex justify-between items-center gap-4 mb-10">
           <FocusOnHospitalityCard
             icon={<TrendingUp />}
             title="Start Earning Faster"

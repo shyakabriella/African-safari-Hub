@@ -3,7 +3,7 @@ import FeaturesSectionCard from "./FeaturesSectionCard";
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full min-h-screen flex justify-center items-center py-25">
+    <section className="w-full min-h-screen flex justify-center items-center">
       <div className="w-[1280px] flex flex-col items-center justify-center gap-32 px-16 bg-white">
         <div className="w-full flex flex-col gap-32">
           <FeaturesSectionCard

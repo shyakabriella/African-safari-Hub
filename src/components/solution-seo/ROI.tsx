@@ -7,9 +7,9 @@ export default function ROI() {
       <div className="w-7xl h-151.5 pr-40 pl-40 pt-24 pb-24 bg-[#F3EFEA]">
         <div className="w-[960px] h-[414px] flex justify-between items-center gap-[64px]">
           
-          <div className="w-[415px] h-[332px] flex flex-col gap-[32px]">
+          <div className="w-[415px] h-[332px] flex flex-col gap-[20px]">
             <div className="w-[415px] h-[48px]">
-              <span className="text-[48px] text-[#4A3B2A] font-extrabold w-[415px] h-[48px]">
+              <span className="text-[32px] text-[#4A3B2A] font-extrabold w-[415px] h-[48px]">
                 ROI You Can See
               </span>
             </div>

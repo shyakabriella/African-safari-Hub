@@ -5,22 +5,22 @@ export default function TailoredHospitality() {
   return (
     <section className="w-full flex justify-center items-center mb-10">
       <div className="w-[1280px] h-[625px] flex flex-col pt-[10px] pb-[80px]">
-        <div className="h-[465px] flex flex-col gap-[48px]">
+        <div className="h-[465px] flex flex-col gap-[40px]">
           
-          <div className="w-[768px] h-[117px] flex flex-col gap-[16px]">
+          <div className="w-[768px] h-[117px] flex flex-col gap-[16px] ml-8">
             <div className="w-full h-[45px]">
-              <span className="font-extrabold text-[36px] leading-[45px] text-[#0F172A]">
+              <span className="font-extrabold text-[32px] leading-[45px] text-[#0F172A]">
                 Tailored for Boutique Hospitality
               </span>
             </div>
             <div className="w-full h-[56px]">
-              <span className="font-normal text-[18px] leading-[28px] text-[#475569]">
+              <span className="font-normal text-[15px] leading-[28px] text-[#727d8d]">
                 Our system is designed to handle the unique nuances of guesthouses and lodges, where every detail counts.
               </span>
             </div>
           </div>
 
-          <div className="w-full h-[300px] flex gap-[40px] mt-2">
+          <div className="w-full h-[280px] flex gap-[20px] p-7">
             <TailoredHospitalityCard
               image="/tailored-one.png"
               title="Simple Booking System"

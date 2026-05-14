@@ -4,14 +4,14 @@ import OurProcessCard from "./OurProcessCard";
 export default function OurProcess() {
   return (
     <section className="w-full flex justify-center items-center">
-      <div className="w-[1280px] h-[540px] pr-[160px] pl-[160px] pb-[96px] flex flex-col justify-center items-center gap-[80px]">
+      <div className="w-[1280px] h-[440px] pr-[160px] pl-[160px] flex flex-col justify-center items-center gap-[40px]">
         
-        <div className="w-[960px] h-[88px] text-center flex flex-col gap-[16px]">
+        <div className="w-[960px] h-[88px] text-center flex flex-col">
           <div className="w-[960px] h-[48px]">
-            <span className="w-[285.84px] h-[48px] text-[#4A3B2A] text-[48px] font-extrabold">Our Process</span>
+            <span className="w-[285.84px] h-[48px] text-[#4A3B2A] text-[28px] font-extrabold">Our Process</span>
           </div>
           <div className="w-[960px] h-[24px]">
-            <span className="w-[368.33px] h-[24px] text-[#7B6B5A] text-[16px] font-normal">
+            <span className="w-[368.33px] h-[24px] text-[#7B6B5A] text-[12px] font-normal">
               From audit to ongoing growth in four proven steps.
             </span>
           </div>

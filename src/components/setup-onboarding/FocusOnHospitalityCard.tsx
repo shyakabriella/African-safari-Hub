@@ -10,10 +10,12 @@ export default function FocusOnHospitalityCard({
   description,
 }: FocusOnHospitalityCardProps) {
   return (
-    <div className="w-[384px] h-[230px] rounded-[16px] bg-[#FFFFFF]/50 border border-[#E2E8F0] flex flex-col justify-start items-center text-center pt-8">
+    <div className="w-[384px] h-[180px] rounded-[16px] bg-[#FFFFFF]/50 border border-[#E2E8F0] flex flex-col justify-start items-center text-center pt-8">
       {/* Icon */}
-      <div className="w-[64px] h-[64px] rounded-full bg-[#8B4513] flex justify-center items-center text-white mb-4">
-        {icon}
+      <div className="w-[40px] h-[45px] rounded-full bg-[#8B4513] flex justify-center items-center text-white mb-4">
+          <span className="text-[8px]">
+            {icon}
+          </span>
       </div>
 
       {/* Title */}
@@ -24,8 +26,8 @@ export default function FocusOnHospitalityCard({
       </div>
 
       {/* Description */}
-      <div className="w-[318px] h-[72px]">
-        <span className="font-normal text-[16px] leading-[24px] text-[#475569]">
+      <div className="w-[318px] h-[72px] mb-4">
+        <span className="font-normal text-[10px] leading-[10px] text-[#a6adb7]">
           {description}
         </span>
       </div>

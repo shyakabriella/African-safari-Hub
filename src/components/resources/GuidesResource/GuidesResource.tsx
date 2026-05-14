@@ -16,7 +16,7 @@ const Hero = () => (
         Expert Guides & Resources
       </h1>
 
-      <p className="text-[16px] text-[#64748B] leading-[26px]">
+      <p className="text-[14px] text-[#64748B] leading-[26px]">
         Master the art of hotel management and digital growth with our curated
         professional resource library.
       </p>

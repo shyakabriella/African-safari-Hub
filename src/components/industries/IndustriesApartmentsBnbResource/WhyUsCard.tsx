@@ -14,10 +14,10 @@ export default function WhyUsCard({ icon, title, description }: WhyUsCardProps) 
       </div>
       <div className="w-[351.56px] h-[72px] flex flex-col gap-[4px]">
         <div className="w-full h-[28px]">
-          <span className="w-[177.59px] h-[28px] font-bold text-[20px] text-white leading-[28px]">{title}</span>
+          <span className="w-[177.59px] h-[28px] font-bold text-[18px] text-white leading-[28px]">{title}</span>
         </div>
         <div className="w-full h-[40px]">
-          <span className="text-[#94A3B8] leading-[20px] text-[14px] font-normal">{description}</span>
+          <span className="text-[#94A3B8] leading-[20px] text-[12px] font-normal">{description}</span>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ export default function TransformYourHotelItem({ text }: TransformYourHotelProps
         <span className="w-full h-full text-white"><CheckCircle /></span>
       </div>
       <div className="w-[349.14px] h-[24px]">
-        <span className="w-full h-full font-normal text-[16px] text-white leading-[24px]">{text}</span>
+        <span className="w-full h-full font-normal text-[13px] text-white leading-[24px]">{text}</span>
       </div>
     </div>
   )

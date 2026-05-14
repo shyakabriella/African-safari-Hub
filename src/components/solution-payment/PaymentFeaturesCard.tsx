@@ -23,8 +23,8 @@ export default function InfoPaymentCard({
         {icon}
       </div>
       <div className="flex flex-col justify-center gap-4">
-        <h3 className="text-lg font-semibold text-[#5C2F0B]">{title}</h3>
-        <p className="text-[#8C5A36]">{description}</p>
+        <h3 className="text-[14px] font-semibold text-[#5C2F0B]">{title}</h3>
+        <p className="text-[#8C5A36] text-[11px]">{description}</p>
       </div>
     </div>
   );

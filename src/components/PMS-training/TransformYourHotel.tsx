@@ -34,12 +34,12 @@ export default function TransformYourHotel() {
 
           <div className="w-[576px] h-[288px] flex flex-col gap-[24px]">
             <div className="w-full h-[80]">
-              <span className="w-full h-full font-extrabold text-[36px] text-white leading-[40px]">
+              <span className="w-full h-full font-extrabold text-[29px] text-white leading-[40px]">
                 Transform Your Hotel Management Experience
               </span>
             </div>
             <div className="w-full h-[56px]">
-              <span className="w-full h-full text-[#FFFFFF]/50 font-normal text-[20px]">
+              <span className="w-full h-full text-[#FFFFFF]/50 font-normal text-[15px]">
                 Our training doesn&apos;t just teach software; it transforms your business culture to prioritize efficiency and service excellence.
               </span>
             </div>

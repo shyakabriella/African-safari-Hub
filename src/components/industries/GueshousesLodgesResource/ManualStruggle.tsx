@@ -4,14 +4,14 @@ import ManualStruggleCard from "./ManualStruggleCard";
 export default function ManualStruggle() {
   return (
     <section className="w-full flex justify-center items-center mb-20">
-      <div className="w-[1280px] p-[80px] bg-[#8B4513]/5">
+      <div className="w-[1280px] p-[40px] bg-[#8B4513]/5">
         <div className="w-[1120px] flex flex-col justify-center items-center text-center gap-[64px] mt-10">
 
           <div className="w-full flex flex-col items-center gap-[16px]">
-            <h1 className="font-semibold text-[40px] leading-[48px] text-[#0F172A] whitespace-nowrap text-center">
+            <h1 className="font-semibold text-[30px] leading-[48px] text-[#0F172A] whitespace-nowrap text-center">
               The Struggle of Manual Management
             </h1>
-            <p className="font-normal text-[16px] leading-[24px] text-[#475569] text-center max-w-[672px]">
+            <p className="font-normal text-[13px] leading-[24px] text-[#475569] text-center max-w-[672px]">
               Traditional hospitality thrives on warmth, but manual back-office
               tasks can turn a dream lodge into an operational nightmare.
             </p>
