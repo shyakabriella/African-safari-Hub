@@ -3,7 +3,7 @@ export default function GuesHouseCTA() {
   return (
     <section className="w-full flex justify-center items-center">
       
-      <div className="w-[768px] h-[534px] flex flex-col items-center text-center gap-[30px] pt-[96px] pr-[80px] pl-[80px] bg-[#8B4513]/5 border border-[#8B4513]/20">
+      <div className="w-[768px] h-[470px] flex flex-col items-center text-center gap-[30px] pt-[96px] pr-[80px] pl-[80px] bg-[#8B4513]/5 border border-[#8B4513]/20">
         
           <div className="w-[606px]">
             <span className="w-[499.1px] h-full font-bold text-[30px] leading-[48px] text-[#0F172A]">

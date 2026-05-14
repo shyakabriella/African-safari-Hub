@@ -245,7 +245,7 @@ function App() {
         <div className="mx-auto grid max-w-[928px] items-center gap-12 px-6 md:grid-cols-[0.92fr_1fr] lg:px-0">
           <div className="reveal-up max-w-[420px]">
             <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.24em] text-[#AD6419]">OTA Integration</p>
-            <h1 className="font-display text-[42px] leading-[1.08] tracking-[-0.035em] text-[#21180f] md:text-[46px]">
+            <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.035em] text-[#21180f] md:text-[36px]">
               Global OTA Connectivity
             </h1>
             <p className="mt-6 max-w-[388px] text-[13px] leading-6 text-[#655950]">

@@ -17,23 +17,23 @@ function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 md:pb-24 md:pt-20">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 shadow-sm">
               <Globe className="h-4 w-4 text-[#AD6419]" />
-              <span className="text-xs font-semibold tracking-wider text-slate-700">
+              <span className="text-[10px] font-semibold tracking-wider text-slate-700">
                 24/7 GLOBAL OPERATIONS
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl">
+            <h1 className="text-2xl font-bold leading-tight tracking-tight text-slate-900 md:text-3xl">
               Round-the-Clock Support{" "}
               <span className="text-[#AD6419]">for Global Hospitality</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="max-w-lg text-base leading-relaxed text-slate-600">
+            <p className="max-w-lg text-[14px] leading-relaxed text-slate-600">
               We're here when you need us most. Our dedicated technical experts are
               available 24/7 to ensure your operations never miss a beat.
             </p>

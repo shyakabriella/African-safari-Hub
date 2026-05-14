@@ -7,20 +7,20 @@ export default function WhyHotelGrowth() {
     <section className="w-full flex justify-center items-center">
       <div className="w-[1280px] h-[736px] pl-[80px] pr-[80px] pt-[112px] pb-[96px] bg-[#0F172A] flex justify-center items-center">
         <div className="w-[1120px] h-[528px] flex items-center gap-[64px]">
-          <div className="w-[528px] h-[488px] flex flex-col gap-[40px]">
+          <div className="w-[528px] h-[488px] flex flex-col gap-[10px]">
             <div className="w-full h-[132px]">
               <div className="w-[528px] h-[20px]">
-                <span className="text-[14px] leading-[20px] font-bold text-[#8B4513]">
+                <span className="text-[12px] leading-[20px] font-bold text-[#8B4513]">
                   The Benefits
                 </span>
               </div>
               <div className="w-[528px] h-[80px]">
-                <span className="font-bold text-[36px] text-white leading-[40px]">
-                  Why HotelGrowth is the preferred choice
+                <span className="font-bold text-[20px] text-white leading-[40px]">
+                  Why Hotel Growth is the preferred choice
                 </span>
               </div>
             </div>
-            <div className="w-full h-[264px] flex flex-col gap-[24px]">
+            <div className="w-full h-[224px] flex flex-col gap-[24px]">
               <WhyHotelGrowthCard
                 icon={<CheckCircle />}
                 title="Higher Occupancy"
@@ -39,7 +39,7 @@ export default function WhyHotelGrowth() {
             </div>
           </div>
 
-          <div className="relative w-[528px] h-[528px]">
+          <div className="relative w-[528px] h-[428px]">
             <div
               className="relative w-full h-full rounded-[24px] overflow-hidden
                   bg-white/10 backdrop-blur-[20px]
