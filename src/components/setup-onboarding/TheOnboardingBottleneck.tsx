@@ -4,17 +4,17 @@ import TheOnboardingBottleneckCard from "./TheOnboardingBottleneckCard";
 export default function TheOnboardingBottleneck() {
   return (
     <section className="w-full flex justify-center items-center">
-      <div className="w-[1280px] h-[562px] pt-[20px] pb-[80px] bg-[#F8FAFC]/30 border border-[#F6F6F8]/10">
-        <div className="w-full h-[402px] flex flex-col justify-center items-center pr-[32px] pl-[32px] gap-[64px]">
+      <div className="w-[1280px] pb-[40px] bg-[#F8FAFC]/30 border border-[#F6F6F8]/10">
+        <div className="w-full h-[402px] flex flex-col justify-center items-center pr-[32px] pl-[32px] gap-[30px]">
           {/* Header */}
           <div className="w-[768px] h-[108px] flex flex-col text-center gap-[16px]">
             <div className="w-[768px] h-[36px]">
-              <span className="w-[392.5px] h-[36px] font-extrabold text-[30px] text-[#0F172A]">
+              <span className="w-[392.5px] h-[36px] font-extrabold text-[25px] text-[#2d3953]">
                 The Onboarding Bottleneck
               </span>
             </div>
             <div className="w-[768px] h-[56px]">
-              <span className="w-full h-full font-normal text-[20px] text-[#475569]">
+              <span className="w-full h-full font-normal text-[15px] text-[#475569]">
                 Why most hotel software implementations fail or stall for months.
               </span>
             </div>

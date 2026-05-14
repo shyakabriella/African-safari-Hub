@@ -54,12 +54,12 @@ export default function GrowthMetrics() {
                 85% NPS Score Increase
               </span>
             </div>
-            <div className="cursor-pointer hover:underline w-[290.93px] h-[20px] pr-[210.47px] mt-8 flex justify-center items-center">
+            {/* <div className="cursor-pointer hover:underline w-[290.93px] h-[20px] pr-[210.47px] mt-8 flex justify-center items-center">
               <span className="w-[71.53px] h-full text-[#8B4513] font-bold text-[10px] leading-[20px]">
                 View Story
               </span>
               <ArrowRight className="w-[12px] h-[12px] text-[#8B4513]" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -128,19 +128,19 @@ export default function GrowthMetrics() {
 
         <button className="hover:underline flex items-center cursor-pointer gap-[4px]">
           {/* Text */}
-          <span className="text-[14px] font-bold text-[#8B4513]">
+          {/* <span className="text-[14px] font-bold text-[#8B4513]">
             View Story
-          </span>
+          </span> */}
 
           {/* Arrow */}
-          <div className="w-[9px] h-[8px] relative">
+          {/* <div className="w-[9px] h-[8px] relative">
             <Image
               src="/arrow-no-tail.png"
               alt="Arrow"
               fill
               className="object-contain"
             />
-          </div>
+          </div> */}
         </button>
       </div>
 

@@ -4,9 +4,13 @@ interface WhyChooseUsProps {
   description: string;
 }
 
-export default function WhyChooseUsCard({ icon, title, description }: WhyChooseUsProps) {
+export default function WhyChooseUsCard({
+  icon,
+  title,
+  description,
+}: WhyChooseUsProps) {
   return (
-    <div className="w-[378.66px] h-[234px] bg-[#F5E6D3]/30 border border-[#F5E6D3]/40 rounded-[16px] pl-6 pt-8 flex flex-col gap-[20px] shadow-sm">
+    <div className="p-5 rounded-xl bg-[#F5E6D3]/30 border border-[#F5E6D3]/40 shadow-sm flex flex-col gap-3 hover:shadow-md transition">
       
       {/* Icon */}
       <div className="text-[#8B4513]">
@@ -14,19 +18,15 @@ export default function WhyChooseUsCard({ icon, title, description }: WhyChooseU
       </div>
 
       {/* Title */}
-      <div className="w-[312.66px] h-[28px]">
-        <span className="text-[20px] font-bold text-[#5C3317]">
-          {title}
-        </span>
-      </div>
+      <h3 className="text-base font-bold text-[#5C3317]">
+        {title}
+      </h3>
 
       {/* Description */}
-      <div className="w-[312.66px] h-[72px]">
-        <span className="text-[16px] font-normal text-[#8B4513]/80">
-          {description}
-        </span>
-      </div>
+      <p className="text-sm text-[#8B4513]/80 leading-relaxed">
+        {description}
+      </p>
 
     </div>
-  )
+  );
 }

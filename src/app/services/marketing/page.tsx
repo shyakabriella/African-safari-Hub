@@ -14,17 +14,17 @@ import {
 
 
 const Hero = () => (
-  <section className="relative pt-12 pb-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+  <section className="relative pt-12 pb-14 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 mt-10 gap-12 items-center">
     <div className="space-y-8">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100">
         <div className="w-2 h-2 rounded-full bg-[#AD6419]" />
         <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">Digital Marketing for Hotels</span>
       </div>
-      <h1 className="text-5xl lg:text-6xl font-extrabold text-[#1a202c] leading-[1.1]">
+      <h1 className="text-2xl lg:text-3xl font-extrabold text-[#1a202c] leading-[1.1]">
         Drive More Direct Bookings with <br/>
         <span className="text-[#AD6419]">Meta & Search Ads</span>
       </h1>
-      <p className="text-lg text-gray-500 max-w-lg leading-relaxed">
+      <p className="text-[13px] text-gray-500 max-w-lg leading-relaxed">
         HotelSafari manages Google Ads, Meta (Facebook/Instagram) Ads, and OTA Sponsored Listings to capture demand and lower your overall distribution costs.
       </p>
       
@@ -82,16 +82,16 @@ const Hero = () => (
 
 
 const Pillars = () => (
-  <section className="py-24 px-6 max-w-7xl mx-auto">
-    <div className="text-center mb-16 space-y-4">
+  <section className="py-12 px-6 max-w-7xl mx-auto">
+    <div className="text-center mb-10 space-y-4">
       <p className="text-[10px] font-bold uppercase tracking-widest text-[#AD6419]">Our Advertising Pillars</p>
-      <h2 className="text-4xl font-extrabold text-gray-900">Omnichannel Marketing Solutions</h2>
-      <p className="text-gray-500 max-w-2xl mx-auto">
+      <h2 className="text-3xl font-extrabold text-gray-900">Omnichannel Marketing Solutions</h2>
+      <p className="text-gray-500 max-w-3xl mx-auto">
         We build tailored advertising strategies that connect with guests at every stage of their booking journey.
       </p>
     </div>
 
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-3 text-center gap-8">
       {[
         {
           title: 'Google Hotel Ads',
@@ -163,8 +163,8 @@ const Pillars = () => (
 );
 
 const Benefits = () => (
-  <section className="py-24 px-6 max-w-7xl mx-auto">
-    <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-20">The Benefits of Managed Digital Marketing</h2>
+  <section className="py-12 px-6 max-w-7xl mx-auto">
+    <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-20">The Benefits of Managed Digital Marketing</h2>
     <div className="grid md:grid-cols-3 gap-16 text-center">
       {[
         { 
@@ -187,8 +187,8 @@ const Benefits = () => (
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#AD6419]/10 text-[#AD6419]">
             <benefit.icon className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900">{benefit.title}</h3>
-          <p className="text-sm text-gray-500 leading-relaxed px-4">{benefit.desc}</p>
+          <h3 className="text-[15px] font-bold text-gray-900">{benefit.title}</h3>
+          <p className="text-[10px] text-gray-500 leading-relaxed px-4">{benefit.desc}</p>
         </div>
       ))}
     </div>
@@ -196,16 +196,16 @@ const Benefits = () => (
 );
 
 const CTA = () => (
-  <section className="py-24 px-6">
+  <section className="py-12 px-6">
     <div className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-br from-[#AD6419]/10 via-[#AD6419]/5 to-transparent p-12 lg:p-24 text-center">
-      <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+      <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
         Ready to boost your direct bookings?
       </h2>
-      <p className="text-gray-500 max-w-2xl mx-auto mb-12 text-lg">
+      <p className="text-gray-500 max-w-2xl mx-auto mb-12 text-[13px]">
         Let our experts design a tailored digital marketing strategy for your property. Get a free audit of your current online presence.
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        <button className="bg-[#AD6419] text-white px-10 py-5 rounded-2xl font-bold text-base hover:bg-[#9a5a17] transition-colors shadow-xl shadow-orange-100">
+        <button className="bg-[#AD6419] text-white px-8 py-3 rounded-2xl font-bold text-base hover:bg-[#9a5a17] transition-colors shadow-xl shadow-orange-100">
           Request a Demo
         </button>
       </div>

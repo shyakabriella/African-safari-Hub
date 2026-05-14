@@ -15,12 +15,12 @@ export default function RoiCard({ icon, title, description }: RoiProps) {
 
       <div className='w-[351.95px] h-[76px] flex flex-col'>
         <div className='w-[351.95px] h-[28px]'>
-          <span className='w-[142.34px] h-[28px] font-bold text-[#4A3B2A] text-[18px]'>
+          <span className='w-[142.34px] h-[28px] font-bold text-[#4A3B2A] text-[15px]'>
             {title}
           </span>
         </div>
         <div className='w-[351.95px] h-[48px]'>
-          <span className="w-full h-full text-[16px] font-normal text-[#A19182]">
+          <span className="w-full h-full text-[12px] font-normal text-[#A19182]">
             {description}
           </span>
         </div>

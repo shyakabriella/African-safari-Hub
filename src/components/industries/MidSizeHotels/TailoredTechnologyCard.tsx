@@ -17,7 +17,7 @@ export default function TailoredTechnologyCard({
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
 
-      <div className="w-[298.66px] h-[108px] flex flex-col gap-[8px]">
+      <div className="w-[298.66px] text-center h-[108px] flex flex-col gap-[8px]">
         <div className="flex items-center gap-[6px]">
           <span className="text-[#0F172A] font-bold text-[20px] leading-[28px]">
             {title}

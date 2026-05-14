@@ -1,64 +1,75 @@
-import { Bed, Calendar, RefreshCw } from 'lucide-react'
-import React from 'react'
+import { Bed, Calendar, RefreshCw } from "lucide-react";
+import React from "react";
 
 export default function OneClickIntegration() {
   return (
-    <section className="w-full mt-10 flex justify-center items-center pb-10">
-      <div className='w-[1280px] h-[248px] flex flex-col gap-[64px] text-center pl-5'>
-        <div className='w-[1216px] h-[76px] flex flex-col gap-[16px]'>
-          <div className='w-full h-[36px]'>
-            <span className='w-[313.53px] h-[36px] font-bold text-[30px] text-[#0F172A]'>
+    <section className="w-full mt-12 flex justify-center items-center pb-10">
+      
+      <div className="w-full max-w-5xl flex flex-col gap-10 text-center px-4">
+        
+        {/* Heading */}
+        <div className="flex flex-col gap-3">
+          
+          <div>
+            <span className="font-extrabold text-[26px] text-[#0F172A] tracking-tight">
               One-Click Integration
             </span>
           </div>
-          <div className='w-full h-[24px]'>
-            <span className='text-[#475569] text-[16px] w-[569.13px] h-full font-normal'>
-              Our payment gateway connects seamlessly with our Booking Engine and PMS.
+
+          <div className="max-w-xl mx-auto">
+            <span className="text-[#475569] text-[14px] leading-relaxed">
+              Our payment gateway connects seamlessly with our
+              Booking Engine and PMS.
             </span>
           </div>
         </div>
 
-        <div className='w-[1216px] h-[108px] flex justify-center items-center gap-[48px]'>
-          <div className='w-[99.92px] h-[92px] flex justify-center items-center flex-col gap-[12px]'>
-            <div className='w-[64px] h-[64px] rounded-[9999px] bg-[#F5E6D3] flex justify-center items-center'>
-              <div className='w-[22.5px] h-[25px]'>
-                <Calendar className='w-[22.5px] h-[25px] text-[#8B4513]' />
-              </div>
+        {/* Integration Flow */}
+        <div className="flex justify-center items-center gap-6 sm:gap-10 flex-wrap">
+          
+          {/* Booking Engine */}
+          <div className="flex justify-center items-center flex-col gap-3">
+            
+            <div className="w-14 h-14 rounded-full bg-[#F5E6D3] flex justify-center items-center">
+              <Calendar className="w-5 h-5 text-[#8B4513]" />
             </div>
-            <div className='w-[99.92px] h-[16px]'>
-              <span className='w-[99.92px] h-[16px] text-[#8B4513]/70 text-[12px] font-bold'>
-                Booking Engine
-              </span>
-            </div>
+
+            <span className="text-[#8B4513]/70 text-[11px] font-bold">
+              Booking Engine
+            </span>
           </div>
 
-          <div className='w-[96px] h-[1px] bg-[#D9C5B3]'></div>
+          {/* Line */}
+          <div className="w-14 h-[1px] bg-[#D9C5B3] hidden sm:block"></div>
 
-          <div className='w-[80px] h-[108px] flex items-center flex-col gap-[6px]'>
-            <div className='w-[80px] h-[80px] flex justify-center items-center rounded-[16px] bg-[#8B4513]'>
-              <div className='w-[24px] h-[24px]'>
-                <RefreshCw className='w-full h-full text-[#F5E6D3]' />
-              </div>
+          {/* Payments */}
+          <div className="flex items-center flex-col gap-2">
+            
+            <div className="w-16 h-16 flex justify-center items-center rounded-[14px] bg-[#8B4513] shadow-md">
+              <RefreshCw className="w-5 h-5 text-[#F5E6D3]" />
             </div>
-            <div className='w-[62.8px] h-[16px]'>
-              <span className='w-full h-full text-[12px] font-bold text-[#8B4513]'>Payments</span>
-            </div>
+
+            <span className="text-[11px] font-bold text-[#8B4513]">
+              Payments
+            </span>
           </div>
 
-          <div className='w-[96px] h-[1px] bg-[#D9C5B3]'></div>
+          {/* Line */}
+          <div className="w-14 h-[1px] bg-[#D9C5B3] hidden sm:block"></div>
 
-          <div className='w-[75.17px] h-[92px] flex flex-col items-center gap-[12px]'>
-            <div className='w-[64px] h-[64px] flex justify-center items-center rounded-[9999px] bg-[#F5E6D3]'>
-              <div className='w-[27.5px] h-[18.75px]'>
-                <Bed className='w-[27.5px] h-[18.75px] text-[#8B4513]' />
-              </div>
+          {/* PMS */}
+          <div className="flex flex-col items-center gap-3">
+            
+            <div className="w-14 h-14 flex justify-center items-center rounded-full bg-[#F5E6D3]">
+              <Bed className="w-5 h-5 text-[#8B4513]" />
             </div>
-            <div className='w-[75.17px] h-[16px]'>
-              <span className='text-[#8B4513]/70 text-[12px] font-bold'>PMS System</span>
-            </div>
+
+            <span className="text-[#8B4513]/70 text-[11px] font-bold">
+              PMS System
+            </span>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

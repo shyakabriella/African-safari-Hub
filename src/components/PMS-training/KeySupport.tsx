@@ -9,7 +9,7 @@ export default function KeySupport() {
         <div className="w-full h-[350px] flex flex-col gap-[64px] pr-[32px] pl-[32px]">
           <div className="w-[1216px] h-[76px] flex flex-col gap-[16px] text-center">
             <div className="w-full h-[36px]">
-              <span className="w-[316.94px] h-full text-[30px] font-extrabold text-[#0F172A]">
+              <span className="w-[316.94px] h-full text-[30px] font-extrabold text-[#8B4513]">
                 Key Support Features
               </span>
             </div>

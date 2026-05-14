@@ -6,24 +6,24 @@ export default function MastryOfGuestExperience() {
     <section className="w-full flex justify-center items-center mt-20 mb-20">
       <div className="w-[1218px] flex items-center justify-between gap-[48px]">
 
-        <div className="w-[584px] flex flex-col gap-[40px]">
+        <div className="w-[584px] flex flex-col gap-[30px]">
           <div>
             <div className="flex mt-5 items-center justify-center w-[131.94px] h-[24px] pt-[4px] pb-[4px] pr-[16px] pl-[16px] rounded-[9999px] bg-[#8B4513]/10">
-              <h2 className="text-[#8B4513] text-[12px] font-bold leading-[16px]">
+              <h2 className="text-[#8B4513] text-[10px] font-bold leading-[16px]">
                 THE SOLUTION
               </h2>
             </div>
-            <h1 className="text-[#0F172A] text-[36px] font-extrabold mt-2 leading-tight">
+            <h1 className="text-[#0F172A] text-[28px] font-extrabold mt-2 leading-tight">
               Mastery of the Guest Experience
             </h1>
           </div>
 
-          <p className="text-[#334155] text-[18px] leading-relaxed">
+          <p className="text-[#334155] text-[13px] leading-relaxed">
             Our bespoke modules ensure seamless multi-department coordination and
             white-glove service through an intuitive interface designed for elite operators.
           </p>
 
-          <div className="flex flex-col gap-[24px]">
+          <div className="flex flex-col gap-[6px]">
             <MastryOfGuestExperienceCard
               title="Enterprise-Grade PMS"
               description="A robust core designed for multi-property agility and complex booking engines."

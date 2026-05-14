@@ -4,16 +4,16 @@ import OnboardingChallengeCard from "./OnboardingChallengeCard";
 export default function OnboardingChallenge() {
   return (
     <section className="w-full flex justify-center items-center">
-      <div className="w-[1280px] h-[562px] pt-[80px] pb-[80px] bg-[#F8FAFC]/30 border border-[#F6F6F8]">
+      <div className="w-[1280px] h-[562px] pt-[40px] pb-[40px] bg-[#F8FAFC]/30 border border-[#F6F6F8]">
         <div className="w-full h-[402px] flex flex-col justify-center items-center pr-[32px] pl-[32px] gap-[64px]">
           <div className="w-[768px] h-[108px] flex flex-col text-center gap-[16px]">
             <div className="w-[768px] h-[36px]">
-              <span className="w-[392.5px] h-[36px] font-extrabold text-[30px] text-[#0F172A]">
+              <span className="w-[392.5px] h-[36px] font-extrabold text-[30px] text-[#8B4513]">
                 The Onboarding Challenge
               </span>
             </div>
             <div className="w-[768px] h-[56px]">
-              <span className="w-full h-full font-normal text-[20px] text-[#475569]">
+              <span className="w-full h-full font-normal text-[14px] text-[#61728a]">
                 Tired of manual errors and long training cycles? High staff turnover and complex
                 systems shouldn&apos;t hold your hotel back from excellence.
               </span>

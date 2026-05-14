@@ -19,7 +19,7 @@ export default function TailoredHospitalityCard({
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
 
-      <div className="w-[298.66px] h-[108px] flex flex-col gap-[8px]">
+      <div className="w-full h-[108px] flex flex-col gap-[8px]">
         
         <div className="flex items-center gap-[8px]">
           <span className="text-[#8B4513] flex items-center">
@@ -31,8 +31,8 @@ export default function TailoredHospitalityCard({
           </span>
         </div>
 
-        <div className="w-full h-[72px]">
-          <span className="text-[16px] font-normal leading-[24px] text-[#475569]">
+        <div className="w-full h-[72px] text-center">
+          <span className="text-[12px] font-normal text-[#475569]">
             {description}
           </span>
         </div>

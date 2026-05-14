@@ -7,14 +7,18 @@ interface CardProps {
 
 export default function FeaturesCard({ title, description }: CardProps) {
   return (
-    <div className="w-140 h-28.5 p-4 rounded-xl bg-[#FFFFFF]/10 border border-[#FFFFFF]/10 flex items-center">
-      <div className="w-1/12 flex justify-center items-center">
-        <Check className="text-[#8B4513] bg-white rounded-full p-1" size={30} />
+    <div className="flex items-start gap-3 p-4 rounded-xl bg-white/10 border border-white/10">
+      
+      <div className="flex-shrink-0">
+        <Check className="w-5 h-5 text-[#8B4513] bg-white rounded-full p-1" />
       </div>
 
-      <div className="w-[433.65px] h-20 flex flex-col gap-1 ml-4">
-        <span className="text-[#FFFFFF] text-[20px] font-bold">{title}</span>
-        <span className="text-[#FFFFFF]/80 text-[16px] font-normal">
+      <div className="flex flex-col gap-1">
+        <span className="text-white text-sm font-bold">
+          {title}
+        </span>
+
+        <span className="text-white/80 text-xs leading-relaxed">
           {description}
         </span>
       </div>

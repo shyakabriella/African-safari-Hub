@@ -3,11 +3,11 @@ import ThreeStepsTrainingCard from "./ThreeStepsTrainingCard";
 
 export default function ThreeStepsTraining() {
   return (
-    <section className="w-full flex justify-center items-center mt-20">
-      <div className="w-[1218px] h-[584px] flex items-center justify-between gap-[48px]">
+    <section className="w-full flex justify-center items-center mt-10">
+      <div className="w-[1218px] h-[584px] flex items-center justify-evenly gap-[48px]">
         <div className="w-[584px] h-[380px] flex flex-col gap-[24px]">
           <div className="w-[584px] h-[40px]">
-            <span className="w-full h-full text-[36px] font-extrabold">
+            <span className="w-full h-full text-[25px] font-extrabold">
               <span className="text-[#0F172A]">Our 3-Step</span>{" "}
               <span className="text-[#8B4513]">Training Solution</span>
             </span>
@@ -30,7 +30,7 @@ export default function ThreeStepsTraining() {
             />
           </div>
         </div>
-        <div className="relative w-[584px] h-[584px] bg-[#FFFFFF]/0.2 rounded-[16px]">
+        <div className="relative w-[454px] h-[454px] bg-[#FFFFFF]/0.2 rounded-[16px]">
           <Image 
             src={'/TeamCollaboration.png'}
             alt="Training"

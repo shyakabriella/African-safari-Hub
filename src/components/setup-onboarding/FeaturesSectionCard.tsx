@@ -27,7 +27,7 @@ export default function FeaturesSectionCard({
     >
       {/* Text Column */}
       <div className="max-w-[600px] flex flex-col gap-8">
-        <h2 className="font-extrabold text-[48px] leading-[1.1] text-[#0F172A]">
+        <h2 className="font-extrabold text-[30px] leading-[1.1] text-[#0F172A]">
           {header}
         </h2>
 
@@ -36,10 +36,10 @@ export default function FeaturesSectionCard({
             <div key={index} className="flex items-start gap-4">
               <span className="text-[#8B4513] mt-1">{feature.icon}</span>
               <div className="flex flex-col">
-                <span className="font-bold text-[18px] text-[#0F172A]">
+                <span className="font-bold text-[15px] text-[#0F172A]">
                   {feature.title}
                 </span>
-                <span className="text-[18px] text-[#475569]">
+                <span className="text-[14px] text-[#475569]">
                   {feature.description}
                 </span>
               </div>

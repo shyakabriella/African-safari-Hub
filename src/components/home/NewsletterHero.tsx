@@ -117,7 +117,7 @@ export default function NewsletterHero() {
   return (
     <section ref={wrapRef} className="w-full overflow-x-hidden">
       <div className="w-full" style={{ backgroundColor: C.cream }}>
-        <div className="mx-auto max-w-7xl px-6 py-14">
+        <div className="mx-auto max-w-[1480px] px-4 py-14 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             {/* LEFT */}
             <div

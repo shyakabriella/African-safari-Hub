@@ -60,11 +60,11 @@ export default function page() {
               Global Hospitality Partner
             </div>
 
-            <h1 className="max-w-[560px] text-5xl font-semibold leading-[0.94] tracking-[-0.05em] text-[#0f172a] sm:text-6xl lg:text-[78px]">
+            <h1 className="max-w-[560px] text-3xl font-semibold leading-[0.94] tracking-[-0.05em] text-[#0f172a] sm:text-4xl lg:text-[65px]">
               Let&apos;s <span className="text-[#AD6419]">Connect</span>
             </h1>
 
-            <p className="mt-8 max-w-[560px] text-lg leading-8 text-[#334155] sm:text-[19px]">
+            <p className="mt-8 max-w-[560px] text-lg leading-8 text-[#334155] sm:text-[15px]">
               Partner with the world&apos;s leading hotel technology provider. Our team of experts is ready to help you scale your operations and enhance guest experiences.
             </p>
 
@@ -107,7 +107,7 @@ export default function page() {
 
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-xl bg-[#AD6419] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_24px_rgba(173,100,25,0.24)] transition hover:bg-[#b98a35]"
+                className="mt-5 inline-flex items-center justify-center rounded-xl bg-[#AD6419] px-8 py-3 text-[15px] font-semibold text-white shadow-[0_10px_24px_rgba(173,100,25,0.24)] transition hover:bg-[#b98a35]"
               >
                 Submit Inquiry
               </button>
@@ -166,8 +166,8 @@ export default function page() {
                 key={faq.question}
                 className="rounded-[18px] border border-[#e5e7eb] bg-white/72 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.03)]"
               >
-                <h3 className="text-[22px] font-semibold tracking-[-0.03em] text-[#111827]">{faq.question}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-[#64748b]">{faq.answer}</p>
+                <h3 className="text-[18px] text-center font-semibold tracking-[-0.03em] text-[#111827]">{faq.question}</h3>
+                <p className="mt-3 text-[12px] text-center leading-7 text-[#64748b]">{faq.answer}</p>
               </article>
             ))}
           </div>

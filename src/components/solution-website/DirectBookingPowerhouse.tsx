@@ -2,93 +2,73 @@ import Image from "next/image";
 
 export default function DirectBookingPowerhouse() {
   return (
-    <section className="w-full min-h-screen bg-[#8B4513]/5">
-      <div className="flex justify-center items-center mb-10 w-full h-[847.75px]">
-        <div className="w-7xl h-[655.75px] pr-10 pl-10 flex flex-col gap-16 rounded-xl">
+    <section className="w-full py-14 bg-[#8B4513]/5">
+      
+      <div className="max-w-5xl mx-auto px-4">
+        
+        {/* Header */}
+        <div className="text-center mb-8">
           
-          <div className="h-114.5 pr-10 pl-10">
-            <div className="w-full h-28 flex flex-col gap-4">
-              
-              <div className="w-[652.97px] h-10">
-                <span className="text-[#5C3317] font-extrabold text-[36px]">
-                  Your Direct Booking Powerhouse
-                </span>
-              </div>
+          <h2 className="text-[24px] md:text-[30px] font-extrabold text-[#5C3317] mb-2">
+            Your Direct Booking Powerhouse
+          </h2>
 
-              <div className="w-[652.97px] h-14">
-                <span className="text-[#8B4513]/70 text-[18px] font-normal">
-                  We provide a unified ecosystem that turns your online presence
-                  into a revenue-generating asset.
-                </span>
-              </div>
+          <p className="text-[#8B4513]/70 text-[13px] md:text-[14px] max-w-xl mx-auto">
+            We turn your website into a revenue-generating machine with a unified ecosystem.
+          </p>
 
-              <div className="flex justify-end">
-                <button className="flex items-center gap-x-2 text-[#8B4513] hover:text-[#5C3317] transition cursor-pointer">
-                  <span>Explore full feature list</span>
-                  <span className="text-[18px]">→</span>
-                </button>
-              </div>
-
-            </div>
+          <div className="mt-3">
+            <button className="text-[#8B4513] hover:text-[#5C3317] hover:underline text-xs font-medium transition">
+              Explore full feature list →
+            </button>
           </div>
+        </div>
 
-          <div className="w-300 h-[479.75px] flex gap-12 mt-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+          
+          {/* Card 1 */}
+          <div className="w-full max-w-[340px] flex flex-col gap-3">
             
-            {/* Card 1 */}
-            <div className="w-xl h-[479.75px] flex flex-col gap-5">
-              
-              <div className="relative w-xl h-81">
-                <Image
-                  src={"/web-design-pic.png"}
-                  alt="Hotel direct booking system"
-                  fill
-                  className="object-cover rounded-2xl"
-                />
-              </div>
-
-              <div className="w-xl h-8">
-                <span className="text-[24px] text-[#8B4513] font-bold">
-                  Custom Hotel Website
-                </span>
-              </div>
-
-              <div className="w-xl h-22">
-                <span className="text-[18px] font-normal text-[#5C3317]/90">
-                  Not just a template. We design bespoke, lightning-fast
-                  websites optimized for hospitality SEO, ensuring you rank
-                  higher on Google and capture every direct guest.
-                </span>
-              </div>
+            <div className="relative w-full h-[190px]">
+              <Image
+                src={"/web-design-pic.png"}
+                alt="Hotel direct booking system"
+                fill
+                className="object-cover rounded-lg"
+              />
             </div>
 
-            {/* Card 2 */}
-            <div className="w-xl h-[479.75px] flex flex-col gap-5">
-              
-              <div className="relative w-xl h-81">
-                <Image
-                  src={"/booking-engine-pic.png"}
-                  alt="Hotel direct booking system"
-                  fill
-                  className="object-cover rounded-2xl"
-                />
-              </div>
+            <h3 className="text-base font-bold text-[#8B4513]">
+              Custom Hotel Website
+            </h3>
 
-              <div className="w-xl h-8">
-                <span className="text-[24px] text-[#8B4513] font-bold">
-                  Integrated Booking Engine
-                </span>
-              </div>
-
-              <div className="w-xl h-22">
-                <span className="text-[18px] font-normal text-[#5C3317]/90">
-                  A seamless booking experience that lives on your site. Real-time
-                  availability, dynamic pricing, and secure payment processing built to
-                  maximize conversion rates.
-                </span>
-              </div>
-            </div>
-
+            <p className="text-xs text-[#5C3317]/90 leading-relaxed">
+              Bespoke, fast hotel websites optimized for SEO to boost direct bookings.
+            </p>
           </div>
+
+          {/* Card 2 */}
+          <div className="w-full max-w-[340px] flex flex-col gap-3">
+            
+            <div className="relative w-full h-[190px]">
+              <Image
+                src={"/booking-engine-pic.png"}
+                alt="Hotel direct booking system"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+
+            <h3 className="text-base font-bold text-[#8B4513]">
+              Integrated Booking Engine
+            </h3>
+
+            <p className="text-xs text-[#5C3317]/90 leading-relaxed">
+              Real-time availability, dynamic pricing, and secure payments to maximize conversions.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>

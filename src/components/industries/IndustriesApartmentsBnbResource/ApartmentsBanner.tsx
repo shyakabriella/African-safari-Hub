@@ -10,19 +10,21 @@ export default function ApartmentsBanner() {
             <div className="w-[460px] h-[496px] flex flex-col gap-[32px]">
               <div className="w-full h-[344px] flex flex-col gap-[16px]">
                 <div className="w-full h-[20px]">
-                  <span className="w-full h-full font-bold text-[14px] leading-[20px] text-[#8B4513]">
+                  <span className="w-full h-full font-bold text-[12px] leading-[20px] text-[#8B4513]">
                     SMART RENTAL MANAGEMENT
                   </span>
                 </div>
-                <div className="w-full h-[180px] leading-12.5">
-                  <span className="w-full h-full font-extrabold text-[50px]">
+                <div className="w-full h-[180px] ">
+                  <span className="w-full h-full font-extrabold text-[30px]">
                     <span className="text-[#0F172A]">Maximize Your</span>{" "}
+                    <br />
                     <span className="text-[#8B4513]">Short-Term</span>{" "}
+                    <br />
                     <span className="text-[#0F172A]">Rental Revenue</span>
                   </span>
                 </div>
                 <div className="w-full h-[112px]">
-                  <span className="text-[20px] leading-[28px] font-normal text-[#475569]">
+                  <span className="text-[15px] leading-[28px] font-normal text-[#475569]">
                     Streamline your apartment and Airbnb management with the
                     ultimate automated PMS designed for modern hosts. Sync
                     platforms, automate messages, and grow your business.

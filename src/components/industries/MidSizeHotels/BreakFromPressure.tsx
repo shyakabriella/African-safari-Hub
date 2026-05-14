@@ -13,7 +13,7 @@ export default function BreakFromPressure() {
             </span>
           </div>
           <div className="w-[672px] h-[24px]">
-            <span className="w-[627.03px] h-full font-semibold font-normal text-[40px] leading-[40px] text-[#0F172A]">
+            <span className="w-[627.03px] h-full font-semibold text-[30px] leading-[40px] text-[#0F172A]">
               Break Free From Market Pressures
             </span>
           </div>

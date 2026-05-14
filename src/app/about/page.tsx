@@ -10,13 +10,13 @@ export default function page() {
           <div className="inline-block px-3 py-1 bg-[#f6efe9] text-[#AD6419] text-[10px] font-bold uppercase tracking-wider rounded mb-6">
             Our Legacy 
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+          <h1 className="text-3xl lg:text-3xl font-bold text-slate-900 leading-tight mb-6">
             Bridging Luxury Hospitality & Seamless Technology
           </h1>
-          <p className="text-slate-500 text-[15px] mb-6 leading-relaxed">
+          <p className="text-slate-500 text-[14px] mb-6 leading-relaxed">
             HotelSafari was founded with a singular vision: to bridge the gap between luxury hospitality and seamless technology. We empower B2B partners to deliver excellence through innovation.
           </p>
-          <p className="text-slate-500 text-[15px] mb-12 leading-relaxed">
+          <p className="text-slate-500 text-[14px] mb-12 leading-relaxed">
             Our journey began with a simple observation—the most prestigious hotels in the world were often held back by fragmented systems. We set out to create a unified ecosystem that prioritizes guest experience without compromising on operational security.
           </p>
           <div className="flex flex-wrap gap-x-12 gap-y-8">
@@ -136,7 +136,7 @@ export default function page() {
         <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#AD6419] to-[#965716] rounded-[2rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-xl">
           <div className="relative z-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready to Elevate Your Hospitality Standards?</h2>
-            <p className="mb-10 max-w-2xl mx-auto text-white/90 text-[15px]">
+            <p className="mb-8 max-w-2xl mx-auto text-white/90 text-[15px]">
               Join the world most prestigious hotel brands in creating unforgettable digital experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -13,8 +13,8 @@ export default function InvisibleToGuestsCard({ icon, title, description }: Invi
           {title}
         </span>
       </div>
-      <div className="w-[232.66px] h-[104px]">
-        <span className="w-[213.38px] h-[104px] text-[16px] font-normal text-[#7B6B5A]">
+      <div className="w-[232.66px] h-[104px] text-center">
+        <span className="w-[213.38px] h-[104px] text-[13px] font-normal text-[#7B6B5A]">
           {description}
         </span>
       </div>

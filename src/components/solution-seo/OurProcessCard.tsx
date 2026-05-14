@@ -13,12 +13,12 @@ export default function OurProcessCard({ icon, title, description }: OurProcessP
         </div>
       </div>
       <div className="w-[216px] h-[28px]">
-        <span className="w-[63.52px] h-[28px] font-bold text-[18px] text-[#4A3B2A]">
+        <span className="w-[63.52px] h-[28px] font-bold text-[15px] text-[#4A3B2A]">
           {title}
         </span>
       </div>
       <div className="w-[216px] h-[40px]">
-        <span className="w-[213.73px] h-[40px] text-[14px] text-[#7B6B5A] font-normal">
+        <span className="w-[213.73px] h-[40px] text-[10px] text-[#7B6B5A] font-normal">
           {description}
         </span>
       </div>

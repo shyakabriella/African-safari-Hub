@@ -28,7 +28,7 @@ export default function DesignedDistinctionCard({
         <span className="text-[#1f1212] font-bold text-[20px] leading-[28px]">
           {title}
         </span>
-        <p className="text-[16px] font-normal leading-[24px] text-[#475569]">
+        <p className="text-[11px] font-normal leading-[18px] text-[#475569]">
           {description}
         </p>
       </div>

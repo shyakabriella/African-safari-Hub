@@ -15,16 +15,25 @@ export default function InfoCard({
 }: CardProps) {
   return (
     <div
-      className={`w-[378.66px] h-70.5 flex flex-col gap-8 p-4 pt-8 rounded-xxl ${className}`}
+      className={`w-[300px] h-[180px] flex flex-col gap-4 p-5 rounded-2xl bg-white/40 border border-[#F5E6D3]/40 shadow-sm ${className}`}
     >
+      
       <div
-        className={`shrink-0 w-12 h-12 rounded-lg flex justify-center items-center ${classNameIcon}`}
+        className={`w-10 h-10 rounded-lg flex justify-center items-center ${classNameIcon}`}
       >
         {icon}
       </div>
-      <div className="flex flex-col justify-center gap-4">
-        <h3 className="text-lg font-semibold text-[#8B4513]">{title}</h3>
-        <p className="text-[#A0522D]/80">{description}</p>
+
+      <div className="flex flex-col gap-2">
+        
+        <h3 className="text-sm font-bold text-[#8B4513]">
+          {title}
+        </h3>
+
+        <p className="text-[#A0522D]/80 text-xs leading-relaxed">
+          {description}
+        </p>
+
       </div>
     </div>
   );
