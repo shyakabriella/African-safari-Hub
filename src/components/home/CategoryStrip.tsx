@@ -280,7 +280,7 @@ export default function CategoryStrip({
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#7C2D12]/10 via-white/35 to-[#14532D]/10" />
 
-        {/* ✅ balanced container: wider than max-w-7xl, but not too wide */}
+        {/* balanced container: wider than max-w-7xl, but not too wide */}
         <div className="relative mx-auto w-full max-w-[1480px] px-4 py-6 sm:px-6 sm:py-7 lg:px-8">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div className="min-w-0">

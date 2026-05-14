@@ -46,7 +46,7 @@ export default function WhatsNewMain() {
         category: "WEBSITE + OTA VISIBILITY",
         title:
           "Get a World-Class Hotel Website that becomes a 24/7 booking machine.",
-        href: "/solutions/website-booking",
+        href: "/solutions/seo",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=70",
         readTime: "Fast + mobile-friendly",
@@ -139,7 +139,7 @@ export default function WhatsNewMain() {
           category: "SEO + Reviews",
           title:
             "SEO optimization + guest review integration for more trust and visibility.",
-          href: "/solutions/website-booking",
+          href: "/solutions/seo",
           image:
             "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=900&q=70",
         },
@@ -252,11 +252,11 @@ export default function WhatsNewMain() {
       {
         category: "Premium Package",
         title:
-          "Full Hotel Digital Management — 2,000,000 RWF per month (we manage everything).",
+          "Full Hotel Digital Management — 700$ per month (we manage everything).",
         href: "/pricing#premium",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70",
-        author: "HotelSafari Team",
+        author: "african safari and hotel booking hub Team",
       },
       {
         category: "Channel Manager",
@@ -265,7 +265,7 @@ export default function WhatsNewMain() {
         href: "/solutions/channel-manager",
         image:
           "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
-        author: "HotelSafari Team",
+        author: "african safari and hotel booking hub Team",
       },
       {
         category: "Marketing",
@@ -274,7 +274,7 @@ export default function WhatsNewMain() {
         href: "/solutions/marketing",
         image:
           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
-        author: "HotelSafari Team",
+        author: "african safari and hotel booking hub Team",
       },
     ];
 
@@ -286,7 +286,7 @@ export default function WhatsNewMain() {
         href: "/solutions/website-booking",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=70",
-        author: "HotelSafari Team",
+        author: "african safari and hotel booking hub Team",
       },
       {
         category: "PMS (Front Office)",
@@ -295,7 +295,7 @@ export default function WhatsNewMain() {
         href: "/solutions/pms",
         image:
           "https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=1600&q=70",
-        author: "HotelSafari Team",
+        author: "african safari and hotel booking hub Team",
       },
     ];
 
@@ -322,7 +322,7 @@ export default function WhatsNewMain() {
 
   return (
     <section className="w-full overflow-x-hidden">
-      {/* ✅ Same balanced homepage margin */}
+      {/* Same balanced homepage margin */}
       <div className="mx-auto w-full max-w-[1480px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         {/* Header + tabs */}
         <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
@@ -342,7 +342,7 @@ export default function WhatsNewMain() {
             <p className="mt-3 text-sm text-zinc-600 sm:text-base">
               Updates across Website, OTAs, PMS, Marketing & Pricing.
               <span className="ml-2 font-semibold" style={{ color: C.green }}>
-                Built for bookings ✅
+                Built for bookings
               </span>
             </p>
           </div>

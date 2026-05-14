@@ -152,7 +152,7 @@ export default function NewsletterHero() {
                 Boost bookings. Save time. Grow revenue — with one complete digital
                 solution for hotels, apartments, lodges, resorts, B&amp;Bs and Airbnbs.
                 <span className="ml-2 font-semibold" style={{ color: C.green }}>
-                  Built for growth ✅
+                  Built for growth
                 </span>
               </p>
 
@@ -193,46 +193,7 @@ export default function NewsletterHero() {
               </div>
 
               {/* Pillars grid */}
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                {pillars.map((p, i) => {
-                  const Icon = p.icon;
-                  return (
-                    <Link
-                      key={p.title}
-                      href={p.href}
-                      className={[
-                        "group rounded-2xl bg-white/70 p-5 ring-1 ring-black/5",
-                        "shadow-[0_1px_0_rgba(0,0,0,0.04)] transition",
-                        "hover:bg-white hover:shadow-sm",
-                        "transition-all duration-700 ease-out",
-                        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
-                      ].join(" ")}
-                      style={{ transitionDelay: `${120 + i * 70}ms` }}
-                    >
-                      <div className="flex items-start gap-3">
-                        <div
-                          className="grid h-11 w-11 place-items-center rounded-xl"
-                          style={{ backgroundColor: `${C.green}18` }}
-                        >
-                          <Icon className="h-6 w-6" style={{ color: C.green }} />
-                        </div>
-
-                        <div className="min-w-0">
-                          <div className="font-extrabold text-zinc-900">
-                            {p.title}
-                          </div>
-                          <div className="mt-1 text-sm leading-6 text-zinc-700">
-                            {p.desc}
-                          </div>
-                          <div className="mt-2 text-sm font-extrabold" style={{ color: C.orange }}>
-                            Learn more →
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
+              
             </div>
 
             {/* RIGHT */}
@@ -254,112 +215,8 @@ export default function NewsletterHero() {
                   style={{ backgroundColor: C.green }}
                 />
 
-                {/* Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/10">
-                  <div className="relative h-[260px] w-full sm:h-[300px]">
-                    <img
-                      src="https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=1800&q=70"
-                      alt="HotelSafari Services"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                  </div>
-
-                  <div className="absolute left-5 top-5">
-                    <span
-                      className="inline-flex items-center rounded-full px-5 py-2 text-sm font-bold text-white shadow-sm"
-                      style={{ backgroundColor: C.orange }}
-                    >
-                      Boost Bookings • Save Time • Grow Revenue
-                    </span>
-                  </div>
-
-                  {/* Two professional service cards (PDF-style) */}
-                  <div className="grid gap-4 p-6 sm:grid-cols-2">
-                    {/* Website + OTA Visibility */}
-                    <div
-                      className="rounded-2xl p-5 ring-1 ring-black/5"
-                      style={{
-                        backgroundImage: `linear-gradient(90deg, ${C.orangeTint}, rgba(255,255,255,0.92) 60%)`,
-                      }}
-                    >
-                      <div
-                        className="text-sm font-extrabold tracking-[0.12em] uppercase"
-                        style={{ color: C.orange }}
-                      >
-                        Website + OTA Visibility
-                      </div>
-                      <div className="mt-3 space-y-2">
-                        {websiteFeatures.map((t) => (
-                          <div key={t} className="flex items-center gap-2 text-sm" style={{ color: C.ink }}>
-                            <span
-                              className="grid h-6 w-6 place-items-center rounded-lg"
-                              style={{ backgroundColor: `${C.orange}18` }}
-                            >
-                              <Check className="h-4 w-4" style={{ color: C.orange }} />
-                            </span>
-                            <span className="font-semibold">{t}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div
-                        className="mt-4 h-[5px] w-20 rounded-full"
-                        style={{ backgroundColor: C.orange }}
-                      />
-                    </div>
-
-                    {/* Digital Marketing */}
-                    <div
-                      className="rounded-2xl p-5 ring-1 ring-black/5"
-                      style={{
-                        backgroundImage: `linear-gradient(90deg, ${C.greenTint}, rgba(255,255,255,0.92) 60%)`,
-                      }}
-                    >
-                      <div
-                        className="text-sm font-extrabold tracking-[0.12em] uppercase"
-                        style={{ color: C.orange }}
-                      >
-                        Digital Marketing
-                      </div>
-                      <div className="mt-3 space-y-2">
-                        {marketingFeatures.slice(0, 5).map((t) => (
-                          <div key={t} className="flex items-center gap-2 text-sm" style={{ color: C.ink }}>
-                            <span
-                              className="grid h-6 w-6 place-items-center rounded-lg"
-                              style={{ backgroundColor: `${C.green}18` }}
-                            >
-                              <Check className="h-4 w-4" style={{ color: C.green }} />
-                            </span>
-                            <span className="font-semibold">{t}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div
-                        className="mt-4 h-[5px] w-20 rounded-full"
-                        style={{ backgroundColor: C.green }}
-                      />
-                      <div className="mt-3 text-xs text-zinc-700">
-                        + more (reviews, storytelling, guest engagement)
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* small trust note */}
-                <div
-                  className={[
-                    "mt-5 rounded-2xl bg-white/70 px-5 py-4 ring-1 ring-black/5 shadow-[0_1px_0_rgba(0,0,0,0.04)]",
-                    "transition-all duration-700 ease-out",
-                    inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
-                  ].join(" ")}
-                  style={{ transitionDelay: "420ms" }}
-                >
-                  <div className="text-sm font-semibold text-zinc-900">
-                    Get listed on{" "}
-                    <span style={{ color: C.green }}>450+ OTAs worldwide</span> — more
-                    exposure = more bookings = more revenue ✅
-                  </div>
-                </div>
+                {/*growth image*/}
+          <img src="/images/chart.png" alt="" />
               </div>
             </div>
           </div>

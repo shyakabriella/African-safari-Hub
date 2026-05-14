@@ -19,7 +19,7 @@ type Post = {
   description?: string;
 };
 
-/** ✅ Brand colors */
+/** Brand colors */
 const BRAND = {
   orange: "#AD6419",
   orangeDark: "#8E4F13",
@@ -385,7 +385,7 @@ export default function FeaturedWithSidebar() {
         }
       `}</style>
 
-      {/* ✅ balanced container: wider than old, but not too stretched */}
+      {/* balanced container: wider than old, but not too stretched */}
       <div className="mx-auto w-full max-w-[1480px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="min-w-0">
@@ -465,7 +465,6 @@ export default function FeaturedWithSidebar() {
         >
           <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards]">
             <FeaturedMain post={featuredPost} />
-            <TopStoryRow post={topStory} />
           </div>
 
           <div className="h-full opacity-0 animate-[fadeUp_650ms_ease-out_forwards] [animation-delay:120ms]">
@@ -476,6 +475,10 @@ export default function FeaturedWithSidebar() {
               <SidebarPosts top={sidebarTop} list={sidebarList} />
             </div>
           </div>
+        </div>
+
+        <div className="opacity-0 animate-[fadeUp_650ms_ease-out_forwards] [animation-delay:200ms]">
+          <TopStoryRow post={topStory} />
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">

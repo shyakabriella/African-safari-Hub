@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { CalendarDays, Repeat2 } from "lucide-react";
+import { HUB_NEWS_ARTICLES } from "@/data/hubNews";
 
 type PopularItem = {
   category: string;
@@ -19,7 +19,7 @@ type OtaItem = {
   href?: string;
 };
 
-/* ✅ sample list (you can add more). UI represents 450+ connections */
+/* sample list (you can add more). UI represents 450+ connections */
 const OTAS: OtaItem[] = [
   { name: "Booking.com", accent: "bg-blue-600", href: "/solutions/otas" },
   { name: "Expedia", accent: "bg-indigo-600", href: "/solutions/otas" },
@@ -50,55 +50,33 @@ const OTAS: OtaItem[] = [
   { name: "Ostrovok", accent: "bg-amber-600", href: "/solutions/otas" },
 ];
 
-/* ✅ Updated popular content to match your HotelSafari business idea */
-const POPULAR: PopularItem[] = [
-  {
-    category: "DIRECT BOOKINGS",
-    title: "How a booking engine increases revenue (and reduces OTA costs).",
-    date: "December 9, 2024",
-    badge: 1,
-    image:
-      "https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=300&q=70",
-    href: "/post/pop-1",
-  },
-  {
-    category: "CHANNEL MANAGER",
-    title: "Prevent overbookings with real-time rate & availability sync.",
-    date: "December 9, 2024",
-    badge: 2,
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=300&q=70",
-    href: "/post/pop-2",
-  },
-  {
-    category: "PMS + OPERATIONS",
-    title: "Front desk workflow: check-in/out, billing, housekeeping status.",
-    date: "December 9, 2024",
-    badge: 3,
-    image:
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=300&q=70",
-    href: "/post/pop-3",
-  },
-];
+const POPULAR: PopularItem[] = HUB_NEWS_ARTICLES.slice(0, 3).map((a, i) => ({
+  category: a.category,
+  title: a.title,
+  date: a.date,
+  badge: i + 1,
+  image: `${a.image.split("?")[0]}?auto=format&fit=crop&w=300&q=70`,
+  href: `/post/${a.slug}`,
+}));
 
-const TAGS = [
-  "Website + SEO",
-  "Booking Engine",
-  "Online Payments",
-  "450+ OTAs",
-  "Channel Manager",
-  "PMS",
-  "Revenue",
-  "Marketing",
-  "Reviews",
-  "Analytics",
-  "Support",
+const TAGS: { name: string; href: string }[] = [
+  { name: "Website + SEO",    href: "/solutions/website" },
+  { name: "Booking Engine",   href: "/solutions/payments" },
+  { name: "Online Payments",  href: "/solutions/payments" },
+  { name: "450+ OTAs",        href: "/solutions/otas" },
+  { name: "Channel Manager",  href: "/core-solutions/channel-manager" },
+  { name: "PMS",              href: "/solutions/pms" },
+  { name: "Revenue",          href: "/core-solutions/digital-marketing" },
+  { name: "Marketing",        href: "/solutions/marketing" },
+  { name: "Reviews",          href: "/services/reviews" },
+  { name: "Analytics",        href: "/resources/guides" },
+  { name: "Support",          href: "/services/support" },
 ];
 
 export default function WhatsNewSidebar() {
   return (
     <aside className="w-full space-y-8">
-      {/* ✅ 450+ OTAs Connected (scrolling list) */}
+      {/* 450+ OTAs Connected (scrolling list) */}
       <div className="rounded-2xl bg-white p-6 ring-1 ring-zinc-100">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -174,12 +152,12 @@ export default function WhatsNewSidebar() {
         </div>
 
         <div className="mt-7">
-          <button
-            type="button"
-            className="w-full rounded-full border border-blue-500/70 px-6 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-600 hover:text-white"
+          <Link
+            href="/news"
+            className="block w-full rounded-full border border-blue-500/70 px-6 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-blue-600 hover:text-white"
           >
             View More
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -189,11 +167,11 @@ export default function WhatsNewSidebar() {
         <div className="mt-6 flex flex-wrap gap-4">
           {TAGS.map((t) => (
             <Link
-              key={t}
-              href={`/tag/${t.toLowerCase().replace(/\s+/g, "-")}`}
+              key={t.name}
+              href={t.href}
               className="rounded-full bg-zinc-100 px-5 py-2 text-sm text-zinc-700 transition hover:bg-zinc-200"
             >
-              {t}
+              {t.name}
             </Link>
           ))}
         </div>
@@ -210,7 +188,7 @@ export default function WhatsNewSidebar() {
           <div className="absolute inset-0 bg-blue-600/35" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <div className="text-lg font-semibold text-white">
-              Boost Direct Bookings <br /> With HotelSafari.com
+              Boost Direct Bookings <br /> With ashbhub.com
             </div>
             <button
               type="button"

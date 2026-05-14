@@ -80,7 +80,7 @@ export default function LatestNews() {
         category: "Reliability",
         description:
           "Professional onboarding + training + responsive support to keep operations smooth.",
-        href: "/support",
+        href: "/services/support",
         icon: ShieldCheck,
       },
     ],
@@ -157,7 +157,7 @@ export default function LatestNews() {
             />
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-800/90">
-              Hotels choose HotelSafari because we build with{" "}
+              Hotels choose african safari and hotel booking hub because we build with{" "}
               <span className="font-semibold" style={{ color: C.green }}>
                 reliable integrations
               </span>{" "}
@@ -215,91 +215,36 @@ export default function LatestNews() {
         <div className="mt-8 h-px w-full bg-zinc-300/60" />
 
         {/* Trust story + awards image */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          {/* left trust copy */}
-          <div
-            className={[
-              "rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/10 transition-all duration-700 ease-out",
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-            ].join(" ")}
-            style={{ transitionDelay: "140ms" }}
+        <div className="mt-10">
+          <p
+            className="mb-5 text-center text-[11px] font-bold tracking-[0.22em] uppercase"
+            style={{ color: C.orange }}
           >
-            <h3 className="text-2xl font-extrabold text-zinc-900">
-              Why partners matter for your hotel ✅
-            </h3>
-
-            <div
-              className="mt-3 h-[5px] w-24 rounded-full"
-              style={{ backgroundColor: C.green }}
-            />
-
-            <ul className="mt-5 space-y-3 text-zinc-700">
-              <li className="flex gap-3">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: C.orange }} />
-                <span>
-                  <b>More trust:</b> Guests feel safe when your system uses reliable tools.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: C.green }} />
-                <span>
-                  <b>Less errors:</b> Real-time sync reduces overbooking and manual mistakes.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: C.orange }} />
-                <span>
-                  <b>More bookings:</b> Better visibility + smoother payments increases conversion.
-                </span>
-              </li>
-            </ul>
-
-            <div
-              className="mt-6 inline-flex rounded-2xl bg-white px-6 py-4 ring-1"
-              style={{ borderColor: `${C.green}55` }}
-            >
-              <span className="text-lg font-semibold text-zinc-900">
-                We turn visibility into{" "}
-                <span style={{ color: C.green }}>real bookings</span>.
-              </span>
-            </div>
-          </div>
-
-          {/* right awards image */}
-          <div
-            className={[
-              "relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/10 transition-all duration-700 ease-out",
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-            ].join(" ")}
-            style={{ transitionDelay: "220ms" }}
-          >
-            {/* ✅ Put your downloaded badge image here:
-                public/images/trust/hoteltech-awards.png
-             */}
-            <img
-              src="/images/trust/hoteltech-awards.png"
-              alt="Industry awards and recognition"
-              className="h-[340px] w-full object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-transparent" />
-
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            Trusted By
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+            {[
+              { src: "/partners/Luxury-Logo-HD.png", alt: "Luxury Partner" },
+              { src: "/partners/mountain view logo.png", alt: "Mountain View" },
+              { src: "/partners/olympic_hotel_logo.png", alt: "Olympic Hotel" },
+            ].map((logo) => (
               <div
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-extrabold text-white shadow-sm"
-                style={{ backgroundColor: C.orange }}
+                key={logo.alt}
+                className="flex items-center justify-center rounded-xl bg-white px-6 py-4 shadow-sm ring-1 ring-black/5 transition hover:shadow-md"
+                style={{ minWidth: 140, maxWidth: 200 }}
               >
-                <Award className="h-4 w-4" />
-                Awards & Recognition
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-14 w-auto object-contain"
+                  style={{ filter: "grayscale(20%)" }}
+                />
               </div>
-
-              <p className="mt-3 max-w-md text-sm font-medium text-white/90">
-                These badges help customers trust that the technology behind your hotel
-                is modern, reliable, and recognized in the industry.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
+
+
 
         {/* Partners carousel (ONE LINE) */}
         <div className="mt-12">
@@ -311,7 +256,7 @@ export default function LatestNews() {
               className="hidden sm:block text-sm font-semibold"
               style={{ color: C.green }}
             >
-              Built for stability + growth ✅
+              Built for stability + growth
             </div>
           </div>
 

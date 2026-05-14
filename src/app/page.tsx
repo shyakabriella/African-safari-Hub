@@ -1,3 +1,4 @@
+import HeroSection from "@/components/home/HeroSection";
 import CategoryStrip from "@/components/home/CategoryStrip";
 import FeaturedWithSidebar from "@/components/home/FeaturedWithSidebar";
 import WhatsNewSection from "@/components/home/whatsnew/WhatsNewSection";
@@ -7,6 +8,7 @@ import NewsletterHero from "@/components/home/NewsletterHero";
 export default function Home() {
   return (
     <div className="w-full overflow-x-hidden">
+      <HeroSection />
       <CategoryStrip className="mt-8" />
       <FeaturedWithSidebar />
       <WhatsNewSection />

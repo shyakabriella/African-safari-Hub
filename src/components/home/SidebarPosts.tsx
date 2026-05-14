@@ -8,11 +8,11 @@ export type Post = {
   href: string;
   image: string; // online or /public image
 
-  /** ✅ make these optional so marketing cards can pass without them */
+  /** make these optional so marketing cards can pass without them */
   readTime?: string;
   views?: string | number;
 
-  /** ✅ optional (if you ever want to reuse the type elsewhere) */
+  /** optional (if you ever want to reuse the type elsewhere) */
   tag?: string;
   description?: string;
 };
@@ -41,7 +41,7 @@ export default function SidebarPosts({
           {top.title}
         </h3>
 
-        {/* ✅ show meta only if readTime/views exist */}
+        {/* show meta only if readTime/views exist */}
         {(top.readTime || top.views) && (
           <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-600">
             {top.readTime && (
@@ -79,7 +79,7 @@ export default function SidebarPosts({
                 {p.title}
               </h4>
 
-              {/* ✅ show meta only if exists */}
+              {/* show meta only if exists */}
               {(p.readTime || p.views) && (
                 <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-600">
                   {p.readTime && (

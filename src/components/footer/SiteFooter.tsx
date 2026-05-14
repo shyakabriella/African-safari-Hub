@@ -30,8 +30,8 @@ const SOLUTIONS = [
 ];
 
 const COMPANY = [
-  { label: "About HotelSafari", href: "/about" },
-  { label: "Why HotelSafari", href: "/why-us" },
+  { label: "About african safari and hotel booking hub", href: "/about" },
+  { label: "Why african safari and hotel booking hub", href: "/why-us" },
   { label: "Partners & Trust", href: "/partners" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Contact", href: "/contact" },
@@ -52,11 +52,11 @@ export default function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
           {/* Brand / intro */}
           <div>
-            {/* ✅ Use real logo from public/lg.png */}
+            {/* Use real logo from public/lg.png */}
             <Link href="/" className="inline-flex items-center">
               <Image
                 src="/lg.png"
-                alt="HotelSafari logo"
+                alt="african safari and hotel booking hub logo"
                 width={220}
                 height={64}
                 priority
@@ -163,11 +163,7 @@ export default function SiteFooter() {
 
             {/* Awards / badges image */}
             <div className="mt-7 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10">
-              <img
-                src="/images/trust/hoteltech-awards.png"
-                alt="Awards and recognition"
-                className="h-[140px] w-full object-cover opacity-95"
-              />
+              
             </div>
           </div>
         </div>
@@ -177,7 +173,7 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="mt-6 flex flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} HotelSafari. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} african safari and hotel booking hub. All rights reserved.</div>
 
           <div className="flex flex-wrap items-center gap-4">
             <Link className="hover:text-white" href="/legal/privacy">
