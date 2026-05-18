@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles, Globe, Repeat2, Headset, MonitorCog } from "lucid
 
 // ── swap this URL to use your own background video ───────────────────────────
 const HERO_VIDEO_SRC =
-  "/video/13439770_1920_1080_60fps.mp4";
+  "/video/bg-video.mp4";
 
 const BRAND = {
   orange: "#AD6419",
@@ -40,7 +40,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative w-full overflow-hidden h-[80vh]"
+      className="relative w-full overflow-hidden h-[85vh]"
     >
       {/* ── background video — change HERO_VIDEO_SRC above to swap ── */}
       <video
@@ -49,7 +49,7 @@ export default function HeroSection() {
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover mt-5"
         style={{ zIndex: 0 }}
       >
         <source src={HERO_VIDEO_SRC} type="video/mp4" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
         
           {/* headline */}
           <h1
-            className="mt-5 text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-7xl"
+            className="mt-5 text-xl font-extrabold leading-[1.12] tracking-tight sm:text-2xl lg:text-3xl"
             style={{ color: "#ffffff" }}
           >
             One Platform.{" "}
@@ -91,7 +91,7 @@ export default function HeroSection() {
           </h1>
 
           {/* sub-copy */}
-          <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-2xl text-[14px] leading-7 text-zinc-300 sm:text-[16px] sm:leading-8">
             Website · Booking Engine · Channel Manager · PMS · 450+ OTAs ·
             Payments · Marketing — one connected stack{" "}
             <span className="font-semibold" style={{ color: BRAND.orange }}>
@@ -104,13 +104,13 @@ export default function HeroSection() {
             <Link
               href="/contact"
               id="hero-cta-primary"
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-semibold text-white shadow-lg transition-all active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-[12px] font-semibold text-white shadow-lg transition-all active:scale-[0.98]"
               style={{ backgroundColor: BRAND.orange, boxShadow: "0 4px 24px rgba(173,100,25,0.40)" }}
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND.orangeDark; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = BRAND.orange; }}
             >
               Get Started Free
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
             </Link>
 
            

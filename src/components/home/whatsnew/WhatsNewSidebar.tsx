@@ -190,12 +190,13 @@ export default function WhatsNewSidebar() {
             <div className="text-lg font-semibold text-white">
               Boost Direct Bookings <br /> With ashbhub.com
             </div>
-            <button
+            <Link
+              href="/contact"
               type="button"
               className="mt-4 rounded-full bg-blue-600 px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
             >
               Get Demo
-            </button>
+            </Link>
           </div>
         </div>
       </div>
