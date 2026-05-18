@@ -60,17 +60,17 @@ const POPULAR: PopularItem[] = HUB_NEWS_ARTICLES.slice(0, 3).map((a, i) => ({
 }));
 
 const TAGS: { name: string; href: string }[] = [
-  { name: "Website + SEO",    href: "/solutions/website" },
-  { name: "Booking Engine",   href: "/solutions/payments" },
-  { name: "Online Payments",  href: "/solutions/payments" },
-  { name: "450+ OTAs",        href: "/solutions/otas" },
-  { name: "Channel Manager",  href: "/core-solutions/channel-manager" },
-  { name: "PMS",              href: "/solutions/pms" },
-  { name: "Revenue",          href: "/core-solutions/digital-marketing" },
-  { name: "Marketing",        href: "/solutions/marketing" },
-  { name: "Reviews",          href: "/services/reviews" },
-  { name: "Analytics",        href: "/resources/guides" },
-  { name: "Support",          href: "/services/support" },
+  { name: "Website + SEO", href: "/solutions/website" },
+  { name: "Booking Engine", href: "/solutions/payments" },
+  { name: "Online Payments", href: "/solutions/payments" },
+  { name: "450+ OTAs", href: "/solutions/otas" },
+  { name: "Channel Manager", href: "/core-solutions/channel-manager" },
+  { name: "PMS", href: "/solutions/pms" },
+  { name: "Revenue", href: "/core-solutions/digital-marketing" },
+  { name: "Marketing", href: "/solutions/marketing" },
+  { name: "Reviews", href: "/services/reviews" },
+  { name: "Analytics", href: "/resources/guides" },
+  { name: "Support", href: "/services/support" },
 ];
 
 export default function WhatsNewSidebar() {
@@ -80,18 +80,20 @@ export default function WhatsNewSidebar() {
       <div className="rounded-2xl bg-white p-6 ring-1 ring-zinc-100">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-2xl font-semibold text-zinc-900">
+            <h3 className="text-[18px] font-semibold text-zinc-900">
               450+ OTAs Connected
             </h3>
-            <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
-              We connect your property to major OTAs and keep rates & availability
-              synced automatically — to avoid overbookings.
+            <p className="mt-2 text-[12px] text-zinc-600 leading-relaxed">
+              We connect your property to major OTAs and keep rates &
+              availability synced automatically — to avoid overbookings.
             </p>
           </div>
 
-          <div className="hidden sm:inline-flex items-center gap-2 rounded-full bg-zinc-50 px-3 py-1 text-xs font-semibold text-zinc-700 ring-1 ring-zinc-200">
-            <Repeat2 className="h-4 w-4" />
-            Live sync
+          <div className="hidden sm:inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full bg-zinc-50 px-8 py-2 text-[7px] font-semibold leading-none text-zinc-700 ring-1 ring-zinc-200">
+            <div className="flex items-center justify-center gap-1 text-center mr-8">
+              <Repeat2 className="h-3 w-3 shrink-0" />
+              <span className="whitespace-nowrap leading-none">Live sync</span>
+            </div>
           </div>
         </div>
 
@@ -119,7 +121,11 @@ export default function WhatsNewSidebar() {
 
         <div className="mt-6 space-y-6">
           {POPULAR.map((p, i) => (
-            <Link key={i} href={p.href} className="group flex items-start gap-4">
+            <Link
+              key={i}
+              href={p.href}
+              className="group flex items-start gap-4"
+            >
               <div className="relative shrink-0">
                 <div className="h-14 w-14 overflow-hidden rounded-full ring-2 ring-zinc-200">
                   <img
@@ -300,6 +306,6 @@ function getInitials(name: string) {
     .split(/\s+/);
 
   const a = parts[0]?.[0] ?? "O";
-  const b = parts[1]?.[0] ?? (parts[0]?.[1] ?? "");
+  const b = parts[1]?.[0] ?? parts[0]?.[1] ?? "";
   return (a + b).toUpperCase();
 }

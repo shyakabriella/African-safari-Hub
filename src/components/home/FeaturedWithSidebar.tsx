@@ -33,7 +33,7 @@ const featuredPost: Post = {
   tag: "AI-ready hospitality platform",
   title: "Connect Your Hotel to AI.",
   description: "Get Booked Through AI.",
-  href: "/solutions/website-booking",
+  href: "/services/connect-to-ai",
   image: "/img1.png",
 };
 
@@ -64,14 +64,14 @@ const sidebarList: Post[] = [
       "Front desk operations in one place — reservations, room assignment, billing, and performance dashboards.",
     href: "/solutions/pms",
     image:
-      "https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=1000&q=70",
+      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1000&q=70",
   },
   {
     tag: "Marketing + Reputation",
     title: "Digital Marketing + Reviews: Grow Trust & Increase Bookings.",
     description:
       "Monthly content, ads tracking, review inbox, response templates, and reputation growth that drives demand.",
-    href: "/solutions/marketing",
+    href: "/services/marketing",
     image:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=70",
   },
@@ -80,7 +80,7 @@ const sidebarList: Post[] = [
     title: "Dedicated Support + Monitoring: Catch Sync/Payment Failures Fast.",
     description:
       "Ticketing + SLA, alerts for channel sync issues, payment failures, and proactive help to keep sales running.",
-    href: "/support",
+    href: "/services/support",
     image:
       "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=70",
   },
@@ -262,16 +262,14 @@ function TopStoryRow({ post }: { post: Post }) {
         </span>
       </div>
 
-      <Link
-        href={post.href}
-        className="group mt-6 grid items-center gap-6 md:grid-cols-[400px_1fr] xl:grid-cols-[430px_1fr]"
-      >
+      {/* ❌ removed Link wrapper */}
+      <div className="mt-6 grid items-center gap-6 md:grid-cols-[400px_1fr] xl:grid-cols-[430px_1fr]">
         <div className="relative w-full overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-200">
           <div className="relative h-[200px] w-full sm:h-[240px] md:h-[260px] xl:h-[285px]">
             <img
               src={post.image}
               alt={post.title}
-              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
             />
           </div>
         </div>
@@ -290,7 +288,7 @@ function TopStoryRow({ post }: { post: Post }) {
             </div>
           ) : null}
 
-          <h4 className="mt-3 text-2xl font-semibold leading-tight text-zinc-900 transition-colors duration-300 group-hover:text-[#AD6419] sm:text-3xl">
+          <h4 className="mt-3 text-2xl font-semibold leading-tight text-zinc-900 sm:text-3xl">
             {post.title}
           </h4>
 
@@ -318,10 +316,7 @@ function TopStoryRow({ post }: { post: Post }) {
 
             <div className="rounded-xl bg-white p-4 ring-1 ring-zinc-200">
               <div className="flex items-center gap-2 text-sm font-semibold text-zinc-900">
-                <Headset
-                  className="h-4 w-4"
-                  style={{ color: BRAND.orange }}
-                />
+                <Headset className="h-4 w-4" style={{ color: BRAND.orange }} />
                 Sync health monitoring
               </div>
 
@@ -336,15 +331,17 @@ function TopStoryRow({ post }: { post: Post }) {
             </div>
           </div>
 
-          <div
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold"
+          {/* ✅ ONLY clickable thing */}
+          <Link
+            href={post.href}
+            className="mt-6 inline-flex items-center hover:underline gap-2 text-sm font-semibold"
             style={{ color: BRAND.orange }}
           >
             Read details
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </div>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 hover:translate-x-0.5" />
+          </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
@@ -415,7 +412,7 @@ export default function FeaturedWithSidebar() {
               channel manager + PMS + marketing + local support — one connected
               system.
               <span
-                className="ml-2 font-semibold"
+                className="ml-2 font-semibold underline"
                 style={{ color: BRAND.orange }}
               >
                 Built for bookings

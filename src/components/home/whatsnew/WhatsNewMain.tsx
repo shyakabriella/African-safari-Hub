@@ -46,7 +46,7 @@ export default function WhatsNewMain() {
         category: "WEBSITE + OTA VISIBILITY",
         title:
           "Get a World-Class Hotel Website that becomes a 24/7 booking machine.",
-        href: "/solutions/seo",
+        href: "/solutions/website",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=70",
         readTime: "Fast + mobile-friendly",
@@ -78,7 +78,7 @@ export default function WhatsNewMain() {
           "Manage your front office: check-ins/out, calendar, invoicing & real-time availability.",
         href: "/solutions/pms",
         image:
-          "https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=1800&q=70",
+          "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1800&q=70",
         readTime: "Front desk ready",
         views: "Real-time availability",
         comments: "Billing + invoices",
@@ -124,7 +124,7 @@ export default function WhatsNewMain() {
           category: "Booking Engine",
           title:
             "Integrated booking engine for direct reservations on your website.",
-          href: "/solutions/booking-engine",
+          href: "/solutions/website",
           image:
             "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=70",
         },
@@ -177,14 +177,14 @@ export default function WhatsNewMain() {
           title: "Front desk system for check-ins & check-outs.",
           href: "/solutions/pms",
           image:
-            "https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=900&q=70",
+            "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=900&q=70",
         },
         {
           category: "Calendar",
           title: "Unified reservation calendar + room assignment.",
           href: "/solutions/pms",
           image:
-            "https://images.unsplash.com/photo-1520975693411-b62613c8d4c0?auto=format&fit=crop&w=900&q=70",
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=70",
         },
         {
           category: "Billing + Analytics",
@@ -201,7 +201,7 @@ export default function WhatsNewMain() {
           category: "Social Media Setup",
           title:
             "Instagram, Facebook & TikTok setup + monthly content creation.",
-          href: "/solutions/marketing",
+          href: "/services/social-media",
           image:
             "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=900&q=70",
         },
@@ -215,7 +215,7 @@ export default function WhatsNewMain() {
         {
           category: "Reputation",
           title: "Review management + brand identity & storytelling.",
-          href: "/solutions/marketing",
+          href: "/services/branding",
           image:
             "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=70",
         },
@@ -377,7 +377,7 @@ export default function WhatsNewMain() {
         <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(340px,0.85fr)] xl:grid-cols-[minmax(0,1.55fr)_minmax(390px,0.85fr)]">
           {/* Big card */}
           <div className="overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-100">
-            <Link href={featured.href} className="group block">
+            <div className="group block">
               <div className="relative aspect-[16/10] min-h-[320px] w-full overflow-hidden sm:min-h-0">
                 <img
                   src={featured.image}
@@ -429,15 +429,17 @@ export default function WhatsNewMain() {
                   {featured.excerpt}
                 </p>
 
-                <div
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold"
+                {/* ONLY CLICKABLE PART */}
+                <Link
+                  href={featured.href}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold transition-all hover:gap-3"
                   style={{ color: C.orange }}
                 >
                   Explore solution
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
-            </Link>
+            </div>
           </div>
 
           {/* Right list */}

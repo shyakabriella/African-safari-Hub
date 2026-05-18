@@ -29,7 +29,7 @@ const ITEMS: Item[] = [
     title: "Online visibility on 450+ OTAs\n(Booking.com, Expedia, Airbnb…)",
     description: "Boost visibility by syncing to major OTAs automatically.",
     avatarSrc:
-      "https://images.unsplash.com/photo-1551887373-6e07aa1e7b47?auto=format&fit=crop&w=200&q=70",
+  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=200&q=70",
     badge: "450+",
     href: "/core-solutions/otas",
   },

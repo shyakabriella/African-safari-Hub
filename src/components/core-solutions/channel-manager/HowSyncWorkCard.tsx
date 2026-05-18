@@ -44,15 +44,15 @@ interface HowSyncWorkCardProps {
 
 export default function HowSyncWorkCard({ integer, title, description }: HowSyncWorkCardProps) {
   return (
-    <div className="flex gap-5 group hover:bg-slate-50 p-4 rounded-xl transition">
+    <div className="flex gap-3 group hover:bg-slate-50 p-4 rounded-xl transition">
       <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg group-hover:bg-amber-600 group-hover:text-white transition">
         {integer}
       </div>
       <div>
-        <h3 className="font-bold text-lg text-slate-800 mb-2 group-hover:text-amber-600 transition">
+        <h3 className="font-bold text-[15px] text-slate-800 mb-2 group-hover:text-amber-600 transition">
           {title}
         </h3>
-        <p className="text-slate-500 leading-relaxed">
+        <p className="text-slate-500 text-[11px] leading-relaxed">
           {description}
         </p>
       </div>

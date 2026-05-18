@@ -62,14 +62,14 @@ import { CheckCircle, ArrowRight, Clock, CreditCard, Headphones } from "lucide-r
 
 export default function ByeOverbookingCTA() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-20">
+    <div className="w-full max-w-7xl mx-auto px-4 py-10">
       <div className="rounded-2xl bg-gradient-to-r from-amber-700 to-amber-800 p-8 md:p-12 text-center shadow-xl">
         
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4">
           Ready to say goodbye to overbookings forever?
         </h2>
         
-        <p className="text-lg text-amber-100 max-w-2xl mx-auto mb-8">
+        <p className="text-[14px] text-amber-100 max-w-2xl mx-auto mb-8">
           Join 15,000+ hoteliers who trust our Sync engine to manage their properties. 
           Start your 14-day free trial today.
         </p>
@@ -90,12 +90,15 @@ export default function ByeOverbookingCTA() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="group px-8 py-3.5 rounded-xl bg-white text-amber-700 font-semibold hover:bg-amber-50 transition shadow-md flex items-center justify-center gap-2">
+          {/* <button className="group px-8 py-3.5 rounded-xl bg-white text-amber-700 font-semibold hover:bg-amber-50 transition shadow-md flex items-center justify-center gap-2">
             Get Started Free <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-          </button>
-          <button className="px-8 py-3.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition border border-amber-500">
+          </button> */}
+          <a
+          href="/contact"
+          target="_blank"
+          className="px-8 py-3.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition border border-amber-500">
             Talk to Sales
-          </button>
+          </a>
         </div>
         
         <p className="text-xs text-amber-200 mt-6">

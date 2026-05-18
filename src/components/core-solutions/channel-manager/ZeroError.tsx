@@ -67,38 +67,38 @@ export default function ZeroError() {
   ];
 
   return (
-    <div className="w-full bg-slate-50 py-20">
+    <div className="w-full bg-slate-50 py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-200 mb-4">
-            <CheckCircle className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-bold text-green-700 tracking-wide">ZERO ERRORS GUARANTEED</span>
+            <CheckCircle className="w-3 h-3 text-green-600" />
+            <span className="text-[10px] font-bold text-green-700 tracking-wide">ZERO ERRORS GUARANTEED</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
             Eliminate Overbookings Forever
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-[14px] text-slate-600 max-w-2xl mx-auto">
             Join 15,000+ hoteliers who trust our Sync engine to manage their properties with 100% accuracy
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-3">
           {benefits.map((benefit, i) => (
             <div key={i} className="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition group">
               <div className="w-14 h-14 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">{benefit.title}</h3>
-              <p className="text-slate-500 leading-relaxed mb-3">{benefit.description}</p>
+              <h3 className="text-[15px] font-bold text-slate-800 mb-2">{benefit.title}</h3>
+              <p className="text-slate-500 text-[11px] leading-relaxed mb-3">{benefit.description}</p>
               <div className="inline-flex items-center gap-1 text-sm font-semibold text-amber-600">
-                {benefit.highlight} →
+                {benefit.highlight}
               </div>
             </div>
           ))}
         </div>
 
         {/* Additional Stats */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
+        <div className="mt-7 grid grid-cols-2 md:grid-cols-4 gap-4 pt-20 border-t border-slate-200">
           <div className="text-center">
             <p className="text-2xl font-bold text-slate-800">0</p>
             <p className="text-sm text-slate-500">Overbookings reported</p>

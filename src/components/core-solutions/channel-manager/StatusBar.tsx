@@ -41,8 +41,8 @@ import StatusBarCard from "./StatusBarCard";
 
 export default function StatusBar() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
-      <div className="grid md:grid-cols-3 gap-6">
+    <div className="w-full max-w-7xl mx-auto px-1 py-4">
+      <div className="grid md:grid-cols-3 gap-3 mr-1 ml-1">
         <StatusBarCard
           header="Average Sync Speed"
           title="< 2 Seconds"

@@ -47,8 +47,8 @@ export default function StatusBarCard({ header, title, description }: StatusBarC
         {getIcon()}
       </div>
       <p className="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-2">{header}</p>
-      <p className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">{title}</p>
-      <p className="text-slate-500 leading-relaxed">{description}</p>
+      <p className="text-xl md:text-2xl font-bold text-slate-800 mb-3">{title}</p>
+      <p className="text-slate-500 text-[11px] leading-relaxed">{description}</p>
     </div>
   );
 }
