@@ -571,17 +571,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import Link from "next/link";
@@ -636,7 +625,12 @@ type ChildItem = {
   description?: string;
 };
 
-type NavLinkItem = { type: "link"; label: string; href: string; icon: LucideIcon };
+type NavLinkItem = {
+  type: "link";
+  label: string;
+  href: string;
+  icon: LucideIcon;
+};
 type NavMenuItem = {
   type: "menu";
   label: string;
@@ -761,10 +755,30 @@ const NAV_ITEMS: NavItem[] = [
     label: "Pricing",
     icon: BadgeDollarSign,
     children: [
-      { label: "Monthly Plans", href: "/pricing#plans", icon: BadgeDollarSign, description: "Basic / Standard / Premium" },
-      { label: "One-time Setup Fees", href: "/pricing#setup-fees", icon: FileText, description: "Website, OTA setup, PMS…" },
-      { label: "Commission Option", href: "/pricing#commission", icon: Repeat2, description: "Pay only when you earn" },
-      { label: "Compare Plans", href: "/pricing#compare", icon: LayoutGrid, description: "Choose what fits you" },
+      {
+        label: "Monthly Plans",
+        href: "/pricing#plans",
+        icon: BadgeDollarSign,
+        description: "Basic / Standard / Premium",
+      },
+      {
+        label: "One-time Setup Fees",
+        href: "/pricing#setup-fees",
+        icon: FileText,
+        description: "Website, OTA setup, PMS…",
+      },
+      {
+        label: "Commission Option",
+        href: "/pricing#commission",
+        icon: Repeat2,
+        description: "Pay only when you earn",
+      },
+      {
+        label: "Compare Plans",
+        href: "/pricing#compare",
+        icon: LayoutGrid,
+        description: "Choose what fits you",
+      },
     ],
   },
 
@@ -773,10 +787,30 @@ const NAV_ITEMS: NavItem[] = [
     label: "Industries",
     icon: Building2,
     children: [
-      { label: "Apartments & Airbnbs", href: "/industries/apartments-airbnb", icon: Building2, description: "Small properties & hosts" },
-      { label: "Guesthouses & Lodges", href: "/industries/guesthouses-lodges", icon: Building2, description: "Growth + OTA visibility" },
-      { label: "Mid-size Hotels", href: "/industries/mid-size-hotels", icon: Building2, description: "Scale operations + revenue" },
-      { label: "Luxury Hotels & Resorts", href: "/industries/luxury-hotels", icon: Building2, description: "Premium experience & systems" },
+      {
+        label: "Apartments & Airbnbs",
+        href: "/industries/apartments-airbnb",
+        icon: Building2,
+        description: "Small properties & hosts",
+      },
+      {
+        label: "Guesthouses & Lodges",
+        href: "/industries/guesthouses-lodges",
+        icon: Building2,
+        description: "Growth + OTA visibility",
+      },
+      {
+        label: "Mid-size Hotels",
+        href: "/industries/mid-size-hotels",
+        icon: Building2,
+        description: "Scale operations + revenue",
+      },
+      {
+        label: "Luxury Hotels & Resorts",
+        href: "/industries/luxury-hotels",
+        icon: Building2,
+        description: "Premium experience & systems",
+      },
     ],
   },
 
@@ -785,10 +819,30 @@ const NAV_ITEMS: NavItem[] = [
     label: "Resources",
     icon: BookOpen,
     children: [
-      { label: "Blog / Insights", href: "/resources/blog", icon: BookMarked, description: "Tips to increase bookings" },
-      { label: "FAQs", href: "/resources/faqs", icon: HelpCircle, description: "Quick answers" },
-      { label: "Case Studies", href: "/resources/case-studies", icon: FileText, description: "Real success stories" },
-      { label: "Guides", href: "/resources/guides", icon: BookOpen, description: "Step-by-step learning" },
+      {
+        label: "Blog / Insights",
+        href: "/resources/blog",
+        icon: BookMarked,
+        description: "Tips to increase bookings",
+      },
+      {
+        label: "FAQs",
+        href: "/resources/faqs",
+        icon: HelpCircle,
+        description: "Quick answers",
+      },
+      {
+        label: "Case Studies",
+        href: "/resources/case-studies",
+        icon: FileText,
+        description: "Real success stories",
+      },
+      {
+        label: "Guides",
+        href: "/resources/guides",
+        icon: BookOpen,
+        description: "Step-by-step learning",
+      },
     ],
   },
 
@@ -797,9 +851,24 @@ const NAV_ITEMS: NavItem[] = [
     label: "About",
     icon: Info,
     children: [
-      { label: "Who We Are", href: "/about", icon: Users, description: "Our story & mission" },
-      { label: "Partners / Certifications", href: "/about#partners", icon: Award, description: "Trusted partnerships" },
-      { label: "Our Team", href: "/about#team", icon: Users, description: "People behind the work" },
+      {
+        label: "Who We Are",
+        href: "/about",
+        icon: Users,
+        description: "Our story & mission",
+      },
+      {
+        label: "Partners / Certifications",
+        href: "/about#partners",
+        icon: Award,
+        description: "Trusted partnerships",
+      },
+      {
+        label: "Our Team",
+        href: "/about#team",
+        icon: Users,
+        description: "People behind the work",
+      },
     ],
   },
 
@@ -815,7 +884,9 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
   const pathname = usePathname();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openMobileSections, setOpenMobileSections] = useState<Record<string, boolean>>({});
+  const [openMobileSections, setOpenMobileSections] = useState<
+    Record<string, boolean>
+  >({});
 
   const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -842,9 +913,12 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
 
   const activeTopLabel = useMemo(() => {
     for (const item of NAV_ITEMS) {
-      if (item.type === "link" && isActivePath(pathname, item.href)) return item.label;
+      if (item.type === "link" && isActivePath(pathname, item.href))
+        return item.label;
       if (item.type === "menu") {
-        const anyChildActive = item.children.some((c) => isActivePath(pathname, c.href));
+        const anyChildActive = item.children.some((c) =>
+          isActivePath(pathname, c.href),
+        );
         if (anyChildActive) return item.label;
       }
     }
@@ -882,12 +956,11 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
 
           <div
             className={[
-              "relative overflow-hidden w-2.5 rounded-2xl  bg-white",
-              "ring-1 ring-black/5 ",
+              "relative overflow-hidden w-2.5 rounded-2xl bg-white",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-14 w-[200px] sm:h-16 sm:w-[230px]"
-                : "h-16 w-[220px] sm:h-20 sm:w-[280px]",
+                ? "h-14 w-[200px] sm:h-16 sm:w-[170px]"
+                : "h-16 w-[220px] sm:h-20 sm:w-[160px]",
             ].join(" ")}
           >
             <Image
@@ -918,7 +991,9 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   key={item.href}
                   href={item.href}
                   className={`${pillBase} ${
-                    active ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419]" : ""
+                    active
+                      ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419] w-[12%]"
+                      : ""
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -928,7 +1003,9 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
             }
 
             const Icon = item.icon;
-            const anyChildActive = item.children.some((c) => isActivePath(pathname, c.href));
+            const anyChildActive = item.children.some((c) =>
+              isActivePath(pathname, c.href),
+            );
             const isOpen = openDesktopMenu === item.label;
 
             return (
@@ -941,23 +1018,34 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                 <button
                   type="button"
                   onClick={() =>
-                    setOpenDesktopMenu((prev) => (prev === item.label ? null : item.label))
+                    setOpenDesktopMenu((prev) =>
+                      prev === item.label ? null : item.label,
+                    )
                   }
                   className={`${pillBase} ${
-                    anyChildActive ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419]" : ""
+                    anyChildActive
+                      ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419]"
+                      : ""
                   }`}
                   aria-haspopup="menu"
                   aria-expanded={isOpen}
                 >
                   <Icon className="h-4 w-4" />
                   <span className="whitespace-nowrap">{item.label}</span>
-                  <ChevronDown className={`h-4 w-4 transition ${isOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition ${isOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
 
                 {/* Dropdown */}
                 <div
                   className={[
-                    "absolute left-0 top-full z-50 mt-3 w-[520px] rounded-2xl border bg-white p-3 shadow-xl",
+                    `absolute top-full z-50 mt-3 ${
+                      ["Industries", "Resources", "About"].includes(item.label)
+                        ? "right-0"
+                        : "left-0"
+                    }`,
+                    "w-[720px] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl",
                     "transition duration-150 ease-out",
                     isOpen
                       ? "visible opacity-100 translate-y-0 pointer-events-auto"
@@ -966,7 +1054,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   onMouseEnter={() => openMenu(item.label)}
                   onMouseLeave={scheduleClose}
                 >
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-3 gap-2">
                     {item.children.map((child) => {
                       const active = isActivePath(pathname, child.href);
                       const ChildIcon = child.icon;
@@ -976,33 +1064,40 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                           key={child.href}
                           href={child.href}
                           className={[
-                            "group flex items-start gap-3 rounded-xl p-3 transition",
-                            active ? "bg-[rgba(173,100,25,0.10)]" : "hover:bg-gray-50",
+                            "group rounded-xl p-3 transition-all duration-200",
+                            active
+                              ? "bg-[rgba(173,100,25,0.10)]"
+                              : "hover:bg-gray-50",
                           ].join(" ")}
                         >
-                          <div
-                            className={[
-                              "mt-0.5 rounded-xl border bg-white p-2",
-                              "text-[#AD6419]",
-                              "group-hover:bg-[rgba(89,158,26,0.10)] group-hover:text-[#599E1A]",
-                            ].join(" ")}
-                          >
-                            <ChildIcon className="h-4 w-4" />
-                          </div>
-
-                          <div className="min-w-0">
+                          <div className="flex items-start gap-2.5">
                             <div
-                              className={`text-sm font-semibold ${
-                                active ? "text-[#AD6419]" : "text-gray-800"
-                              }`}
+                              className={[
+                                "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border bg-white",
+                                "text-[#AD6419]",
+                                "transition-all duration-200",
+                                "group-hover:bg-[rgba(89,158,26,0.10)]",
+                                "group-hover:text-[#599E1A]",
+                              ].join(" ")}
                             >
-                              {child.label}
+                              <ChildIcon className="h-4 w-4" />
                             </div>
-                            {child.description && (
-                              <div className="mt-0.5 text-xs text-gray-500">
-                                {child.description}
+
+                            <div className="min-w-0">
+                              <div
+                                className={`text-[13px] font-semibold leading-tight ${
+                                  active ? "text-[#AD6419]" : "text-gray-800"
+                                }`}
+                              >
+                                {child.label}
                               </div>
-                            )}
+
+                              {child.description && (
+                                <div className="mt-1 text-[11px] leading-relaxed text-gray-500">
+                                  {child.description}
+                                </div>
+                              )}
+                            </div>
                           </div>
                         </Link>
                       );
@@ -1010,7 +1105,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   </div>
 
                   <div
-                    className="mt-3 h-[5px] w-24 rounded-full"
+                    className="mt-4 h-[4px] w-24 rounded-full"
                     style={{ backgroundColor: BRAND.green }}
                   />
                 </div>
@@ -1028,8 +1123,12 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
               compact ? "px-4 py-2 text-[13px]" : "px-5 py-2.5 text-[14px]",
             ].join(" ")}
             style={{ backgroundColor: BRAND.orange }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BRAND.orangeDark)}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND.orange)}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = BRAND.orangeDark)
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = BRAND.orange)
+            }
           >
             Request a Demo
           </Link>
@@ -1084,7 +1183,9 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
               }
 
               const open = !!openMobileSections[item.label];
-              const anyChildActive = item.children.some((c) => isActivePath(pathname, c.href));
+              const anyChildActive = item.children.some((c) =>
+                isActivePath(pathname, c.href),
+              );
               const Icon = item.icon;
 
               return (
@@ -1101,7 +1202,9 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                       <Icon className="h-4 w-4" />
                       {item.label}
                     </span>
-                    <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`}
+                    />
                   </button>
 
                   {open && (
