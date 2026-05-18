@@ -830,7 +830,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
     closeTimer.current = setTimeout(() => setOpenDesktopMenu(null), 220);
   };
 
-  // ✅ FIXED: This function was missing - ADD THIS BACK
+  // FIXED: This function was missing - ADD THIS BACK
   const toggleMobileSection = (label: string) => {
     setOpenMobileSections((prev) => ({ ...prev, [label]: !prev[label] }));
   };
@@ -878,28 +878,28 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
       >
         {/* Logo */}
         <Link href="/" className="group flex items-center shrink-0">
-          <span className="sr-only">HotelSafari</span>
+          <span className="sr-only">african safari and hotel booking hub</span>
 
           <div
             className={[
-              "relative overflow-hidden rounded-2xl bg-white",
-              "ring-1 ring-black/5 shadow-sm",
+              "relative overflow-hidden w-2.5 rounded-2xl  bg-white",
+              "ring-1 ring-black/5 ",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-12 w-[170px] sm:h-12 sm:w-[190px]"
-                : "h-14 w-[190px] sm:h-14 sm:w-[220px]",
+                ? "h-14 w-[200px] sm:h-16 sm:w-[230px]"
+                : "h-16 w-[220px] sm:h-20 sm:w-[280px]",
             ].join(" ")}
           >
             <Image
-              src="/lg.png"
+              src="/logo.png"
               alt="HotelSafari logo"
               fill
               priority
-              sizes="(max-width: 640px) 170px, 220px"
+              sizes="(max-width: 640px) 200px, 280px"
               className={[
                 "object-contain object-left",
-                "p-0.5 sm:p-1",
-                "scale-[1.05]",
+                "p-0",
+                "scale-190",
                 "origin-left",
               ].join(" ")}
             />
