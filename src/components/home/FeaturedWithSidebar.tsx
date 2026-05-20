@@ -52,7 +52,7 @@ const sidebarTop: Post = {
     "Turn Your Website Into a 24/7 Booking Machine (Payments + Confirmations).",
   description:
     "Guests search dates, choose rooms, add extras, pay online, and receive instant confirmation — while inventory updates everywhere.",
-  href: "/solutions/booking-engine",
+  href: "/solutions/website",
   image: "/img2.png",
 };
 

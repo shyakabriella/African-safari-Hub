@@ -254,7 +254,7 @@ export default function WhatsNewMain() {
         category: "Premium Package",
         title:
           "Full Hotel Digital Management — 700$ per month (we manage everything).",
-        href: "/pricing#premium",
+        href: "/pricing/mothly-plans",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70",
         author: "african safari and hotel booking hub Team",
@@ -295,7 +295,7 @@ export default function WhatsNewMain() {
           "Manage your entire property: front desk, calendar, billing, guest messages, analytics.",
         href: "/solutions/pms",
         image:
-          "https://images.unsplash.com/photo-1551887373-6aa6c26f98bd?auto=format&fit=crop&w=1600&q=70",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=70",
         author: "african safari and hotel booking hub Team",
       },
     ];
