@@ -859,13 +859,13 @@ const NAV_ITEMS: NavItem[] = [
       },
       {
         label: "Partners / Certifications",
-        href: "/about#partners",
+        href: "/about/partners",
         icon: Award,
         description: "Trusted partnerships",
       },
       {
         label: "Our Team",
-        href: "/about#team",
+        href: "/about/ourteam",
         icon: Users,
         description: "People behind the work",
       },

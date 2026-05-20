@@ -51,20 +51,20 @@ export default function SiteFooter() {
         {/* Top row */}
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
           {/* Brand / intro */}
-          <div>
+          <div className="mt-[-50]">
             {/* Use real logo from public/lg.png */}
             <Link href="/" className="inline-flex items-center">
               <Image
-                src="/lg.png"
+                src="/logo.png"
                 alt="african safari and hotel booking hub logo"
                 width={220}
-                height={64}
+                height={24}
                 priority
-                className="h-auto w-[220px]"
+                className="h-55 w-[150px]"
               />
             </Link>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/75">
+            <p className="mt-[-30px] max-w-sm text-sm leading-7 text-white/75">
               We help hotels, apartments, lodges and resorts grow direct bookings
               with a modern website + booking engine, OTA distribution, channel
               management, PMS, marketing, analytics, and support.
