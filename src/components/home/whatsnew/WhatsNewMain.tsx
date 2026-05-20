@@ -103,18 +103,18 @@ export default function WhatsNewMain() {
       },
 
       Pricing: {
-        category: "PRICING STRATEGY",
+        category: "PRICING & PARTNERSHIP",
         title:
-          "Choose a plan: Basic 800k, Standard 1.2M, Premium 2M RWF per month.",
-        href: "/pricing",
+          "Monthly plans from $2,450/mo, one-time setup from $4,500, or commission from 10%.",
+        href: "/pricing/mothly-plans",
         image:
-          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=70",
+          "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1800",
         readTime: "Monthly subscription",
-        views: "Basic / Standard / Premium",
-        comments: "Optional setup fees",
-        shares: "Commission option",
+        views: "Foundation / Horizon / Elite",
+        comments: "One-time setup fees",
+        shares: "Commission tiers",
         excerpt:
-          "Basic (800,000 RWF/month) for small apartments & Airbnbs. Standard (1,200,000 RWF/month) adds 150+ OTAs, SEO & social media management. Premium (2,000,000 RWF/month) includes full website, 450+ OTAs, channel manager setup, PMS setup, reviews, and priority support with 24/7 assistance.",
+          "Monthly: Heritage Foundation ($2,450/mo), Horizon Suite ($5,900/mo, recommended), or Institutional Elite ($12,500/mo). One-time onboarding: Foundation Setup ($4,500), Horizon Implementation ($8,750), or Elite Migration ($15,000+). Or align with revenue via Growth (10%), Accelerator (15%), or Enterprise (custom) commission.",
       },
     };
 
@@ -223,27 +223,28 @@ export default function WhatsNewMain() {
 
       Pricing: [
         {
-          category: "Basic Plan",
-          title: "800,000 RWF/month — website + key OTA setup + basic support.",
-          href: "/pricing#basic",
+          category: "Monthly Plans",
+          title:
+            "Heritage Foundation $2,450/mo · Horizon Suite $5,900/mo · Elite $12,500/mo.",
+          href: "/pricing/mothly-plans",
           image:
-            "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=70",
+            "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=900",
         },
         {
-          category: "Standard Plan",
+          category: "One-Time Setup",
           title:
-            "1,200,000 RWF/month — 150+ OTAs + SEO + social media management.",
-          href: "/pricing#standard",
+            "Foundation $4,500 · Horizon Implementation $8,750 · Elite Migration $15,000+.",
+          href: "/pricing/one-time-setup#setup-fees",
           image:
-            "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=70",
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80",
         },
         {
-          category: "Premium Plan",
+          category: "Commission Model",
           title:
-            "2,000,000 RWF/month — full website + 450+ OTAs + PMS + priority support.",
-          href: "/pricing#premium",
+            "Pay when you earn: Growth 10%, Accelerator 15%, or custom Enterprise tier.",
+          href: "/pricing/commision",
           image:
-            "https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=900&q=70",
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70",
         },
       ],
     };
