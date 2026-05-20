@@ -9,15 +9,17 @@ export default function SyncRatingBanner() {
           {/* Left Content */}
           <div className="flex-1">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 mt-4 rounded-full bg-amber-50 border border-amber-200 mb-6">
-              <Zap className="w-3 h-3 text-[#AD6419]" />
-              <span className="text-[10px] font-semibold text-[#b86715] uppercase tracking-wide">Real-time Channel Manager</span>
+            <div className="mb-6 mt-4 inline-flex items-center gap-2 rounded-full border border-[#e8d5c0] bg-[#f6efe9] px-3 py-1">
+              <Zap className="h-3 w-3 text-[#AD6419]" />
+              <span className="text-[10px] font-semibold tracking-wide text-[#AD6419] uppercase">
+                Real-time Channel Manager
+              </span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 leading-tight mb-6">
+            <h1 className="mb-6 text-2xl leading-tight font-bold text-slate-800 md:text-3xl lg:text-4xl">
               Sync Rates & Availability to{" "}
-              <span className="text-amber-600">Stop Overbookings</span>
+              <span className="text-[#AD6419]">Stop Overbookings</span>
             </h1>
 
             {/* Description */}
@@ -32,7 +34,7 @@ export default function SyncRatingBanner() {
               <a
               href="/contact"
               target="_blank"
-              className="px-6 py-3 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition flex items-center gap-2">
+              className="flex items-center gap-2 rounded-lg bg-[#AD6419] px-6 py-3 font-semibold text-white transition hover:bg-[#8A4F12]">
                 Start 14-Day Free Trial <ArrowRight className="w-4 h-4" />
               </a>
             </div>

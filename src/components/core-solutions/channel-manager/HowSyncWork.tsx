@@ -60,9 +60,9 @@ export default function HowSyncWork() {
         
         {/* Left Side - Image/Visual */}
         <div className="flex-1">
-          <div className="relative bg-gradient-to-br from-amber-50 to-slate-100 rounded-2xl p-8 h-full flex items-center justify-center">
+          <div className="relative flex h-full items-center justify-center rounded-2xl bg-linear-to-br from-[#f6efe9] to-slate-100 p-8">
             <div className="text-center">
-              <div className="w-24 h-24 rounded-full bg-amber-200 flex items-center justify-center mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-[#e8d5c0]">
                 <span className="text-4xl">🔄</span>
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-2">The Sync Engine</h3>
@@ -79,7 +79,7 @@ export default function HowSyncWork() {
         <div className="flex-1">
           <div className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
-              How the <span className="text-amber-600">Sync Engine</span> Works
+              How the <span className="text-[#AD6419]">Sync Engine</span> Works
             </h2>
             <p className="text-[14px] text-slate-500">
               Three simple steps to eliminate manual work and prevent overbookings forever

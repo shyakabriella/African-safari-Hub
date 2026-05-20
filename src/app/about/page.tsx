@@ -1,4 +1,38 @@
-import { Handshake, Shield, Check, Lock, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Handshake, Shield, Check, Lock, ShieldCheck, ArrowRight } from 'lucide-react';
+
+const PARTNER_BRANDS = [
+  'HILTON',
+  'MARRIOTT',
+  'HYATT',
+  'FOUR SEASONS',
+  'ACCOR',
+  'MANDARIN',
+];
+
+const COMPLIANCE_ITEMS = [
+  {
+    icon: Check,
+    title: 'PCI DSS',
+    description: 'Level 1 Compliant Service Provider',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'ISO 27001',
+    description: 'Certified Information Security',
+  },
+  {
+    icon: Shield,
+    title: 'GDPR',
+    description: 'Global Privacy Standard Adherent',
+    filled: true,
+  },
+  {
+    icon: Lock,
+    title: 'SOC 2 TYPE II',
+    description: 'Enterprise Security Control',
+  },
+] as const;
 
 export default function page() {
   return (
@@ -53,102 +87,142 @@ export default function page() {
               Guided by industry veterans across technology and luxury hospitality, we are committed to redefining the guest journey.
             </p>
           </div>
-      <div className="flex justify-center">
-  <div className=" gap-8 justify-items-center">
-    {[
-      {
-        name: 'Diocles',
-        role: 'CEO & Founder',
-        img: 'https://scontent-ham3-1.cdninstagram.com/v/t51.75761-15/503851182_18369602845134298_1634138455075772440_n.webp?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=fiSTwEvcXqsQ7kNvwHcEdmu&_nc_oc=AdkqGnL1LxomnIO__8zwDKqtpUs_1Q5CUH4_t9WnT9TUpfp03qPQU5epCuI1nd74du4&_nc_zt=23&_nc_ht=scontent-ham3-1.cdninstagram.com&_nc_gid=50UwRpEpVa5HSMIDfU7JPg&_nc_ss=8&oh=00_AfyGyWbkKmjkiZ-fCSv6wGz99tk84TbkMtGNSWpjwIxTvg&oe=69B25E02'
-      }
-    ].map(person => (
-      <div key={person.name} className="flex flex-col items-center text-center max-w-[280px]">
-        <img src={person.img} alt={person.name} className="rounded-2xl mb-5 object-cover aspect-square shadow-sm w-full h-auto max-w-[320px]" />
-        <h3 className="text-base font-bold text-slate-900">{person.name}</h3>
-        <p className="text-[10px] text-slate-400 font-bold tracking-wider uppercase mt-1">{person.role}</p>
-      </div>
-    ))}
-  </div>
-  </div>
-        </div>
-      </section>
-
-      {/* Partners & Security */}
-      <section id="partners" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Trusted Partners */}
-          <div>
-            <div className="flex items-center gap-3 mb-10">
-              <Handshake className="text-[#AD6419] w-5 h-5" />
-              <h2 className="text-xl font-bold text-slate-900">Trusted Industry Partners</h2>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {['HILTON', 'MARRIOTT', 'HYATT', 'FOUR SEASONS', 'ACCOR', 'MANDARIN'].map(brand => (
-                <div key={brand} className="border border-slate-100 rounded-lg py-8 flex items-center justify-center shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] bg-white">
-                  <span className="text-[11px] font-bold text-slate-600 tracking-widest">{brand}</span>
+          <div className="flex justify-center">
+            <div className="gap-8 justify-items-center">
+              {[
+                {
+                  name: 'Diocles',
+                  role: 'CEO & Founder',
+                  img: 'https://scontent-ham3-1.cdninstagram.com/v/t51.75761-15/503851182_18369602845134298_1634138455075772440_n.webp?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=fiSTwEvcXqsQ7kNvwHcEdmu&_nc_oc=AdkqGnL1LxomnIO__8zwDKqtpUs_1Q5CUH4_t9WnT9TUpfp03qPQU5epCuI1nd74du4&_nc_zt=23&_nc_ht=scontent-ham3-1.cdninstagram.com&_nc_gid=50UwRpEpVa5HSMIDfU7JPg&_nc_ss=8&oh=00_AfyGyWbkKmjkiZ-fCSv6wGz99tk84TbkMtGNSWpjwIxTvg&oe=69B25E02'
+                }
+              ].map(person => (
+                <div key={person.name} className="flex flex-col items-center text-center max-w-[280px]">
+                  <img src={person.img} alt={person.name} className="rounded-2xl mb-5 object-cover aspect-square shadow-sm w-full h-auto max-w-[320px]" />
+                  <h3 className="text-base font-bold text-slate-900">{person.name}</h3>
+                  <p className="text-[10px] text-slate-400 font-bold tracking-wider uppercase mt-1">{person.role}</p>
                 </div>
               ))}
             </div>
           </div>
-          
-          {/* Security & Compliance */}
-          <div>
-            <div className="flex items-center gap-3 mb-10">
-              <Shield className="text-[#AD6419] w-5 h-5" />
-              <h2 className="text-xl font-bold text-slate-900">Security & Compliance</h2>
+        </div>
+      </section>
+
+      {/* Trusted Partners */}
+      <section id="partners" className="border-y border-slate-100 bg-white py-24 px-6 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 max-w-2xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#f6efe9] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#AD6419]">
+              <Handshake className="h-3.5 w-3.5" />
+              Partnerships
             </div>
-            <div className="bg-[#fbf9f4] rounded-2xl p-8 lg:p-10 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
-              <div className="text-center flex flex-col items-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
-                  <Check className="text-[#AD6419] w-5 h-5" />
-                </div>
-                <div className="text-[11px] font-bold text-slate-900 mb-1 tracking-wider uppercase">PCI DSS</div>
-                <div className="text-[11px] text-slate-400">Level 1 Compliant Service Provider</div>
+            <h2 className="text-2xl font-bold text-slate-900 lg:text-3xl">
+              Trusted Industry Partners
+            </h2>
+            <p className="mt-4 text-[14px] leading-relaxed text-slate-500">
+              We collaborate with global hospitality leaders to deliver reliable,
+              enterprise-grade booking and operations technology.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+            {PARTNER_BRANDS.map((brand) => (
+              <div
+                key={brand}
+                className="flex items-center justify-center rounded-xl border border-slate-100 bg-[#f9fafb] px-4 py-10 transition-colors hover:border-[#AD6419]/30 hover:bg-[#f6efe9]"
+              >
+                <span className="text-center text-[10px] font-bold tracking-[0.2em] text-slate-600">
+                  {brand}
+                </span>
               </div>
-              <div className="text-center flex flex-col items-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
-                  <ShieldCheck className="text-[#AD6419] w-5 h-5" />
-                </div>
-                <div className="text-[11px] font-bold text-slate-900 mb-1 tracking-wider uppercase">ISO 27001</div>
-                <div className="text-[11px] text-slate-400">Certified Information Security</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Compliance */}
+      <section
+        id="certifications"
+        className="bg-slate-900 py-24 px-6 text-white lg:px-12"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-xl">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#e8c9a8]">
+                <Shield className="h-3.5 w-3.5" />
+                Trust & Safety
               </div>
-              <div className="text-center flex flex-col items-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
-                  <Shield className="text-[#AD6419] w-5 h-5 fill-current" />
-                </div>
-                <div className="text-[11px] font-bold text-slate-900 mb-1 tracking-wider uppercase">GDPR</div>
-                <div className="text-[11px] text-slate-400">Global Privacy Standard Adherent</div>
-              </div>
-              <div className="text-center flex flex-col items-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
-                  <Lock className="text-[#AD6419] w-5 h-5" />
-                </div>
-                <div className="text-[11px] font-bold text-slate-900 mb-1 tracking-wider uppercase">SOC 2 TYPE II</div>
-                <div className="text-[11px] text-slate-400">Enterprise Security Control</div>
-              </div>
+              <h2 className="text-2xl font-bold lg:text-3xl">
+                Security & Compliance
+              </h2>
+              <p className="mt-4 text-[14px] leading-relaxed text-slate-400">
+                Your guest data and payments are protected by industry-leading
+                certifications and continuous security monitoring.
+              </p>
             </div>
+            <p className="max-w-sm text-[13px] leading-relaxed text-slate-500 lg:text-right">
+              Audited annually. Built for hotels that cannot compromise on privacy
+              or uptime.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {COMPLIANCE_ITEMS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#AD6419]/20">
+                    <Icon
+                      className={`h-5 w-5 text-[#e8c9a8] ${'filled' in item && item.filled ? 'fill-current' : ''}`}
+                    />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold tracking-wider uppercase text-white">
+                      {item.title}
+                    </div>
+                    <p className="mt-1 text-[12px] leading-relaxed text-slate-400">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="pb-24 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#AD6419] to-[#965716] rounded-[2rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-xl">
-          <div className="relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready to Elevate Your Hospitality Standards?</h2>
-            <p className="mb-8 max-w-2xl mx-auto text-white/90 text-[15px]">
-              Join the world most prestigious hotel brands in creating unforgettable digital experiences.
+      <section className="bg-[#f6efe9] px-6 py-24 lg:px-12">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 overflow-hidden rounded-[2rem] bg-white p-8 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.18)] md:p-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-wider text-[#AD6419]">
+              Get started
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="border border-white/40 text-white px-8 py-3.5 rounded font-semibold hover:bg-white/10 transition-colors text-sm">
-                Request a Demo 
-              </button>
-            </div>
+            <h2 className="text-2xl font-bold leading-tight text-slate-900 md:text-3xl lg:text-4xl">
+              Ready to elevate your hospitality standards?
+            </h2>
+            <p className="mt-4 max-w-lg text-[14px] leading-relaxed text-slate-500">
+              Join the world&apos;s most prestigious hotel brands in creating
+              unforgettable digital experiences for every guest.
+            </p>
+          </div>
+
+          <div className="flex flex-col justify-center gap-4 rounded-2xl bg-gradient-to-br from-[#AD6419] to-[#965716] p-8 text-white">
+            <p className="text-[14px] text-white/90">
+              Speak with our team about demos, onboarding, and enterprise plans.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-[#AD6419] transition-colors hover:bg-[#f6efe9]"
+            >
+              Request a Demo
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
-
-     
     </div>
   );
 }

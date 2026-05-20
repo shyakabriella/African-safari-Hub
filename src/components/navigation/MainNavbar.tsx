@@ -757,25 +757,25 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       {
         label: "Monthly Plans",
-        href: "/pricing#plans",
+        href: "/pricing/mothly-plans",
         icon: BadgeDollarSign,
         description: "Basic / Standard / Premium",
       },
       {
         label: "One-time Setup Fees",
-        href: "/pricing#setup-fees",
+        href: "/pricing/one-time-setup#setup-fees",
         icon: FileText,
         description: "Website, OTA setup, PMS…",
       },
       {
         label: "Commission Option",
-        href: "/pricing#commission",
+        href: "/pricing/commision",
         icon: Repeat2,
         description: "Pay only when you earn",
       },
       {
         label: "Compare Plans",
-        href: "/pricing#compare",
+        href: "/pricing/mothly-plans#compare",
         icon: LayoutGrid,
         description: "Choose what fits you",
       },

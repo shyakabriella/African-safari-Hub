@@ -43,10 +43,10 @@ export default function StatusBarCard({ header, title, description }: StatusBarC
 
   return (
     <div className="group bg-white rounded-xl p-6 border border-slate-200 hover:shadow-xl transition-all hover:-translate-y-1">
-      <div className="w-12 h-12 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#f6efe9] text-[#AD6419] transition group-hover:bg-[#AD6419] group-hover:text-white">
         {getIcon()}
       </div>
-      <p className="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-2">{header}</p>
+      <p className="mb-2 text-sm font-semibold tracking-wide text-[#AD6419] uppercase">{header}</p>
       <p className="text-xl md:text-2xl font-bold text-slate-800 mb-3">{title}</p>
       <p className="text-slate-500 text-[11px] leading-relaxed">{description}</p>
     </div>

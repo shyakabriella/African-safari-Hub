@@ -63,28 +63,28 @@ import { CheckCircle, ArrowRight, Clock, CreditCard, Headphones } from "lucide-r
 export default function ByeOverbookingCTA() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-10">
-      <div className="rounded-2xl bg-gradient-to-r from-amber-700 to-amber-800 p-8 md:p-12 text-center shadow-xl">
+      <div className="rounded-2xl bg-linear-to-r from-[#AD6419] to-[#8A4F12] p-8 text-center shadow-xl md:p-12">
         
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4">
           Ready to say goodbye to overbookings forever?
         </h2>
         
-        <p className="text-[14px] text-amber-100 max-w-2xl mx-auto mb-8">
+        <p className="mx-auto mb-8 max-w-2xl text-[14px] text-white/85">
           Join 15,000+ hoteliers who trust our Sync engine to manage their properties. 
           Start your 14-day free trial today.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-8">
           <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-amber-200" />
+            <Clock className="h-5 w-5 text-[#f6efe9]" />
             <span className="text-sm text-white">14-day free trial</span>
           </div>
           <div className="flex items-center gap-2">
-            <CreditCard className="w-5 h-5 text-amber-200" />
+            <CreditCard className="h-5 w-5 text-[#f6efe9]" />
             <span className="text-sm text-white">No credit card required</span>
           </div>
           <div className="flex items-center gap-2">
-            <Headphones className="w-5 h-5 text-amber-200" />
+            <Headphones className="h-5 w-5 text-[#f6efe9]" />
             <span className="text-sm text-white">24/7 support included</span>
           </div>
         </div>
@@ -96,12 +96,12 @@ export default function ByeOverbookingCTA() {
           <a
           href="/contact"
           target="_blank"
-          className="px-8 py-3.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition border border-amber-500">
+          className="rounded-xl border border-white/30 bg-white px-8 py-3.5 font-semibold text-[#AD6419] transition hover:bg-[#f6efe9]">
             Talk to Sales
           </a>
         </div>
         
-        <p className="text-xs text-amber-200 mt-6">
+        <p className="mt-6 text-xs text-white/70">
           Free trial includes full access to all features. Cancel anytime.
         </p>
       </div>

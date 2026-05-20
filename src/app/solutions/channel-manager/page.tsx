@@ -7,7 +7,7 @@ import ByeOverbookingCTA from "@/components/core-solutions/channel-manager/ByeOv
 
 export default function ChannelManagerPage() {
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-white">
+    <div className="flex w-full flex-col items-center justify-center bg-linear-to-br from-[#f6efe9] to-white">
       <SyncRatingBanner />
       <StatusBar />
       <ZeroError />

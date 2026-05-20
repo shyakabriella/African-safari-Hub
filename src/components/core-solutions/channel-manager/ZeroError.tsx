@@ -85,12 +85,12 @@ export default function ZeroError() {
         <div className="grid md:grid-cols-3 gap-3">
           {benefits.map((benefit, i) => (
             <div key={i} className="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition group">
-              <div className="w-14 h-14 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-600 group-hover:text-white transition">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#f6efe9] text-[#AD6419] transition group-hover:bg-[#AD6419] group-hover:text-white">
                 {benefit.icon}
               </div>
-              <h3 className="text-[15px] font-bold text-slate-800 mb-2">{benefit.title}</h3>
-              <p className="text-slate-500 text-[11px] leading-relaxed mb-3">{benefit.description}</p>
-              <div className="inline-flex items-center gap-1 text-sm font-semibold text-amber-600">
+              <h3 className="mb-2 text-[15px] font-bold text-slate-800">{benefit.title}</h3>
+              <p className="mb-3 text-[11px] leading-relaxed text-slate-500">{benefit.description}</p>
+              <div className="inline-flex items-center gap-1 text-sm font-semibold text-[#AD6419]">
                 {benefit.highlight}
               </div>
             </div>
