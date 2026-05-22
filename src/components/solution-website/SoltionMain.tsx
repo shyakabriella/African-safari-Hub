@@ -42,13 +42,13 @@ export default function SoltionMain() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
               
-              <button className="px-6 py-3 cursor-pointer rounded-xl bg-[#8B4513] text-[#F5E6D3] font-semibold text-sm hover:bg-[#5C3317] transition">
-                Request a Demo
-              </button>
+              <a href="/contact" target="_blank" className="px-6 py-3 cursor-pointer rounded-xl bg-[#8B4513] text-[#F5E6D3] font-semibold text-sm hover:bg-[#5C3317] transition">
+                Contact Us
+              </a>
 
-              <button className="px-6 py-3 cursor-pointer rounded-xl bg-[#F5E6D3] border border-[#8B4513]/30 text-[#5C3317] font-semibold text-sm hover:bg-[#F5E6D3]/90 transition">
-                Get a Quote
-              </button>
+              <a href="/pricing/monthly-plans" target="_blank" className="px-6 py-3 cursor-pointer rounded-xl bg-[#F5E6D3] border border-[#8B4513]/30 text-[#5C3317] font-semibold text-sm hover:bg-[#F5E6D3]/90 transition">
+                Get an Idea
+              </a>
 
             </div>
           </div>

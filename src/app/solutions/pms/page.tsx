@@ -304,9 +304,9 @@ export default function page() {
                 Join thousands of properties worldwide that use HotelSafari to
                 drive efficiency and deliver unforgettable guest experiences.
               </p>
-              <button className="bg-[#AD6419] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#9a5a17] transition-colors shadow-lg shadow-[#AD6419]/20 text-[14px]">
+              <a href="/contact" target="_blank" className="bg-[#AD6419] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#9a5a17] transition-colors shadow-lg shadow-[#AD6419]/20 text-[14px]">
                 Request a Demo
-              </button>
+              </a>
             </div>
           </div>
         </div>

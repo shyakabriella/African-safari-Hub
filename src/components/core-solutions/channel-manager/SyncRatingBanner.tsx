@@ -35,7 +35,7 @@ export default function SyncRatingBanner() {
               href="/contact"
               target="_blank"
               className="flex items-center gap-2 rounded-lg bg-[#AD6419] px-6 py-3 font-semibold text-white transition hover:bg-[#8A4F12]">
-                Start 14-Day Free Trial <ArrowRight className="w-4 h-4" />
+                Reach Out To Us <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 

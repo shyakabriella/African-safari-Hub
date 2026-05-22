@@ -292,9 +292,9 @@ export default function Otas() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button className="w-full cursor-pointer sm:w-auto px-8 py-4 border border-gray-700 rounded-xl font-black text-white hover:bg-white/5 transition-all text-base backdrop-blur-sm">
+                <a href="/contact" target="_blank" className="w-full cursor-pointer sm:w-auto px-8 py-4 border border-gray-700 rounded-xl font-black text-white hover:bg-white/5 transition-all text-base backdrop-blur-sm">
                   Request a Demo
-                </button>
+                </a>
               </div>
             </div>
           </div>

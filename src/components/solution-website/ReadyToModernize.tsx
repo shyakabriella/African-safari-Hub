@@ -17,9 +17,9 @@ export default function ReadyToModernize() {
           </p>
 
           {/* Button */}
-          <button className="px-8 py-4 bg-[#F5E6D3] text-[#8B4513] rounded-xl font-bold text-sm md:text-base hover:bg-[#F5E6D3]/90 transition cursor-pointer">
+          <a href="/contact" target="_blank" className="px-8 py-4 bg-[#F5E6D3] text-[#8B4513] rounded-xl font-bold text-sm md:text-base hover:bg-[#F5E6D3]/90 transition cursor-pointer">
             Book a Free Consultation
-          </button>
+          </a>
 
           {/* Footer text */}
           <p className="text-xs text-white/70">
