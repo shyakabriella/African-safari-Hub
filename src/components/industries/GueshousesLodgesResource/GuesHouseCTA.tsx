@@ -18,16 +18,16 @@ export default function GuesHouseCTA() {
           </div>
 
           <div className="w-[606px] h-[88px] flex justify-center gap-[16px]">
-            <button className="cursor-pointer w-[300px] h-[65px] pt-[21.5px] pb-[22.5px] pr-[40px] pl-[40px] rounded-[12px] bg-[#8B4513]">
+            <a href="/contact" target="_blank" className="cursor-pointer w-[300px] h-[65px] pt-[21.5px] pb-[22.5px] pr-[40px] pl-[40px] rounded-[12px] bg-[#8B4513]">
               <span className="w-[159.52px] h-[28px] font-bold text-[15px] leading-[28px] text-[#FFFFFF]">
                 Start Your 14-Day Free Trial
               </span>
-            </button>
-            <button className="cursor-pointer w-[180px] h-[65px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[12px] bg-[#FFFFFF] border-2 border-[#8B4513]/20">
+            </a>
+            <a href="/contact" target="_blank" className="cursor-pointer w-[180px] h-[65px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[12px] bg-[#FFFFFF] border-2 border-[#8B4513]/20">
               <span className="w-[120.25px] h-[28px] text-[15px] leading-[28px] font-bold text-[#8B4513]">
                 Talk to Sales
               </span>
-            </button>
+            </a>
           </div>
 
           <div className="w-[606px] h-[20px]">

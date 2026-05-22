@@ -16,10 +16,8 @@ export default function ApartmentsBanner() {
                 </div>
                 <div className="w-full h-[180px] ">
                   <span className="w-full h-full font-extrabold text-[30px]">
-                    <span className="text-[#0F172A]">Maximize Your</span>{" "}
-                    <br />
-                    <span className="text-[#8B4513]">Short-Term</span>{" "}
-                    <br />
+                    <span className="text-[#0F172A]">Maximize Your</span> <br />
+                    <span className="text-[#8B4513]">Short-Term</span> <br />
                     <span className="text-[#0F172A]">Rental Revenue</span>
                   </span>
                 </div>
@@ -30,17 +28,22 @@ export default function ApartmentsBanner() {
                     platforms, automate messages, and grow your business.
                   </span>
                 </div>
-                <div className="w-full h-[56px] flex gap-[16px]">
-                  <button className="w-[161.72px] h-[56px] pr-[24px] pl-[24px] rounded-[8px] bg-[#8B4513]">
-                    <span className="w-[113.72px] h-[24px] font-bold text-[14px] text-white leading-[24px]">
-                      Start Free Trial
-                    </span>
-                  </button>
-                  <button className="w-[160px] h-full pr-[36.73px] pl-[36.73px] rounded-[8px] bg-[#8B4513]/10 border border-[#8B4513]/20">
-                    <span className="w-[84.52px] h-[24px] font-bold text-[14px] leading-[24px] text-[#8B4513]">
-                      View Demo
-                    </span>
-                  </button>
+                <div className="flex gap-4 items-center">
+                  <a
+                    href="/contact"
+                    target="_blank"
+                    className="w-[162px] h-[56px] flex items-center justify-center rounded-[8px] bg-[#8B4513] text-white font-bold text-[14px] hover:bg-[#6B3410] transition"
+                  >
+                    Start Free Trial
+                  </a>
+
+                  <a
+                    href="/pricing/monthly-plans"
+                    target="_blank"
+                    className="w-[160px] h-[56px] flex items-center justify-center rounded-[8px] bg-[#8B4513]/10 border border-[#8B4513]/20 text-[#8B4513] font-bold text-[14px] hover:bg-[#8B4513]/15 transition"
+                  >
+                    View Packages
+                  </a>
                 </div>
                 <div className="w-full h-[32px] flex items-center gap-[16px]">
                   <div className="w-[80px] h-[32px] flex">

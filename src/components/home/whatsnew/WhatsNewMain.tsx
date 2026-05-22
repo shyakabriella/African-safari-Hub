@@ -106,7 +106,7 @@ export default function WhatsNewMain() {
         category: "PRICING & PARTNERSHIP",
         title:
           "Monthly plans from $2,450/mo, one-time setup from $4,500, or commission from 10%.",
-        href: "/pricing/mothly-plans",
+        href: "/pricing/monthly-plans",
         image:
           "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1800",
         readTime: "Monthly subscription",
@@ -215,7 +215,7 @@ export default function WhatsNewMain() {
         {
           category: "Reputation",
           title: "Review management + brand identity & storytelling.",
-          href: "/services/branding",
+          href: "/services/brandings",
           image:
             "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=70",
         },
@@ -226,7 +226,7 @@ export default function WhatsNewMain() {
           category: "Monthly Plans",
           title:
             "Heritage Foundation $2,450/mo · Horizon Suite $5,900/mo · Elite $12,500/mo.",
-          href: "/pricing/mothly-plans",
+          href: "/pricing/monthly-plans",
           image:
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=900",
         },
@@ -254,7 +254,7 @@ export default function WhatsNewMain() {
         category: "Premium Package",
         title:
           "Full Hotel Digital Management — 700$ per month (we manage everything).",
-        href: "/pricing/mothly-plans",
+        href: "/pricing/monthly-plans",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70",
         author: "african safari and hotel booking hub Team",

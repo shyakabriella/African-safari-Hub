@@ -25,16 +25,13 @@ export default function SupportSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
 
-            <button className="cursor-pointer flex items-center gap-2 px-8 py-3.5 bg-white text-[#8B4513] font-bold rounded-xl hover:bg-gray-50 transition shadow-lg">
+            <a
+            href="/contact"
+            target="_blank"
+            className="cursor-pointer flex items-center gap-2 px-8 py-3.5 bg-white text-[#8B4513] font-bold rounded-xl hover:bg-gray-50 transition shadow-lg">
               <Mail className="w-5 h-5" />
               Contact Support
-            </button>
-
-            <button className="cursor-pointer flex items-center gap-2 px-8 py-3.5 border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition shadow-lg">
-              <MessageSquare className="w-5 h-5" />
-              Live Chat
-            </button>
-
+            </a>
           </div>
         </div>
       </div>

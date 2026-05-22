@@ -15,17 +15,17 @@ export default function ApartmentsBnbCTA() {
             </span>
           </div>
           <div className="w-full h-[62px] flex justify-center gap-[16px]">
-            <button className="w-[200px] h-[50px] cursor-pointer flex items-center justify-center rounded-[8px] bg-[#FFFFFF]">
+            <a href="/contact" target="_blank" className="w-[200px] h-[50px] cursor-pointer flex items-center justify-center rounded-[8px] bg-[#FFFFFF]">
               <span className="font-bold text-[13px] leading-[28px] text-[#8B4513] text-center">
                 Start 14-Day Free Trial
               </span>
-            </button>
+            </a>
 
-            <button className="w-[200px] h-[50px] cursor-pointer flex items-center justify-center rounded-[8px] bg-[#8B4513]/20 border border-[#FFFFFF]/30">
+            <a href="/contact" target="_blank" className="w-[200px] h-[50px] cursor-pointer flex items-center justify-center rounded-[8px] bg-[#8B4513]/20 border border-[#FFFFFF]/30">
               <span className="text-[13px] leading-[28px] font-bold text-white text-center">
                 Talk to Sales
               </span>
-            </button>
+            </a>
           </div>
           <div className="w-full h-[20px]">
             <span className="font-normal text-[14px] text-white leading-[20px]">

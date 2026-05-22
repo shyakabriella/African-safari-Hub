@@ -757,7 +757,7 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       {
         label: "Monthly Plans",
-        href: "/pricing/mothly-plans",
+        href: "/pricing/monthly-plans",
         icon: BadgeDollarSign,
         description: "Basic / Standard / Premium",
       },
@@ -775,7 +775,7 @@ const NAV_ITEMS: NavItem[] = [
       },
       {
         label: "Compare Plans",
-        href: "/pricing/mothly-plans#compare",
+        href: "/pricing/monthly-plans#compare",
         icon: LayoutGrid,
         description: "Choose what fits you",
       },

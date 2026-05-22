@@ -128,10 +128,10 @@ export default function CommissionPricingPage() {
               </p>
 
               <div className="mt-7 flex gap-3">
-                <a className="bg-[#ad6419] px-5 py-3 text-[0.65rem] uppercase tracking-widest text-white">
+                <a href="/contact" target="_blank" className="bg-[#ad6419] px-5 py-3 text-[0.65rem] uppercase tracking-widest text-white">
                   Apply
                 </a>
-                <a className="border border-[#e0c9b2] px-5 py-3 text-[0.65rem] uppercase tracking-widest text-[#ad6419]">
+                <a href="/pricing/monthly-plans" target="_blank" className="border border-[#e0c9b2] px-5 py-3 text-[0.65rem] uppercase tracking-widest text-[#ad6419]">
                   View Tiers
                 </a>
               </div>

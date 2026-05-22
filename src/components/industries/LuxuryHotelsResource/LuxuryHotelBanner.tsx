@@ -16,9 +16,10 @@ export default function LuxuryHotelBanner() {
             <div className="absolute inset-0 bg-black/60"></div>
           </div>
 
-          <div className="absolute top-1/2 left-[38%] -translate-x-1/2 -translate-y-1/2 
-            w-[1280px] px-[80px] ml-25 flex flex-col gap-[32px]">
-            
+          <div
+            className="absolute top-1/2 left-[38%] -translate-x-1/2 -translate-y-1/2 
+            w-[1280px] px-[80px] ml-25 flex flex-col gap-[32px]"
+          >
             <div className="w-[768px]">
               <span className="font-extrabold text-[27px]">
                 <span className="text-white">Elevate Every Guest</span>{" "}
@@ -30,23 +31,27 @@ export default function LuxuryHotelBanner() {
             <div className="w-[672px]">
               <span className="text-[#E2E8F0] leading-5 font-light text-[15px]">
                 Redefining 5-star standards with enterprise-grade management for
-                the world&apos;s most prestigious resorts. Experience operational
-                harmony through bespoke luxury technology.
+                the world&apos;s most prestigious resorts. Experience
+                operational harmony through bespoke luxury technology.
               </span>
             </div>
 
-            <div className="w-[768px] flex gap-[16px]">
-              <button className="w-[230px] h-[40px] cursor-pointer rounded-[8px] bg-[#8B4513]">
-                <span className="text-[12px] font-semibold leading-[28px] text-white">
-                  Experience the Future
-                </span>
-              </button>
+            <div className="flex gap-4 items-center">
+              <a
+                href="/pricing/monthly-plans"
+                target="_blank"
+                className="w-[230px] h-[44px] flex items-center justify-center rounded-[10px] bg-[#8B4513] text-white font-semibold text-[12px] tracking-wide hover:bg-[#6B3410] transition"
+              >
+                Experience the Future
+              </a>
 
-              <button className="w-[130px] h-[40px] cursor-pointer rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20">
-                <span className="font-semibold text-[12px] text-white leading-[28px]">
-                  Watch Film
-                </span>
-              </button>
+              <a
+                href="/contact"
+                target="_blank"
+                className="w-[130px] h-[44px] flex items-center justify-center rounded-[10px] bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-[12px] hover:bg-white/15 transition"
+              >
+                Speak With Us
+              </a>
             </div>
           </div>
         </div>

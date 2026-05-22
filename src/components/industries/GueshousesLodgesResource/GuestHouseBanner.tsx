@@ -15,8 +15,7 @@ export default function GuestHouseBanner() {
             <div className="w-[536px] h-[90px]">
               <span className="w-full h-full font-extrabold text-[30px] leading-[48px]">
                 <span className="text-[#0F172A]">Preserve the</span>{" "}
-                <span className="text-[#0F172A]">Charm,</span>{" "}
-                <br />
+                <span className="text-[#0F172A]">Charm,</span> <br />
                 <span className="text-[#8B4513]">Automate The Rest</span>
               </span>
             </div>
@@ -30,17 +29,26 @@ export default function GuestHouseBanner() {
             </div>
           </div>
 
-          <div className="w-full h-[20px] flex gap-[16px]">
-            <button className="w-[234.67px] h-[64px] pr-[32px] pl-[32px] pt-[18px] pb-[18px] rounded-[12px] bg-[#8B4513]">
-              <span className="w-[120px] h-[28px] font-bold text-[13px] text-white leading-[28px]">
+          <div className="flex gap-4">
+            <a
+              href="/contact"
+              target="_blank"
+              className="w-[234px] h-[64px] flex items-center justify-center rounded-[12px] bg-[#8B4513]"
+            >
+              <span className="font-bold text-[13px] text-white">
                 Start Free Trial
               </span>
-            </button>
-            <button className="w-[179.2px] h-[64px] pr-[32px] pl-[32px] pt-[16px] pb-[16px] rounded-[12px] border border-[#8B4513]/20">
-              <span className="w-[88px] h-[28px] font-bold text-[13px] leading-[28px] text-[#8B4513]">
+            </a>
+
+            <a
+              href="/contact"
+              target="_blank"
+              className="w-[179px] h-[64px] flex items-center justify-center rounded-[12px] border border-[#8B4513]/20"
+            >
+              <span className="font-bold text-[13px] text-[#8B4513]">
                 Watch Demo
               </span>
-            </button>
+            </a>
           </div>
         </div>
 

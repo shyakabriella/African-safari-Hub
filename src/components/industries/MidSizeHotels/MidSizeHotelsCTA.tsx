@@ -16,17 +16,23 @@ export default function MidSizeHotelsCTA() {
         </div>
 
         <div className="w-[606px] h-[88px] flex justify-center gap-[16px]">
-          <button className="cursor-pointer w-[200px] h-[52px] flex items-center justify-center rounded-[12px] bg-[#8B4513]">
+          <a
+          href="/contact"
+          target="_blank"
+          className="cursor-pointer w-[200px] h-[52px] flex items-center justify-center rounded-[12px] bg-[#8B4513]">
             <span className="font-bold text-[15px] leading-[28px] text-[#FFFFFF]">
               Get Started Now
             </span>
-          </button>
+          </a>
 
-          <button className="cursor-pointer w-[180px] h-[52px] flex items-center justify-center rounded-[12px] bg-[#FFFFFF] border-2 border-[#8B4513]/20">
+          <a
+          href="/contact"
+          target="_blank"
+          className="cursor-pointer w-[180px] h-[52px] flex items-center justify-center rounded-[12px] bg-[#FFFFFF] border-2 border-[#8B4513]/20">
             <span className="text-[15px] leading-[28px] font-bold text-[#8B4513]">
               Talk to Sales
             </span>
-          </button>
+          </a>
         </div>
 
         <div className="w-[606px] h-[20px]">

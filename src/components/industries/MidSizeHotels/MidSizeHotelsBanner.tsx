@@ -31,15 +31,21 @@ export default function MidSizeHotelsBanner() {
 
           <div className="w-full h-[64px] flex gap-[16px]">
             <button className="w-[200px] h-[50px] cursor-pointer flex items-center justify-center rounded-[12px] bg-[#8B4513]">
-              <span className="font-bold text-[13px] text-white leading-[28px] text-center">
+              <a
+              href="/contact"
+              target="_blank"
+              className="font-bold text-[13px] text-white leading-[28px] text-center">
                 Start Your Free Trial
-              </span>
+              </a>
             </button>
 
             <button className="w-[150px] h-[50px] cursor-pointer flex items-center justify-center rounded-[12px] border border-[#8B4513]/20">
-              <span className="font-bold text-[13px] leading-[28px] text-[#8B4513] text-center">
+              <a
+              href="/contact"
+              target="_blank"
+              className="font-bold text-[13px] leading-[28px] text-[#8B4513] text-center">
                 Book a Demo
-              </span>
+              </a>
             </button>
           </div>
         </div>

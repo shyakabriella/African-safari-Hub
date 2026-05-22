@@ -119,7 +119,7 @@ export default function OneTimeSetupPage() {
               and system integrity.
             </p>
 
-            <Link href="/contact" className={btnPrimary}>
+            <Link href="/contact" target="_blank" className={btnPrimary}>
               Start Transition
             </Link>
 

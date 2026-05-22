@@ -19,17 +19,17 @@ export default function LuxuryHotelCTA() {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row justify-center gap-3 mt-2">
-          <button className="cursor-pointer w-full md:w-[220px] h-11 rounded-xl bg-[#8B4513] border border-white flex justify-center items-center hover:bg-[#7a3d11] transition">
+          <a href="/contact" target="_blank" className="cursor-pointer w-full md:w-[220px] h-11 rounded-xl bg-[#8B4513] border border-white flex justify-center items-center hover:bg-[#7a3d11] transition">
             <span className="font-medium text-sm text-white">
               Start Free Trial
             </span>
-          </button>
+          </a>
 
-          <button className="cursor-pointer w-full md:w-[160px] h-11 rounded-xl bg-white border border-[#8B4513]/20 flex justify-center items-center hover:bg-[#f5f5f5] transition">
+          <a href="/contact" target="_blank" className="cursor-pointer w-full md:w-[160px] h-11 rounded-xl bg-white border border-[#8B4513]/20 flex justify-center items-center hover:bg-[#f5f5f5] transition">
             <span className="font-medium text-sm text-[#8B4513]">
               Talk to Sales
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>
