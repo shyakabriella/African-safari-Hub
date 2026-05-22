@@ -1,3 +1,6 @@
+import type { ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
+import { cloneElement, isValidElement } from "react";
+
 const navItems = ["Distribution", "Property Management", "Marketing", "Insights"];
 
 const channels = ["Booking.com", "Expedia", "Airbnb", "Agoda"];
@@ -20,15 +23,41 @@ const valueCards = [
   },
 ];
 
-function Button({ children, variant = "solid" }: { children: string; variant?: "solid" | "outline" }) {
+function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(" ");
+}
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
+  variant?: "solid" | "outline";
+  asChild?: boolean;
+  className?: string;
+};
+
+function Button({
+  children,
+  variant = "solid",
+  asChild = false,
+  className = "",
+  ...props
+}: ButtonProps) {
+  const baseClass =
+    variant === "solid"
+      ? "inline-flex h-10 items-center justify-center border border-[#AD6419] bg-[#AD6419] px-6 text-[11px] font-bold text-white shadow-[0_8px_18px_rgba(173,100,25,0.18)] transition duration-300 hover:-translate-y-0.5 hover:brightness-90"
+      : "inline-flex h-10 items-center justify-center border border-[#c9a78e] bg-transparent px-6 text-[11px] font-semibold text-[#AD6419] transition duration-300 hover:-translate-y-0.5 hover:border-[#AD6419] hover:bg-white/55";
+
+  const finalClassName = cn(baseClass, className);
+
+  if (asChild && isValidElement(children)) {
+    const child = children as ReactElement<{ className?: string }>;
+
+    return cloneElement(child, {
+      className: cn(finalClassName, child.props.className),
+    });
+  }
+
   return (
-    <button
-      className={
-        variant === "solid"
-          ? "h-10 border border-[#AD6419] bg-[#AD6419] px-6 text-[11px] font-bold text-white shadow-[0_8px_18px_rgba(173,100,25,0.18)] transition hover:-translate-y-0.5 hover:brightness-90"
-          : "h-10 border border-[#c9a78e] bg-transparent px-6 text-[11px] font-semibold text-[#AD6419] transition hover:-translate-y-0.5 hover:border-[#AD6419] hover:bg-white/55"
-      }
-    >
+    <button {...props} className={finalClassName}>
       {children}
     </button>
   );
@@ -37,7 +66,13 @@ function Button({ children, variant = "solid" }: { children: string; variant?: "
 function LineIcon({ name }: { name: string }) {
   if (name === "eye") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      >
         <path d="M2.5 12s3.4-5.5 9.5-5.5S21.5 12 21.5 12s-3.4 5.5-9.5 5.5S2.5 12 2.5 12Z" />
         <circle cx="12" cy="12" r="2.4" />
       </svg>
@@ -46,7 +81,13 @@ function LineIcon({ name }: { name: string }) {
 
   if (name === "trend") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      >
         <path d="M4 16.5 9.2 11l3.6 3.2L20 6.5" />
         <path d="M15.5 6.5H20v4.6" />
       </svg>
@@ -55,7 +96,13 @@ function LineIcon({ name }: { name: string }) {
 
   if (name === "gauge") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      >
         <path d="M4.8 15.8a7.6 7.6 0 1 1 14.4 0" />
         <path d="m12 13 4-4" />
         <path d="M8 16h8" />
@@ -65,7 +112,13 @@ function LineIcon({ name }: { name: string }) {
 
   if (name === "shield") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      >
         <path d="M12 3.5 18 6v5.2c0 3.9-2.4 7.4-6 8.8-3.6-1.4-6-4.9-6-8.8V6l6-2.5Z" />
         <path d="m9.2 12 2 2 3.8-4" />
       </svg>
@@ -73,7 +126,13 @@ function LineIcon({ name }: { name: string }) {
   }
 
   return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+    >
       <path d="M4 7h12" />
       <path d="m13 4 3 3-3 3" />
       <path d="M20 17H8" />
@@ -88,7 +147,11 @@ function WorldMapVisual() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_40%,rgba(215,229,218,0.18),transparent_34%),radial-gradient(circle_at_70%_60%,rgba(173,100,25,0.18),transparent_24%),linear-gradient(135deg,#0b0f0d,#202821_58%,#0b0f0d)]" />
       <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:46px_46px]" />
 
-      <svg viewBox="0 0 900 520" className="absolute inset-x-0 top-[18%] h-[66%] w-full" aria-hidden="true">
+      <svg
+        viewBox="0 0 900 520"
+        className="absolute inset-x-0 top-[18%] h-[66%] w-full"
+        aria-hidden="true"
+      >
         <defs>
           <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="5" result="blur" />
@@ -97,6 +160,7 @@ function WorldMapVisual() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
+
           <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0" stopColor="#fff8dc" />
             <stop offset="0.38" stopColor="#AD6419" />
@@ -140,7 +204,11 @@ function WorldMapVisual() {
             [196, 360, 1.8],
             [739, 356, 2.2],
           ].map(([cx, cy, delay]) => (
-            <g key={`${cx}-${cy}`} className="node-pulse" style={{ animationDelay: `${delay}s` }}>
+            <g
+              key={`${cx}-${cy}`}
+              className="node-pulse"
+              style={{ animationDelay: `${delay}s` }}
+            >
               <circle cx={cx} cy={cy} r="34" fill="url(#nodeGlow)" opacity="0.78" />
               <circle cx={cx} cy={cy} r="7" fill="#fff4ce" />
             </g>
@@ -170,12 +238,25 @@ function TrailVisual() {
   return (
     <div className="relative h-[402px] overflow-hidden rounded-[5px] bg-[#e9efe7]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_40%,rgba(255,255,255,0.9),transparent_31%),radial-gradient(circle_at_65%_55%,rgba(173,100,25,0.22),transparent_26%)]" />
+
       <svg viewBox="0 0 560 420" className="absolute inset-0 h-full w-full" aria-hidden="true">
+        <defs>
+          <filter id="trailGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="7" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
         <g className="rail-lines" fill="none" strokeLinecap="round">
           {Array.from({ length: 28 }).map((_, index) => {
             const y = 256 + index * 6;
-            const color = index % 5 === 0 ? "#AD6419" : index % 3 === 0 ? "#6c736b" : "#e8ded1";
+            const color =
+              index % 5 === 0 ? "#AD6419" : index % 3 === 0 ? "#6c736b" : "#e8ded1";
             const width = index % 5 === 0 ? 3.2 : 2;
+
             return (
               <path
                 key={index}
@@ -188,16 +269,8 @@ function TrailVisual() {
             );
           })}
         </g>
+
         <g filter="url(#trailGlow)">
-          <defs>
-            <filter id="trailGlow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="7" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
           <circle className="spark-run" cx="282" cy="204" r="8" fill="#AD6419" />
           <circle className="spark-run [animation-delay:1.6s]" cx="384" cy="158" r="6" fill="#fff0c8" />
         </g>
@@ -211,7 +284,7 @@ function Header() {
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex h-16 max-w-[928px] items-center justify-between px-6 lg:px-0">
         <a href="#" className="font-display text-[17px] font-semibold tracking-tight text-[#AD6419]">
-          HospitalityOS
+          Hotelsafari
         </a>
 
         <nav className="hidden items-center gap-9 text-[10px] font-medium tracking-wide text-[#33261d] md:flex">
@@ -238,20 +311,27 @@ function Header() {
   );
 }
 
-function App() {
+export default function OtaSetupPage() {
   return (
     <main className="min-h-screen bg-[#fbf4ee] text-[#21180f]">
+      <Header />
+
       <section className="relative overflow-hidden bg-[#fbf4ee] pt-28 pb-24 md:pt-[168px] md:pb-[102px]">
         <div className="mx-auto grid max-w-[928px] items-center gap-12 px-6 md:grid-cols-[0.92fr_1fr] lg:px-0">
           <div className="reveal-up max-w-[420px]">
-            <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.24em] text-[#AD6419]">OTA Integration</p>
+            <p className="mb-6 text-[10px] font-bold uppercase tracking-[0.24em] text-[#AD6419]">
+              OTA Integration
+            </p>
+
             <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.035em] text-[#21180f] md:text-[36px]">
               Global OTA Connectivity
             </h1>
+
             <p className="mt-6 max-w-[388px] text-[13px] leading-6 text-[#655950]">
-              Seamlessly distribute your inventory across hundreds of channels worldwide. Ensure real-time synchronization,
-              maintain rate parity, and maximize your global reach from a single, unified dashboard.
+              Seamlessly distribute your inventory across hundreds of channels worldwide. Ensure real-time
+              synchronization, maintain rate parity, and maximize your global reach from a single, unified dashboard.
             </p>
+
             <div className="mt-8 flex flex-wrap gap-4">
               <Button>Request a Demo</Button>
             </div>
@@ -266,9 +346,12 @@ function App() {
       <section className="bg-[#fdfdfc] py-24 md:py-[108px]">
         <div className="mx-auto max-w-[928px] px-6 lg:px-0">
           <div className="mx-auto max-w-[560px] text-center">
-            <h2 className="font-display text-[26px] leading-tight tracking-[-0.025em]">Unified Channel Management</h2>
+            <h2 className="font-display text-[26px] leading-tight tracking-[-0.025em]">
+              Unified Channel Management
+            </h2>
+
             <p className="mt-4 text-[12px] leading-5 text-[#75695f]">
-              Manage your presence across the world's leading travel platforms without leaving HospitalityOS. One
+              Manage your presence across the world's leading travel platforms without leaving Hotelsafari. One
               interface, infinite reach.
             </p>
           </div>
@@ -284,11 +367,13 @@ function App() {
           <div className="mt-16 border border-[#e4d5c9] bg-[#fff8f3] px-10 py-10 md:grid md:grid-cols-[0.92fr_1.08fr] md:gap-12 md:px-12">
             <div className="self-center">
               <h3 className="font-display text-[18px] tracking-[-0.02em]">Centralized Control</h3>
+
               <div className="mt-6 space-y-5">
                 <div className="flex gap-4">
                   <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-[#AD6419] text-[#AD6419]">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#AD6419]" />
                   </span>
+
                   <div>
                     <p className="text-[11px] font-bold text-[#251b12]">Single Dashboard</p>
                     <p className="mt-1 max-w-[320px] text-[11px] leading-5 text-[#75695f]">
@@ -296,10 +381,12 @@ function App() {
                     </p>
                   </div>
                 </div>
+
                 <div className="flex gap-4">
                   <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-full border border-[#AD6419] text-[#AD6419]">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#AD6419]" />
                   </span>
+
                   <div>
                     <p className="text-[11px] font-bold text-[#251b12]">Automated Mapping</p>
                     <p className="mt-1 max-w-[330px] text-[11px] leading-5 text-[#75695f]">
@@ -325,9 +412,10 @@ function App() {
             <h2 className="font-display text-[28px] leading-tight tracking-[-0.03em] md:text-[30px]">
               Flawless Real-time Synchronization
             </h2>
+
             <p className="mt-6 max-w-[440px] text-[13px] leading-6 text-[#655950]">
-              Our robust 2-way XML synchronization engine communicates with OTAs instantly. The moment a booking is made
-              on any channel, inventory is universally adjusted across all connected platforms.
+              Our robust 2-way XML synchronization engine communicates with OTAs instantly. The moment a booking is
+              made on any channel, inventory is universally adjusted across all connected platforms.
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -335,16 +423,21 @@ function App() {
                 <div className="text-[#AD6419]">
                   <LineIcon name="shield" />
                 </div>
+
                 <h3 className="mt-6 text-[11px] font-bold">Zero Overbookings</h3>
+
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
                   Instant availability updates mitigate the risk of double bookings.
                 </p>
               </div>
+
               <div className="border border-[#e4d5c9] bg-white/55 p-6">
                 <div className="text-[#AD6419]">
                   <LineIcon name="swap" />
                 </div>
+
                 <h3 className="mt-6 text-[11px] font-bold">Rate Parity Protected</h3>
+
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
                   Maintain consistent pricing strategies seamlessly across the board.
                 </p>
@@ -356,7 +449,9 @@ function App() {
 
       <section className="bg-[#fdfdfc] py-24 md:py-[108px]">
         <div className="mx-auto max-w-[928px] px-6 lg:px-0">
-          <h2 className="text-center font-display text-[27px] leading-tight tracking-[-0.03em]">The Value of Integration</h2>
+          <h2 className="text-center font-display text-[27px] leading-tight tracking-[-0.03em]">
+            The Value of Integration
+          </h2>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {valueCards.map((card) => (
@@ -364,6 +459,7 @@ function App() {
                 <div className="text-[#AD6419]">
                   <LineIcon name={card.icon} />
                 </div>
+
                 <div className="mt-20">
                   <h3 className="font-display text-[18px] leading-tight tracking-[-0.02em]">{card.title}</h3>
                   <p className="mt-3 text-[11px] leading-5 text-[#75695f]">{card.body}</p>
@@ -376,19 +472,19 @@ function App() {
 
       <section className="bg-[#fbf4ee] py-24 text-center md:py-[108px]">
         <div className="mx-auto max-w-[720px] px-6">
-          <h2 className="font-display text-[39px] leading-tight tracking-[-0.04em] md:text-[42px]">Maximize Your Distribution</h2>
+          <h2 className="font-display text-[39px] leading-tight tracking-[-0.04em] md:text-[42px]">
+            Maximize Your Distribution
+          </h2>
+
           <p className="mt-5 text-[13px] leading-6 text-[#655950]">
             Join thousands of high-end properties optimizing their global reach with Hotelsafari.
           </p>
+
           <div className="mt-8 flex flex-wrap justify-center gap-5">
             <Button>Request a Demo</Button>
           </div>
         </div>
       </section>
-
-    
     </main>
   );
 }
-
-export default App;
