@@ -126,7 +126,7 @@ function CardShell({
 }
 
 export default function CategoryStrip({
-  backgroundSrc = "/images/strip-bg.png",
+  backgroundSrc = "https://via.placeholder.com/1920x400/f3f4f6/9ca3af?text=Background",
   items = ITEMS,
   className = "",
 }: {

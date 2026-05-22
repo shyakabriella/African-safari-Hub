@@ -6,7 +6,7 @@ import { HUB_NEWS_ARTICLES } from "@/data/hubNews";
 export const metadata: Metadata = {
   title: "News",
   description:
-    "Popular hospitality and safari hub updates — direct bookings, channel management, operations, and growth.",
+    "Popular hospitality and African Safari and Hotel Booking Hub updates — direct bookings, channel management, operations, and growth.",
 };
 
 export default function NewsPage() {

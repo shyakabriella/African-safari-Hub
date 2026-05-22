@@ -13,7 +13,7 @@ const LEADERS = [
     role: "Founder & CEO",
     image:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600",
-    bio: "With two decades in luxury hotel management, Julian founded Heritage & Horizon to digitize the intuition of world-class concierges.",
+    bio: "With two decades in luxury hotel management, Julian founded African Safari and Hotel Booking Hub to digitize the intuition of world-class concierges.",
   },
   {
     name: "Elena Rossi",
@@ -277,7 +277,7 @@ function CTASection() {
 
         <p className="mx-auto mb-7 max-w-md text-xs leading-relaxed text-white/80">
           Join the ranks of the world's most prestigious hotel groups by
-          integrating Heritage & Horizon's proprietary technology.
+          integrating African Safari and Hotel Booking Hub's proprietary technology.
         </p>
 
         <div className="flex flex-col justify-center gap-3 sm:flex-row">

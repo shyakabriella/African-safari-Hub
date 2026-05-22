@@ -297,7 +297,7 @@
 //       >
 //         {/* Logo */}
 //         <Link href="/" className="group flex items-center shrink-0">
-//           <span className="sr-only">HotelSafari</span>
+//           <span className="sr-only">African Safari and Hotel Booking Hub</span>
 
 //           <div
 //             className={[
@@ -311,7 +311,7 @@
 //           >
 //             <Image
 //               src="/lg.png"
-//               alt="HotelSafari logo"
+//               alt="African Safari and Hotel Booking Hub logo"
 //               fill
 //               priority
 //               sizes="(max-width: 640px) 170px, 220px"
@@ -952,29 +952,24 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
       >
         {/* Logo */}
         <Link href="/" className="group flex items-center shrink-0">
-          <span className="sr-only">african safari and hotel booking hub</span>
+          <span className="sr-only">African Safari and Hotel Booking Hub</span>
 
           <div
             className={[
-              "relative overflow-hidden w-2.5 rounded-2xl bg-white",
+              "relative overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-14 w-[200px] sm:h-16 sm:w-[170px]"
-                : "h-16 w-[220px] sm:h-20 sm:w-[160px]",
+                ? "h-12 w-[150px] sm:h-14 sm:w-[170px]"
+                : "h-14 w-[170px] sm:h-16 sm:w-[190px]",
             ].join(" ")}
           >
             <Image
-              src="/logo.png"
-              alt="HotelSafari logo"
+              src="/lg.png"
+              alt="African Safari and Hotel Booking Hub logo"
               fill
               priority
-              sizes="(max-width: 640px) 200px, 280px"
-              className={[
-                "object-contain object-left",
-                "p-0",
-                "scale-190",
-                "origin-left",
-              ].join(" ")}
+              sizes="(max-width: 640px) 170px, 190px"
+              className="object-contain object-left p-0.5"
             />
           </div>
         </Link>

@@ -288,7 +288,7 @@ export default function Otas() {
 
               <p className="text-gray-400 mb-10 max-w-xl mx-auto text-base md:text-[13px] leading-relaxed font-medium">
                 Join thousands of hoteliers who are saving time and increasing
-                revenue with African Safari.
+                revenue with African Safari and Hotel Booking Hub.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

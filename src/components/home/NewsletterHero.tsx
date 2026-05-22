@@ -132,7 +132,7 @@ export default function NewsletterHero() {
                   className="text-[12px] font-bold tracking-[0.22em] uppercase"
                   style={{ color: C.orange }}
                 >
-                  Hotel Booking Hub • Official Certified Partner
+                  African Safari and Hotel Booking Hub • Official Certified Partner
                 </span>
               </div>
 
@@ -149,10 +149,9 @@ export default function NewsletterHero() {
               />
 
               <p className="mt-5 max-w-xl text-base leading-7 text-zinc-800/90">
-                Boost bookings. Save time. Grow revenue — with one complete digital
-                solution for hotels, apartments, lodges, resorts, B&amp;Bs and Airbnbs.
+                Connect your property to 450+ OTAs, automate bookings, manage operations seamlessly, and unlock real revenue growth. Hotels using our platform see 60%+ more direct bookings within 90 days.
                 <span className="ml-2 font-semibold" style={{ color: C.green }}>
-                  Built for growth
+                  Proven results
                 </span>
               </p>
 

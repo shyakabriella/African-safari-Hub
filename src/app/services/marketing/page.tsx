@@ -25,7 +25,7 @@ const Hero = () => (
         <span className="text-[#AD6419]">Meta & Search Ads</span>
       </h1>
       <p className="text-[13px] text-gray-500 max-w-lg leading-relaxed">
-        HotelSafari manages Google Ads, Meta (Facebook/Instagram) Ads, and OTA Sponsored Listings to capture demand and lower your overall distribution costs.
+        African Safari and Hotel Booking Hub manages Google Ads, Meta (Facebook/Instagram) Ads, and OTA Sponsored Listings to capture demand and lower your overall distribution costs.
       </p>
       
       <div className="flex gap-6 text-sm text-gray-500 font-medium">

@@ -253,11 +253,11 @@ export default function WhatsNewMain() {
       {
         category: "Premium Package",
         title:
-          "Full Hotel Digital Management — 700$ per month (we manage everything).",
+          "Full Hotel Digital Management — Complete Control, Zero Hassle, Our Expert Team Transforms Your Property Into a Revenue-Generating Machine.",
         href: "/pricing/monthly-plans",
         image:
           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70",
-        author: "african safari and hotel booking hub Team",
+        author: "African Safari and Hotel Booking Hub Team",
       },
       {
         category: "Channel Manager",
@@ -266,7 +266,7 @@ export default function WhatsNewMain() {
         href: "/solutions/channel-manager",
         image:
           "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
-        author: "african safari and hotel booking hub Team",
+        author: "African Safari and Hotel Booking Hub Team",
       },
       {
         category: "Marketing",
@@ -275,7 +275,7 @@ export default function WhatsNewMain() {
         href: "/solutions/marketing",
         image:
           "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=70",
-        author: "african safari and hotel booking hub Team",
+        author: "African Safari and Hotel Booking Hub Team",
       },
     ];
 
@@ -287,7 +287,7 @@ export default function WhatsNewMain() {
         href: "/solutions/website",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=70",
-        author: "african safari and hotel booking hub Team",
+        author: "African Safari and Hotel Booking Hub Team",
       },
       {
         category: "PMS (Front Office)",
@@ -296,7 +296,7 @@ export default function WhatsNewMain() {
         href: "/solutions/pms",
         image:
           "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=70",
-        author: "african safari and hotel booking hub Team",
+        author: "African Safari and Hotel Booking Hub Team",
       },
     ];
 

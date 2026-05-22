@@ -13,13 +13,23 @@ import {
   ChevronRight,
   ShieldCheck,
   Award,
+  Instagram,
 } from "lucide-react";
 
 const C = {
   orange: "#AD6419",
   green: "#599E1A",
 };
-
+const TikTokIcon = ({ className = "", color = "currentColor" }) => (
+  <svg
+    fill={color}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    className={className}
+  >
+    <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
+  </svg>
+);   
 const SOLUTIONS = [
   { label: "Hotel Website + Booking Engine", href: "/solutions/website" },
   { label: "450+ OTAs Distribution", href: "/solutions/otas" },
@@ -30,8 +40,8 @@ const SOLUTIONS = [
 ];
 
 const COMPANY = [
-  { label: "About african safari and hotel booking hub", href: "/about" },
-  { label: "Why african safari and hotel booking hub", href: "/why-us" },
+  { label: "About African Safari and Hotel Booking Hub", href: "/about" },
+  { label: "Why African Safari and Hotel Booking Hub", href: "/why-us" },
   { label: "Partners & Trust", href: "/partners" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Contact", href: "/contact" },
@@ -51,20 +61,20 @@ export default function SiteFooter() {
         {/* Top row */}
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
           {/* Brand / intro */}
-          <div className="mt-[-50]">
-            {/* Use real logo from public/lg.png */}
-            <Link href="/" className="inline-flex items-center">
-              <Image
-                src="/lg.png"
-                alt="african safari and hotel booking hub logo"
-                width={220}
-                height={24}
-                priority
-                className="h-55 w-[150px]"
-              />
+          <div>
+            <Link href="/" className="inline-flex shrink-0 items-center">
+              <span className="relative block h-14 w-[170px] sm:h-16 sm:w-[190px]">
+                <Image
+                  src="/lg.png"
+                  alt="African Safari and Hotel Booking Hub logo"
+                  fill
+                  sizes="(max-width: 640px) 170px, 190px"
+                  className="object-contain object-left"
+                />
+              </span>
             </Link>
 
-            <p className="mt-[-30px] max-w-sm text-sm leading-7 text-white/75">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/75">
               We help hotels, apartments, lodges and resorts grow direct bookings
               with a modern website + booking engine, OTA distribution, channel
               management, PMS, marketing, analytics, and support.
@@ -85,14 +95,14 @@ export default function SiteFooter() {
 
             {/* Social */}
             <div className="mt-7 flex items-center gap-3">
-              <SocialIcon href="https://twitter.com" label="Twitter">
-                <Twitter className="h-4 w-4" />
+              <SocialIcon href="https://www.instagram.com/ashbhub?igsh=ZDhsdHQ3aTA2NjQ2&utm_source=qr" label="Twitter">
+                <Instagram className="h-4 w-4" />
               </SocialIcon>
-              <SocialIcon href="https://facebook.com" label="Facebook">
+              <SocialIcon href="https://www.facebook.com/share/1Ef3iMgcXC/?mibextid=wwXIfr" label="Facebook">
                 <Facebook className="h-4 w-4" />
               </SocialIcon>
-              <SocialIcon href="https://youtube.com" label="YouTube">
-                <Youtube className="h-4 w-4" />
+              <SocialIcon href="https://www.tiktok.com/@ashbhub?_r=1&_t=ZS-96Y7UClfp4e" label="TikTok">
+                <TikTokIcon className="h-4 w-4" />
               </SocialIcon>
               <SocialIcon href="https://linkedin.com" label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
@@ -173,7 +183,7 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="mt-6 flex flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <div>© {new Date().getFullYear()} african safari and hotel booking hub. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} African Safari and Hotel Booking Hub. All rights reserved.</div>
 
           <div className="flex flex-wrap items-center gap-4">
             <Link className="hover:text-white" href="/legal/privacy">

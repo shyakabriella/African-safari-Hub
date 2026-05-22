@@ -217,7 +217,7 @@ export default function page() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-xl font-bold text-slate-900 mb-3">
-              A Day in the Life with HotelSafari
+              A Day in the Life with African Safari and Hotel Booking Hub
             </h2>
             <p className="text-slate-500 text-[11px]">
               Seamlessly managing every touchpoint from dawn to dusk.
@@ -301,7 +301,7 @@ export default function page() {
                 Ready to elevate your hospitality?
               </h2>
               <p className="text-slate-600 mb-8 max-w-xl mx-auto text-[12px]">
-                Join thousands of properties worldwide that use HotelSafari to
+                Join thousands of properties worldwide that use African Safari and Hotel Booking Hub to
                 drive efficiency and deliver unforgettable guest experiences.
               </p>
               <a href="/contact" target="_blank" className="bg-[#AD6419] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#9a5a17] transition-colors shadow-lg shadow-[#AD6419]/20 text-[14px]">

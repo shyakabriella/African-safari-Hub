@@ -157,7 +157,7 @@ export default function LatestNews() {
             />
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-800/90">
-              Hotels choose african safari and hotel booking hub because we build with{" "}
+              Hotels choose African Safari and Hotel Booking Hub because we build with{" "}
               <span className="font-semibold" style={{ color: C.green }}>
                 reliable integrations
               </span>{" "}

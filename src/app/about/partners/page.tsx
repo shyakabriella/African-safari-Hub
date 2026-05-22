@@ -31,7 +31,7 @@ export default function App() {
             Our Global Partner Ecosystem
           </h1>
           <p className="text-white/85 text-[11px] md:text-[13px] leading-relaxed max-w-[560px] font-light">
-            At African Safari and Booking Hub, we believe that the pinnacle of
+            At African Safari and Hotel Booking Hub, we believe that the pinnacle of
             hospitality is reached through the seamless convergence of heritage
             service and horizon-defining technology. Our collaborations drive
             the next era of institutional innovation.

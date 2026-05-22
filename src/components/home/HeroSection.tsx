@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles, Globe, Repeat2, Headset, MonitorCog } from "lucid
 
 // ── swap this URL to use your own background video ───────────────────────────
 const HERO_VIDEO_SRC =
-  "/video/bg-video.mp4";
+  "/video/13439770_1920_1080_60fps.mp4";
 
 const BRAND = {
   orange: "#AD6419",
@@ -75,14 +75,14 @@ export default function HeroSection() {
             className="mt-5 text-xl font-extrabold leading-[1.12] tracking-tight sm:text-2xl lg:text-3xl"
             style={{ color: "#ffffff" }}
           >
-            One Platform.{" "}
-            <span style={{ color: BRAND.orange }}>All Bookings.</span>{" "}
-            Zero{" "}
+            Increase Bookings.{" "}
+            <span style={{ color: BRAND.orange }}>Reduce Stress.</span>{" "}
+            Maximize{" "}
             <span
               className="relative inline-block"
               style={{ color: BRAND.orange }}
             >
-              Overbookings.
+              Revenue.
               <span
                 className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full"
                 style={{ backgroundColor: BRAND.orangeDark, opacity: 0.5 }}
@@ -92,10 +92,9 @@ export default function HeroSection() {
 
           {/* sub-copy */}
           <p className="mt-6 max-w-2xl text-[14px] leading-7 text-zinc-300 sm:text-[16px] sm:leading-8">
-            Website · Booking Engine · Channel Manager · PMS · 450+ OTAs ·
-            Payments · Marketing — one connected stack{" "}
+            All-in-one platform: Website Builder · Booking Engine · 450+ OTA Integration · Channel Manager · PMS · Marketing Tools.{" "}
             <span className="font-semibold" style={{ color: BRAND.orange }}>
-              built for nations hospitality.
+              Hotels see 60%+ more direct bookings in 90 days.
             </span>
           </p>
 

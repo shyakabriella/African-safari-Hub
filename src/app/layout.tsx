@@ -8,26 +8,26 @@ const HEADER_H = 88;
 
 export const metadata: Metadata = {
   title: {
-    default: "AshBHub | African Safari Hub",
+    default: "AshBHub | African Safari and Hotel Booking Hub",
     template: "%s | AshBHub",
   },
   description:
-    "African Safari Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
+    "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
   icons: {
     icon: "/icon.svg", // ✅ from public/icon.svg
   },
   openGraph: {
-    title: "AshBHub | African Safari Hub",
+    title: "AshBHub | African Safari and Hotel Booking Hub",
     description:
-      "African Safari Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
+      "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
     images: ["/og.png"], // ✅ put og.png in /public
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AshBHub | African Safari Hub",
+    title: "AshBHub | African Safari and Hotel Booking Hub",
     description:
-      "African Safari Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
+      "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
     images: ["/og.png"],
   },
 };

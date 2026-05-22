@@ -52,7 +52,7 @@ export default function AboutPage() {
           </h1>
 
           <p className=" text-sm text-slate-500 leading-relaxed">
-            African Safari Hub connects luxury hospitality with modern digital systems.
+            African Safari and Hotel Booking Hub connects luxury hospitality with modern digital systems.
           </p>
 
           <p className="mb-8 text-sm text-slate-500 leading-relaxed">

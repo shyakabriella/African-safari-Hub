@@ -284,7 +284,7 @@ function Header() {
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex h-16 max-w-[928px] items-center justify-between px-6 lg:px-0">
         <a href="#" className="font-display text-[17px] font-semibold tracking-tight text-[#AD6419]">
-          Hotelsafari
+          African Safari and Hotel Booking Hub
         </a>
 
         <nav className="hidden items-center gap-9 text-[10px] font-medium tracking-wide text-[#33261d] md:flex">
@@ -355,7 +355,7 @@ export default function OtaSetupPage() {
             </h2>
 
             <p className="mt-4 text-[12px] leading-5 text-[#75695f]">
-              Manage your presence across the world's leading travel platforms without leaving Hotelsafari. One
+              Manage your presence across the world's leading travel platforms without leaving African Safari and Hotel Booking Hub. One
               interface, infinite reach.
             </p>
           </div>
@@ -500,7 +500,7 @@ export default function OtaSetupPage() {
 
           <p className="mt-5 text-[13px] leading-6 text-[#655950]">
             Join thousands of high-end properties optimizing their global reach
-            with Hotelsafari.
+            with African Safari and Hotel Booking Hub.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-5">
