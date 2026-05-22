@@ -63,12 +63,12 @@ export default function SiteFooter() {
           {/* Brand / intro */}
           <div>
             <Link href="/" className="inline-flex shrink-0 items-center">
-              <span className="relative block h-14 w-[170px] sm:h-16 sm:w-[190px]">
+              <span className="relative block w-[200px] sm:w-[320px]">
                 <Image
-                  src="/lg.png"
+                  src="/logo.png"
                   alt="African Safari and Hotel Booking Hub logo"
-                  fill
-                  sizes="(max-width: 640px) 170px, 190px"
+                  width={320}
+                  height={100}
                   className="object-contain object-left"
                 />
               </span>
