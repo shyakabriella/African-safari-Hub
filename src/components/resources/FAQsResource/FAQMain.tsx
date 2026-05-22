@@ -6,7 +6,7 @@ import SupportSection from "./SupportSection";
 export default function FAQMain() {
   return (
     <div className="min-h-screen bg-[#FDFBF9]">
-      <main className="pt-22 pb-20 max-w-4xl mx-auto px-6">
+      <main className="pt-30 pb-20 max-w-4xl mx-auto px-6">
         
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold text-[#1a1a1a] mb-6 tracking-tight">

@@ -1,30 +1,32 @@
 export default function SuccessStoryCTA() {
   return (
-    <section className="w-full flex justify-center items-center mt-10 mb-10">
-      <div className="w-full max-w-[1120px] flex flex-col items-center text-center gap-[30px] pt-[96px] pb-[80px] px-[40px] md:px-[80px] rounded-[24px] bg-[#261405] border border-[#8B4513]/20">
-        <div className="w-full max-w-[900px]">
-          <span className="block font-bold text-[40px] leading-[48px] text-[#FFFFFF]">
+    <section className="w-full flex justify-center items-center my-10">
+      <div className="w-full max-w-5xl flex flex-col items-center text-center gap-6 py-16 px-6 md:px-12 rounded-2xl bg-[#261405] border border-[#8B4513]/20">
+        {/* Title */}
+        <div className="max-w-2xl">
+          <h2 className="text-2xl md:text-3xl leading-snug text-white font-semibold">
             Ready to write your success story?
-          </span>
+          </h2>
         </div>
 
-        <div className="w-full max-w-[900px]">
-          <span className="block text-[#CBD5E1] leading-[28px] text-[16px] font-normal">
-            Join 2,500+ properties growing their revenue and simplifying their{" "}
-            <br /> stack with HotelTech.
-          </span>
+        {/* Description */}
+        <div className="max-w-2xl">
+          <p className="text-sm md:text-base text-[#CBD5E1] leading-relaxed">
+            Join 2,500+ properties growing their revenue and simplifying their
+            stack with HotelTech.
+          </p>
         </div>
 
-        <div className="w-full max-w-[900px] flex flex-col md:flex-row justify-center gap-[16px] mt-4">
-          <button className="cursor-pointer w-full md:w-[200px] h-[60px] rounded-[12px] bg-[#8B4513]  flex justify-center items-center">
-            <span className="font-semibold text-[15px] leading-[28px] text-[#FFFFFF]">
-              Schedule a Demo
+        {/* Buttons */}
+        <div className="flex flex-col md:flex-row justify-center gap-3 mt-2">
+          <button className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-[#8B4513] flex justify-center items-center hover:bg-[#6f3610] transition">
+            <span className="font-medium text-sm text-white">
+              Schedule Demo
             </span>
           </button>
-          <button
-            className="cursor-pointer w-full md:w-[200px] h-[60px] rounded-[12px] bg-white/10 backdrop-blur-md border border-[#8B4513]/30  flex justify-center items-center"
-          >
-            <span className="font-semibold text-[15px] leading-[28px] text-[#FFFFFF]/50">
+
+          <button className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-white/10 backdrop-blur-md border border-[#8B4513]/30 flex justify-center items-center hover:bg-white/15 transition">
+            <span className="font-medium text-sm text-white/70">
               View Pricing
             </span>
           </button>

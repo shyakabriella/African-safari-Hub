@@ -176,11 +176,11 @@ export default function page() {
                 key={faq.question}
                 className="rounded-[16px] border border-[#e5e7eb] bg-white/70 p-4 shadow-[0_8px_20px_rgba(15,23,42,0.03)]"
               >
-                <h3 className="text-[15px] font-semibold text-[#111827]">
+                <h3 className="text-[15px] text-center font-semibold text-[#111827]">
                   {faq.question}
                 </h3>
 
-                <p className="mt-2 text-[12px] text-center leading-6 text-[#64748b]">
+                <p className="mt-2 text-[9px] text-center leading-6 text-[#64748b]">
                   {faq.answer}
                 </p>
               </article>

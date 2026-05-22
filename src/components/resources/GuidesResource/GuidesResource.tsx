@@ -6,7 +6,7 @@ import { Sparkles, FileText, Clock, Download, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const Hero = () => (
-  <div className="flex justify-between items-start pt-[64px] mb-[48px]">
+  <div className="flex justify-between items-start pt-[64px] mb-[48px] mt-8">
     <div className="max-w-[560px]">
       <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#F6EBE6] text-[#964722] text-[10px] font-bold uppercase tracking-widest rounded-full mb-5">
         <Sparkles size={12} /> Education Center
