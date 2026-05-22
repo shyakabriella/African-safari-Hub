@@ -76,7 +76,7 @@ function Hero() {
 
           {/* CTA */}
           <motion.a
-            href="#services"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[#8B4513] text-white text-[11px] tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#c98453] transition rounded-md"
           >
             Elevate Your Brand
@@ -284,14 +284,14 @@ function CTA() {
     <div className="flex flex-col sm:flex-row gap-3 justify-center">
 
       {/* Primary button */}
-      <button className="bg-[#8B4513] text-white text-xs tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#6B3410] transition shadow-md">
-        Start Project
-      </button>
+      <a href="/pricing/monthly-plans" target="_blank" className="bg-[#8B4513] text-white text-xs tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#6B3410] transition shadow-md">
+        View Plans
+      </a>
 
       {/* Secondary button */}
-      <button className="border border-[#8B4513]/30 text-[#8B4513] text-xs tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#8B4513]/5 transition">
+      <a href="/contact" target="_blank" className="border border-[#8B4513]/30 text-[#8B4513] text-xs tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#8B4513]/5 transition">
         Contact Us
-      </button>
+      </a>
 
     </div>
 

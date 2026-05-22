@@ -22,17 +22,17 @@ export default function FinalSetupCTA() {
 
             {/* Buttons */}
             <div className="w-full flex flex-wrap justify-center gap-3 mt-2">
-              <button className="cursor-pointer px-6 py-3 rounded-[16px] bg-white">
+              <a href='/contact' target='_blank' className="cursor-pointer px-6 py-3 rounded-[16px] bg-white">
                 <span className="font-bold text-[11px] text-[#8B4513]">
                   Start Your Fast-Track Today
                 </span>
-              </button>
+              </a>
               
-              <button className="cursor-pointer px-6 py-3 rounded-[16px] border-2 border-white/30">
+              <a href='/contact' target='_blank' className="cursor-pointer px-6 py-3 rounded-[16px] border-2 border-white/30">
                 <span className="font-bold text-[11px] text-white">
                   Schedule a Call
                 </span>
-              </button>
+              </a>
             </div>
 
             {/* Footer Text */}

@@ -205,9 +205,9 @@ const CTA = () => (
         Let our experts design a tailored digital marketing strategy for your property. Get a free audit of your current online presence.
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        <button className="bg-[#AD6419] text-white px-8 py-3 rounded-2xl font-bold text-base hover:bg-[#9a5a17] transition-colors shadow-xl shadow-orange-100">
+        <a href='/contact' target='_blank' className="bg-[#AD6419] text-white px-8 py-3 rounded-2xl font-bold text-base hover:bg-[#9a5a17] transition-colors shadow-xl shadow-orange-100">
           Request a Demo
-        </button>
+        </a>
       </div>
     </div>
   </section>

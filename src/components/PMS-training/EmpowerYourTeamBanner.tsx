@@ -27,17 +27,17 @@ export default function EmpowerYourTeamBanner() {
               </span>
             </div>
             <div className="w-full h-[68px] flex items-center gap-[16px]">
-              <button className="cursor-pointer h-[50px] px-[28px] rounded-[16px] bg-[#8B4513] flex items-center justify-center">
+              <a href="/contact" target="_blank" className="cursor-pointer h-[50px] px-[28px] rounded-[16px] bg-[#8B4513] flex items-center justify-center">
                 <span className="font-semibold text-[10px] text-white whitespace-nowrap">
                   Schedule Training
                 </span>
-              </button>
+              </a>
 
-              <button className="cursor-pointer h-[50px] px-[28px] rounded-[16px] bg-white border border-[#E2E8F0] flex items-center justify-center">
+              <a href="/pricing/monthly-plans" target="_blank" className="cursor-pointer h-[50px] px-[28px] rounded-[16px] bg-white border border-[#E2E8F0] flex items-center justify-center">
                 <span className="font-semibold text-[10px] text-[#0F172A] whitespace-nowrap">
                   View Support Plans
                 </span>
-              </button>
+              </a>
             </div>
           </div>
           <div className="w-[524px] h-[402px]">

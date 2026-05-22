@@ -18,16 +18,16 @@ export default function FinalCTA() {
           </span>
         </div>
         <div className="w-[862px] h-[84px] flex items-center justify-center gap-4 pt-[16px]">
-          <button className="cursor-pointer w-[204.48px] h-[60px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[10px] bg-[#8B4513] shadow-md shadow-black/50">
+          <a href="/contact" target="_blank" className="cursor-pointer w-[204.48px] h-[60px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[10px] bg-[#8B4513] shadow-md shadow-black/50">
             <span className="w-[174.48px] h-[28px] text-[12px] font-bold text-[#ffffff]/90">
               Get Started Today
             </span>
-          </button>
-          <button className="cursor-pointer w-[208.91px] h-[60px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[10px] bg-[#F1F5F9]">
+          </a>
+          <a href="/contact" target="_blank" className="cursor-pointer w-[208.91px] h-[60px] pt-[20px] pb-[20px] pr-[40px] pl-[40px] rounded-[10px] bg-[#F1F5F9]">
             <span className="w-[158.91px] h-[28px] font-bold text-[12px] leading-[28px] text-[#0F172A]">
               Talk to an Expert
             </span>
-          </button>
+          </a>
         </div>
 
         <div className="w-[862px] h-[28px] pt-[8px]">
