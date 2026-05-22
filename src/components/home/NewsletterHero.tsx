@@ -39,7 +39,7 @@ export default function NewsletterHero() {
         icon: MonitorCog,
         title: "Professional Website Development",
         desc: "Fast, modern, mobile-friendly website built to convert.",
-        href: "/solutions/website-booking",
+        href: "/solutions/website",
       },
       {
         icon: Globe,
@@ -174,7 +174,7 @@ export default function NewsletterHero() {
                 </Link>
 
                 <Link
-                  href="/pricing"
+                  href="/pricing/monthly-plans"
                   className="inline-flex items-center justify-center rounded-full px-7 py-4 text-sm font-semibold transition"
                   style={{
                     color: C.orange,

@@ -109,7 +109,7 @@ export default function HeroSection() {
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND.orangeDark; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = BRAND.orange; }}
             >
-              Get Started Free
+              Get Started
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
             </Link>
 

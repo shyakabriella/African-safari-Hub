@@ -21,7 +21,7 @@ const C = {
 };
 
 const SOLUTIONS = [
-  { label: "Hotel Website + Booking Engine", href: "/solutions/website-booking" },
+  { label: "Hotel Website + Booking Engine", href: "/solutions/website" },
   { label: "450+ OTAs Distribution", href: "/solutions/otas" },
   { label: "Channel Manager", href: "/solutions/channel-manager" },
   { label: "Property Management System (PMS)", href: "/solutions/pms" },
