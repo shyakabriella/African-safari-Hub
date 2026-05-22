@@ -1244,7 +1244,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
             </Link>
 
             <div
-              className="mt-3 h-[5px] w-28 rounded-full"
+              className="mt-3  h-[5px] w-28 rounded-full"
               style={{ backgroundColor: BRAND.green }}
             />
           </div>
