@@ -289,7 +289,11 @@ function Header() {
 
         <nav className="hidden items-center gap-9 text-[10px] font-medium tracking-wide text-[#33261d] md:flex">
           {navItems.map((item) => (
-            <a key={item} href="#" className="group relative py-2 transition hover:text-[#AD6419]">
+            <a
+              key={item}
+              href="#"
+              className="group relative py-2 transition hover:text-[#AD6419]"
+            >
               {item}
               {item === "Distribution" ? (
                 <span className="absolute -bottom-0.5 left-1/2 h-px w-8 -translate-x-1/2 bg-[#AD6419]" />
@@ -358,7 +362,10 @@ export default function OtaSetupPage() {
 
           <div className="mt-16 grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-[136px]">
             {channels.map((channel) => (
-              <div key={channel} className="h-10 bg-[#f0f0ef] text-center text-[11px] leading-10 text-[#a29a93]">
+              <div
+                key={channel}
+                className="h-10 bg-[#f0f0ef] text-center text-[11px] leading-10 text-[#a29a93]"
+              >
                 {channel}
               </div>
             ))}
@@ -375,9 +382,12 @@ export default function OtaSetupPage() {
                   </span>
 
                   <div>
-                    <p className="text-[11px] font-bold text-[#251b12]">Single Dashboard</p>
+                    <p className="text-[11px] font-bold text-[#251b12]">
+                      Single Dashboard
+                    </p>
                     <p className="mt-1 max-w-[320px] text-[11px] leading-5 text-[#75695f]">
-                      Update rates, availability, and restrictions across all channels simultaneously.
+                      Update rates, availability, and restrictions across all
+                      channels simultaneously.
                     </p>
                   </div>
                 </div>
@@ -388,9 +398,12 @@ export default function OtaSetupPage() {
                   </span>
 
                   <div>
-                    <p className="text-[11px] font-bold text-[#251b12]">Automated Mapping</p>
+                    <p className="text-[11px] font-bold text-[#251b12]">
+                      Automated Mapping
+                    </p>
                     <p className="mt-1 max-w-[330px] text-[11px] leading-5 text-[#75695f]">
-                      Intelligent room and rate plan mapping ensures consistency across platforms.
+                      Intelligent room and rate plan mapping ensures consistency
+                      across platforms.
                     </p>
                   </div>
                 </div>
@@ -427,7 +440,8 @@ export default function OtaSetupPage() {
                 <h3 className="mt-6 text-[11px] font-bold">Zero Overbookings</h3>
 
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
-                  Instant availability updates mitigate the risk of double bookings.
+                  Instant availability updates mitigate the risk of double
+                  bookings.
                 </p>
               </div>
 
@@ -439,7 +453,8 @@ export default function OtaSetupPage() {
                 <h3 className="mt-6 text-[11px] font-bold">Rate Parity Protected</h3>
 
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
-                  Maintain consistent pricing strategies seamlessly across the board.
+                  Maintain consistent pricing strategies seamlessly across the
+                  board.
                 </p>
               </div>
             </div>
@@ -455,14 +470,21 @@ export default function OtaSetupPage() {
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {valueCards.map((card) => (
-              <article key={card.title} className="min-h-[240px] border border-[#e4d5c9] bg-[#fff8f3] p-8">
+              <article
+                key={card.title}
+                className="min-h-[240px] border border-[#e4d5c9] bg-[#fff8f3] p-8"
+              >
                 <div className="text-[#AD6419]">
                   <LineIcon name={card.icon} />
                 </div>
 
                 <div className="mt-20">
-                  <h3 className="font-display text-[18px] leading-tight tracking-[-0.02em]">{card.title}</h3>
-                  <p className="mt-3 text-[11px] leading-5 text-[#75695f]">{card.body}</p>
+                  <h3 className="font-display text-[18px] leading-tight tracking-[-0.02em]">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
+                    {card.body}
+                  </p>
                 </div>
               </article>
             ))}
@@ -477,7 +499,8 @@ export default function OtaSetupPage() {
           </h2>
 
           <p className="mt-5 text-[13px] leading-6 text-[#655950]">
-            Join thousands of high-end properties optimizing their global reach with Hotelsafari.
+            Join thousands of high-end properties optimizing their global reach
+            with Hotelsafari.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-5">

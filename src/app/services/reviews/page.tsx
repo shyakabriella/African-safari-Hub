@@ -212,9 +212,9 @@ function FinalCTA() {
             rates through better reviews.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <button className="rounded-full bg-[#AD6419] px-6 py-3 text-xs font-semibold text-white shadow-md shadow-[#AD6419]/20 transition hover:bg-[#9a5a17]">
+            <a href="/contact" target="_blank" className="rounded-full bg-[#AD6419] px-6 py-3 text-xs font-semibold text-white shadow-md shadow-[#AD6419]/20 transition hover:bg-[#9a5a17]">
               Request a Demo
-            </button>
+            </a>
            
           </div>
         </div>

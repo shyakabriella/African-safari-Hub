@@ -124,7 +124,7 @@ function Page() {
     <main className="min-h-screen bg-[#f7efe8] text-[#170d08]">
     
 
-      <section id="top" className="relative isolate min-h-[510px] overflow-hidden lg:min-h-[500px]">
+      <section id="top" className="relative isolate min-h-[510px] overflow-hidden lg:min-h-[500px] mt-10">
         <img
           className="hero-image absolute inset-0 h-full w-full object-cover"
           src="/images/hospitality-hero-lodge.jpg"
@@ -137,13 +137,13 @@ function Page() {
           <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#8b3c00]">
             Advanced Analytics
           </p>
-          <p className="mb-3 max-w-[760px] font-serif text-[38px] leading-[0.95] tracking-[-0.04em] text-[#130b07] sm:text-[50px] lg:text-[58px]">
+          <p className="mb-3 max-w-[760px] font-serif text-[30px] leading-[0.95] tracking-[-0.04em] text-[#130b07] sm:text-[40px] lg:text-[45px]">
             African Safari and Hotel Booking Hub
           </p>
-          <h1 className="max-w-[650px] font-serif text-[34px] leading-[0.98] tracking-[-0.04em] text-[#130b07] sm:text-[45px] lg:text-[50px]">
+          <h1 className="max-w-[650px] font-serif text-[30px] leading-[0.98] tracking-[-0.04em] text-[#130b07] sm:text-[40px] lg:text-[45px]">
             Data-Driven Insights for Elite Hospitality
           </h1>
-          <p className="mt-7 max-w-[560px] text-[15px] leading-8 text-[#473a31]">
+          <p className="mt-7 max-w-[560px] text-[12px] leading-8 text-[#473a31]">
             Harness the power of the African Safari and Hotel Booking Hub to make informed decisions for your luxury lodges. Optimize yield, track market trends, and elevate guest experiences through precision intelligence.
           </p>
         </div>

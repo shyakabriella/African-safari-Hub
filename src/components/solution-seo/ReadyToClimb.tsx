@@ -18,9 +18,9 @@ export default function ReadyToClimb() {
             </p>
           </div>
 
-          <button className="px-[20px] mt-9 py-[10px] rounded-[12px] cursor-pointer bg-[#4A3B2A] text-white text-[10px] font-bold hover:scale-105 transition">
+          <a href="/contact" target="_blank" className="px-[20px] mt-9 py-[10px] rounded-[12px] cursor-pointer bg-[#4A3B2A] text-white text-[10px] font-bold hover:scale-105 transition">
             Request Your SEO Strategy
-          </button>
+          </a>
 
           <p className="text-[12px] text-[#8F7E6D]">
             No obligation. 100% free technical audit included.

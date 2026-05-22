@@ -13,13 +13,13 @@ export default function AIGuestExperienceCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="px-6 py-2.5 rounded-lg bg-[#8B4513] text-white text-sm font-semibold hover:bg-[#6B3410] transition shadow-md hover:shadow-lg">
+            <a href="/contact" target="_blank" className="px-6 py-2.5 rounded-lg bg-[#8B4513] text-white text-sm font-semibold hover:bg-[#6B3410] transition shadow-md hover:shadow-lg">
               Start Free Trial
-            </button>
+            </a>
 
-            <button className="px-6 py-2.5 rounded-lg bg-white text-[#8B4513] text-sm font-semibold border border-[#8B4513] hover:bg-[#8B4513]/5 transition">
+            <a href="/contact" target="_blank" className="px-6 py-2.5 rounded-lg bg-white text-[#8B4513] text-sm font-semibold border border-[#8B4513] hover:bg-[#8B4513]/5 transition">
               Talk To Sales
-            </button>
+            </a>
           </div>
 
         </div>

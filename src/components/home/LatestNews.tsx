@@ -215,7 +215,7 @@ export default function LatestNews() {
         <div className="mt-8 h-px w-full bg-zinc-300/60" />
 
         {/* Trust story + awards image */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <p
             className="mb-5 text-center text-[11px] font-bold tracking-[0.22em] uppercase"
             style={{ color: C.orange }}
@@ -242,7 +242,7 @@ export default function LatestNews() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
 

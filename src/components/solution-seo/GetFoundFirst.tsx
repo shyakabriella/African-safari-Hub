@@ -37,17 +37,17 @@ export default function GetFoundFirst() {
             </span>
           </div>
           <div className="w-[768px] h-[74px] pt-[16px] flex gap-[16px]">
-            <button className="w-[120px] h-[40px] rounded-[12px] bg-[#D9BFA8] flex justify-center items-center border border-[#947F6C]">
+            <a href="/contact" target="_blank" className="w-[120px] h-[40px] rounded-[12px] bg-[#D9BFA8] flex justify-center items-center border border-[#947F6C]">
               <span className="text-[10px] font-bold text-[#0F172A]">
-                Free SEO Audit
+                Contact Our Team
               </span>
-            </button>
+            </a>
 
-            <button className="w-[200px] h-[40px] rounded-[12px] bg-[#ffffff] border border-[#D9BFA8]/40 flex justify-center items-center">
+            <a href="/resources/case-studies" target="_blank" className="w-[200px] h-[40px] rounded-[12px] bg-[#ffffff] border border-[#D9BFA8]/40 flex justify-center items-center">
               <span className="font-bold text-[10px] text-[#0F172A]">
                 View Case Studies
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -31,13 +31,13 @@ export default function GoLiveBanner() {
 
           {/* Buttons */}
           <div className="flex items-center gap-6 pt-4">
-            <button className="px-6 py-3 rounded-[16px] bg-[#8B4513] text-white font-semibold cursor-pointer text-[13px]">
+            <a href="/contact" target="_blank" className="px-6 py-3 rounded-[16px] bg-[#8B4513] text-white font-semibold cursor-pointer text-[13px]">
               Start Your Fast-Track Today
-            </button>
+            </a>
 
-            <button className="px-6 py-3 rounded-[16px] border border-[#E2E8F0] bg-white text-[#0F172A] font-semibold cursor-pointer text-[13px]">
+            <a href="/pricing/monthly-plans" target="_blank" className="px-6 py-3 rounded-[16px] border border-[#E2E8F0] bg-white text-[#0F172A] font-semibold cursor-pointer text-[13px]">
               View Pricing
-            </button>
+            </a>
           </div>
         </div>
 

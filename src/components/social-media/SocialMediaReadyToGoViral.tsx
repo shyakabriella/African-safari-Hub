@@ -21,13 +21,13 @@ export default function SocialMediaReadyToGoViral() {
         {/* Buttons */}
         <div className="flex gap-[12px]">
           
-          <button className="cursor-pointer px-6 py-3 rounded-[12px] bg-white text-[#8B4513] font-semibold">
+          <a href="/contact" target="_blank" className="cursor-pointer px-6 py-3 rounded-[12px] bg-white text-[#8B4513] font-semibold">
             Book a Free Consultation
-          </button>
+          </a>
 
-          <button className="cursor-pointer px-6 py-3 rounded-[12px] border border-white text-white font-semibold">
+          <a href="/" target="_blank" className="cursor-pointer px-6 py-3 rounded-[12px] border border-white text-white font-semibold">
             View Our Portfolio
-          </button>
+          </a>
 
         </div>
 

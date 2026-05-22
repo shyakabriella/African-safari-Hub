@@ -183,10 +183,10 @@ export default function TheIntelligentConcierge() {
                 </div>
               </div>
 
-              <button className="inline-flex items-center gap-2 font-semibold text-amber-700 hover:text-amber-800 transition-all group">
+              {/* <button className="inline-flex items-center gap-2 font-semibold text-amber-700 hover:text-amber-800 transition-all group">
                 See how it works
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-              </button>
+              </button> */}
             </div>
 
             {/* Right Visual - Clean and modern */}

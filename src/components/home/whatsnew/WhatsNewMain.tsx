@@ -284,7 +284,7 @@ export default function WhatsNewMain() {
         category: "Website + OTA Visibility",
         title:
           "Transform your hotel to online presence: boost bookings, save time, grow revenue.",
-        href: "/solutions/website-booking",
+        href: "/solutions/website",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=70",
         author: "african safari and hotel booking hub Team",

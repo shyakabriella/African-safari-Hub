@@ -34,11 +34,11 @@ export default function SocialMediaWelcome() {
           </div>
 
           {/* Button */}
-          <button className="cursor-pointer w-full h-[35px] px-8 rounded-[12px] bg-[#8B4513] flex items-center justify-center">
+          <a href="/contact" target="_blank" className="cursor-pointer w-full h-[35px] px-8 rounded-[12px] bg-[#8B4513] flex items-center justify-center">
             <span className="font-semibold text-[16px] leading-[24px] text-white">
               Get Started
             </span>
-          </button>
+          </a>
 
         </div>
       </div>
