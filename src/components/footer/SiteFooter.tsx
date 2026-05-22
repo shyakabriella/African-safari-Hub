@@ -55,7 +55,7 @@ export default function SiteFooter() {
             {/* Use real logo from public/lg.png */}
             <Link href="/" className="inline-flex items-center">
               <Image
-                src="/logo.png"
+                src="/lg.png"
                 alt="african safari and hotel booking hub logo"
                 width={220}
                 height={24}
