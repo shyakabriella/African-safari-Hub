@@ -19,17 +19,17 @@ export default function SuccessStoryCTA() {
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row justify-center gap-3 mt-2">
-          <button className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-[#8B4513] flex justify-center items-center hover:bg-[#6f3610] transition">
+          <a href="/contact" target="_blank" className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-[#8B4513] flex justify-center items-center hover:bg-[#6f3610] transition">
             <span className="font-medium text-sm text-white">
               Schedule Demo
             </span>
-          </button>
+          </a>
 
-          <button className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-white/10 backdrop-blur-md border border-[#8B4513]/30 flex justify-center items-center hover:bg-white/15 transition">
+          <a href="/pricing/monthly-plans" target="_blank" className="cursor-pointer w-full md:w-[180px] h-12 rounded-xl bg-white/10 backdrop-blur-md border border-[#8B4513]/30 flex justify-center items-center hover:bg-white/15 transition">
             <span className="font-medium text-sm text-white/70">
               View Pricing
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

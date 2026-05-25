@@ -1,7 +1,12 @@
 import type { ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
 import { cloneElement, isValidElement } from "react";
 
-const navItems = ["Distribution", "Property Management", "Marketing", "Insights"];
+const navItems = [
+  "Distribution",
+  "Property Management",
+  "Marketing",
+  "Insights",
+];
 
 const channels = ["Booking.com", "Expedia", "Airbnb", "Agoda"];
 
@@ -209,7 +214,13 @@ function WorldMapVisual() {
               className="node-pulse"
               style={{ animationDelay: `${delay}s` }}
             >
-              <circle cx={cx} cy={cy} r="34" fill="url(#nodeGlow)" opacity="0.78" />
+              <circle
+                cx={cx}
+                cy={cy}
+                r="34"
+                fill="url(#nodeGlow)"
+                opacity="0.78"
+              />
               <circle cx={cx} cy={cy} r="7" fill="#fff4ce" />
             </g>
           ))}
@@ -239,7 +250,11 @@ function TrailVisual() {
     <div className="relative h-[402px] overflow-hidden rounded-[5px] bg-[#e9efe7]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_40%,rgba(255,255,255,0.9),transparent_31%),radial-gradient(circle_at_65%_55%,rgba(173,100,25,0.22),transparent_26%)]" />
 
-      <svg viewBox="0 0 560 420" className="absolute inset-0 h-full w-full" aria-hidden="true">
+      <svg
+        viewBox="0 0 560 420"
+        className="absolute inset-0 h-full w-full"
+        aria-hidden="true"
+      >
         <defs>
           <filter id="trailGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="7" result="blur" />
@@ -254,7 +269,11 @@ function TrailVisual() {
           {Array.from({ length: 28 }).map((_, index) => {
             const y = 256 + index * 6;
             const color =
-              index % 5 === 0 ? "#AD6419" : index % 3 === 0 ? "#6c736b" : "#e8ded1";
+              index % 5 === 0
+                ? "#AD6419"
+                : index % 3 === 0
+                  ? "#6c736b"
+                  : "#e8ded1";
             const width = index % 5 === 0 ? 3.2 : 2;
 
             return (
@@ -271,8 +290,20 @@ function TrailVisual() {
         </g>
 
         <g filter="url(#trailGlow)">
-          <circle className="spark-run" cx="282" cy="204" r="8" fill="#AD6419" />
-          <circle className="spark-run [animation-delay:1.6s]" cx="384" cy="158" r="6" fill="#fff0c8" />
+          <circle
+            className="spark-run"
+            cx="282"
+            cy="204"
+            r="8"
+            fill="#AD6419"
+          />
+          <circle
+            className="spark-run [animation-delay:1.6s]"
+            cx="384"
+            cy="158"
+            r="6"
+            fill="#fff0c8"
+          />
         </g>
       </svg>
     </div>
@@ -283,7 +314,10 @@ function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex h-16 max-w-[928px] items-center justify-between px-6 lg:px-0">
-        <a href="#" className="font-display text-[17px] font-semibold tracking-tight text-[#AD6419]">
+        <a
+          href="#"
+          className="font-display text-[17px] font-semibold tracking-tight text-[#AD6419]"
+        >
           African Safari and Hotel Booking Hub
         </a>
 
@@ -332,13 +366,18 @@ export default function OtaSetupPage() {
             </h1>
 
             <p className="mt-6 max-w-[388px] text-[13px] leading-6 text-[#655950]">
-              Seamlessly distribute your inventory across hundreds of channels worldwide. Ensure real-time
-              synchronization, maintain rate parity, and maximize your global reach from a single, unified dashboard.
+              Seamlessly distribute your inventory across hundreds of channels
+              worldwide. Ensure real-time synchronization, maintain rate parity,
+              and maximize your global reach from a single, unified dashboard.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/contact"
+              target="_blank"
+              className="mt-8 flex flex-wrap gap-4"
+            >
               <Button>Request a Demo</Button>
-            </div>
+            </a>
           </div>
 
           <div className="reveal-up mx-auto w-full max-w-[454px] [animation-delay:0.15s] md:mx-0 md:justify-self-end">
@@ -355,7 +394,8 @@ export default function OtaSetupPage() {
             </h2>
 
             <p className="mt-4 text-[12px] leading-5 text-[#75695f]">
-              Manage your presence across the world's leading travel platforms without leaving African Safari and Hotel Booking Hub. One
+              Manage your presence across the world's leading travel platforms
+              without leaving African Safari and Hotel Booking Hub. One
               interface, infinite reach.
             </p>
           </div>
@@ -373,7 +413,9 @@ export default function OtaSetupPage() {
 
           <div className="mt-16 border border-[#e4d5c9] bg-[#fff8f3] px-10 py-10 md:grid md:grid-cols-[0.92fr_1.08fr] md:gap-12 md:px-12">
             <div className="self-center">
-              <h3 className="font-display text-[18px] tracking-[-0.02em]">Centralized Control</h3>
+              <h3 className="font-display text-[18px] tracking-[-0.02em]">
+                Centralized Control
+              </h3>
 
               <div className="mt-6 space-y-5">
                 <div className="flex gap-4">
@@ -427,8 +469,9 @@ export default function OtaSetupPage() {
             </h2>
 
             <p className="mt-6 max-w-[440px] text-[13px] leading-6 text-[#655950]">
-              Our robust 2-way XML synchronization engine communicates with OTAs instantly. The moment a booking is
-              made on any channel, inventory is universally adjusted across all connected platforms.
+              Our robust 2-way XML synchronization engine communicates with OTAs
+              instantly. The moment a booking is made on any channel, inventory
+              is universally adjusted across all connected platforms.
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -437,7 +480,9 @@ export default function OtaSetupPage() {
                   <LineIcon name="shield" />
                 </div>
 
-                <h3 className="mt-6 text-[11px] font-bold">Zero Overbookings</h3>
+                <h3 className="mt-6 text-[11px] font-bold">
+                  Zero Overbookings
+                </h3>
 
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
                   Instant availability updates mitigate the risk of double
@@ -450,7 +495,9 @@ export default function OtaSetupPage() {
                   <LineIcon name="swap" />
                 </div>
 
-                <h3 className="mt-6 text-[11px] font-bold">Rate Parity Protected</h3>
+                <h3 className="mt-6 text-[11px] font-bold">
+                  Rate Parity Protected
+                </h3>
 
                 <p className="mt-3 text-[11px] leading-5 text-[#75695f]">
                   Maintain consistent pricing strategies seamlessly across the
@@ -503,9 +550,13 @@ export default function OtaSetupPage() {
             with African Safari and Hotel Booking Hub.
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-5">
+          <a
+            href="/contact"
+            target="_blank"
+            className="mt-8 flex flex-wrap gap-4"
+          >
             <Button>Request a Demo</Button>
-          </div>
+          </a>
         </div>
       </section>
     </main>
