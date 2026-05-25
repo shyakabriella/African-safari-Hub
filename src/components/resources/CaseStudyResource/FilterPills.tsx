@@ -1,17 +1,30 @@
 "use client";
+"use client";
 
-import { useState } from "react";
 import { Building, Gem, House } from "lucide-react";
 
-export default function FilterPills() {
-  const [active, setActive] = useState("all");
+type Filter = {
+  id: string;
+  label: string;
+  icon: any | null;
+};
 
-  const filters = [
-    { id: "all", label: "All Stories", icon: null },
-    { id: "luxury", label: "Luxury", icon: Gem },
-    { id: "boutique", label: "Boutique", icon: House },
-    { id: "mid", label: "Mid-size", icon: Building },
+type Props = {
+  active?: string;
+  setActive?: (id: string) => void;
+};
+
+export default function FilterPills({ active = "All Stories", setActive }: Props) {
+  const filters: Filter[] = [
+    { id: "All Stories", label: "All Stories", icon: null },
+    { id: "Luxury", label: "Luxury", icon: Gem },
+    { id: "Boutique", label: "Boutique", icon: House },
+    { id: "Mid-size", label: "Mid-size", icon: Building },
   ];
+
+  const handleClick = (id: string) => {
+    if (setActive) setActive(id);
+  };
 
   return (
     <div className="w-[1120px] flex gap-3 pb-8">
@@ -22,14 +35,13 @@ export default function FilterPills() {
         return (
           <button
             key={filter.id}
-            onClick={() => setActive(filter.id)}
+            onClick={() => handleClick(filter.id)}
             className={`flex items-center gap-2 px-6 h-[40px] rounded-full border transition-all duration-200
               ${
                 isActive
                   ? "bg-[#8B4513] text-white border-[#8B4513]"
                   : "bg-white text-[#334155] border-[#E2E8F0] hover:bg-gray-50"
-              }`}
-          >
+              }`}>
             {Icon && <Icon className="w-4 h-4" />}
             <span className="text-[14px] font-bold">{filter.label}</span>
           </button>
