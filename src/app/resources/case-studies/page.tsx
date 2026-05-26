@@ -17,14 +17,16 @@ export default function CaseStudies() {
     return normalize(c.category) === normalize(active);
   });
 
-  const featured = filtered[0] ?? caseStudies[0];
+  const pool = filtered.length ? filtered : caseStudies;
+  const featured = pool[0] ?? caseStudies[0];
+  const metricsStudies = pool.filter((c) => c.id !== featured.id).slice(0, 2);
 
   return (
     <div className="w-full flex flex-col mt-5 justify-center items-center bg-[#8B4513]/10">
       <SuccessStoryBanner />
       <FilterPills active={active} setActive={setActive} />
       <FeaturedCase caseStudy={featured} />
-      <GrowthMetrics caseStudies={filtered.length ? filtered : caseStudies} />
+      <GrowthMetrics caseStudies={metricsStudies} />
       <SuccessStoryCTA />
     </div>
   );

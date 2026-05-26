@@ -7,6 +7,7 @@ interface ArticleCardProps {
   timer: string;
   title: string;
   description: string;
+  href?: string;
 }
 
 export default function ArticleCard({
@@ -15,6 +16,7 @@ export default function ArticleCard({
   timer,
   title,
   description,
+  href = '#',
 }: ArticleCardProps) {
   return (
     <div className="w-[298.66px] flex flex-col gap-[16px] pb-[25px] rounded-[12px] bg-white border border-[#F1F5F9] overflow-hidden">
@@ -43,10 +45,7 @@ export default function ArticleCard({
           {description}
         </p>
 
-        <Link
-          href="#"
-          className="flex items-center gap-[6px] text-[14px] font-bold text-[#8B4513]"
-        >
+        <Link href={href} className="flex items-center gap-[6px] text-[14px] font-bold text-[#8B4513]">
           Read Insight
           <div className="relative w-[10px] h-[10px]">
             <Image

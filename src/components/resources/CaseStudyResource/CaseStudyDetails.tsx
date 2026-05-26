@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { CaseStudy } from "@/data/caseStudies";
 
 type Props = {
@@ -9,7 +10,15 @@ type Props = {
 export default function CaseStudyDetails({ caseStudy }: Props) {
   return (
     <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mb-8 space-y-4">
+      <Link
+        href="/resources/case-studies"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[#8B4513] hover:text-[#6f3610] transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to success stories
+      </Link>
+
+      <div className="mb-8 mt-6 space-y-4">
         <p className="text-sm font-semibold text-[#8B4513] uppercase tracking-[0.24em]">{caseStudy.category}</p>
         <h1 className="text-4xl font-bold tracking-tight text-[#0F172A] sm:text-5xl">{caseStudy.title}</h1>
         {caseStudy.rooms && <p className="text-sm text-[#64748B]">{caseStudy.rooms}</p>}
@@ -78,10 +87,24 @@ export default function CaseStudyDetails({ caseStudy }: Props) {
             </div>
           )}
 
-          <Link href="/resources/case-studies" className="inline-flex w-full items-center justify-center rounded-3xl bg-[#8B4513] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#6f3610]">
-            Back to case studies
+          <Link
+            href="/resources/case-studies"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-3xl bg-[#8B4513] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#6f3610]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to success stories
           </Link>
         </aside>
+      </div>
+
+      <div className="mt-12 flex justify-center border-t border-[#E2E8F0] pt-8">
+        <Link
+          href="/resources/case-studies"
+          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#8B4513] px-8 text-sm font-semibold text-white transition hover:bg-[#6f3610]"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to all case studies
+        </Link>
       </div>
     </div>
   );

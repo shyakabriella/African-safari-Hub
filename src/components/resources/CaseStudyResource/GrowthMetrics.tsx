@@ -1,5 +1,6 @@
 import { ArrowRight, Clock, TrendingUp, Zap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { CaseStudy } from "@/data/caseStudies";
 
 type Props = {
@@ -51,6 +52,15 @@ export default function GrowthMetrics({ caseStudies }: Props) {
             </div>
           </div>
         </div>
+        {first && (
+          <Link
+            href={`/resources/case-studies/${first.id}`}
+            className="hover:underline flex items-center cursor-pointer gap-[4px] text-[14px] font-bold text-[#8B4513] mt-2"
+          >
+            Read Case Study
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        )}
       </div>
 
       <div className="w-[352px] h-[641px] p-[24px] rounded-[12px] bg-[#FFFFFF] border border-[#E2E8F0]">
@@ -96,7 +106,15 @@ export default function GrowthMetrics({ caseStudies }: Props) {
           </div>
         </div>
 
-        <button className="hover:underline flex items-center cursor-pointer gap-[4px]"></button>
+        {second && (
+          <Link
+            href={`/resources/case-studies/${second.id}`}
+            className="hover:underline flex items-center cursor-pointer gap-[4px] text-[14px] font-bold text-[#8B4513]"
+          >
+            Read Case Study
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        )}
       </div>
 
       <div className="w-[352px] h-[641px] gap-[16px] p-[24px] rounded-[12px] bg-[#FFFFFF] border border-[#E2E8F0]">

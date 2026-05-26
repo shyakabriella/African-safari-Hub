@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import { Building, Gem, House } from "lucide-react";
 
