@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/navigation/SiteHeader";
 import SiteFooter from "@/components/footer/SiteFooter";
+import SupportChatBadge from "@/components/support/SupportChatBadge";
 
 const HEADER_H = 88;
 
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
   description:
     "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
   icons: {
-    icon: "/icon.svg", // ✅ from public/icon.svg
+    icon: "/icon.svg",
   },
   openGraph: {
     title: "AshBHub | African Safari and Hotel Booking Hub",
     description:
       "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
-    images: ["/og.png"], // ✅ put og.png in /public
+    images: ["/og.png"],
     type: "website",
   },
   twitter: {
@@ -44,12 +45,13 @@ export default function RootLayout({
           <SiteHeader />
         </header>
 
-        {/* Spacer for fixed header */}
         <div style={{ height: HEADER_H }} aria-hidden="true" />
 
         <main className="w-full min-w-0 overflow-x-clip">{children}</main>
 
         <SiteFooter />
+
+        <SupportChatBadge />
       </body>
     </html>
   );
