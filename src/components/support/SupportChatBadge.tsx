@@ -14,19 +14,25 @@ import {
   ArrowLeft,
   Loader2,
   CheckCircle2,
-  MessageSquareText,
   Sparkles,
+  MessageSquareText,
+  AlertCircle,
 } from "lucide-react";
 
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "https://d.ashbhub.com/api";
 
+const SUPPORT_SESSION_STORAGE_KEY = "ashbhub_support_ai_session_id";
+const HUMAN_SUPPORT_SCORE_LIMIT = 5;
+
 type ChatMode = "menu" | "bot" | "live";
 
 type ChatMessage = {
-  id: number;
+  id: string;
   role: "bot" | "user" | "system";
   text: string;
+  score?: number;
+  matchedTitle?: string | null;
 };
 
 type LiveChatForm = {
@@ -36,7 +42,22 @@ type LiveChatForm = {
   message: string;
 };
 
-const quickQuestions = [
+type SupportAiApiResponse = {
+  success?: boolean;
+  message?: string;
+  errors?: Record<string, string[]>;
+  data?: {
+    session_id?: string;
+    answer?: string;
+    matched_knowledge_id?: number | null;
+    matched_title?: string | null;
+    score?: number;
+    suggestions?: string[];
+    requires_human?: boolean;
+  };
+};
+
+const defaultQuickQuestions = [
   "What is AshBHub?",
   "Do you build hotel websites?",
   "Do you support booking engine?",
@@ -48,105 +69,66 @@ function normalizeApiUrl(url: string) {
   return String(url || "").replace(/\/+$/, "");
 }
 
-function getBotAnswer(question: string): string {
-  const q = question.toLowerCase();
+function createMessageId() {
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
 
-  if (
-    q.includes("what is") ||
-    q.includes("about") ||
-    q.includes("ashbhub") ||
-    q.includes("ash hub")
-  ) {
-    return "AshBHub means African Safari and Hotel Booking Hub. We help hotels, lodges, apartments, and safari businesses grow online through hotel websites, direct booking, digital marketing, booking support, and travel technology.";
+async function readJsonResponse(response: Response): Promise<SupportAiApiResponse> {
+  const text = await response.text();
+
+  if (!text) {
+    return {};
   }
 
-  if (
-    q.includes("website") ||
-    q.includes("web") ||
-    q.includes("site") ||
-    q.includes("design")
-  ) {
-    return "Yes, AshBHub helps hotels and hospitality businesses get professional websites with room pages, gallery, contact forms, booking links, SEO structure, and mobile-friendly design.";
+  try {
+    return JSON.parse(text) as SupportAiApiResponse;
+  } catch {
+    return {};
+  }
+}
+
+function getValidationErrorMessage(result: SupportAiApiResponse) {
+  if (result?.errors) {
+    return Object.values(result.errors).flat().join(" ");
   }
 
-  if (
-    q.includes("booking") ||
-    q.includes("engine") ||
-    q.includes("reservation") ||
-    q.includes("direct")
-  ) {
-    return "Yes, we support direct booking solutions. The goal is to help hotels receive more direct reservations and reduce full dependence on OTAs.";
-  }
+  return result?.message || "Something went wrong. Please try again.";
+}
 
-  if (
-    q.includes("marketing") ||
-    q.includes("seo") ||
-    q.includes("social") ||
-    q.includes("ads") ||
-    q.includes("google")
-  ) {
-    return "Yes, AshBHub supports hotel digital marketing, including SEO, social media content, Google visibility, campaigns, and strategies to increase bookings.";
-  }
+function isHumanSupportRequest(message: string) {
+  const q = message.toLowerCase();
 
-  if (
-    q.includes("pms") ||
-    q.includes("channel") ||
-    q.includes("ota") ||
-    q.includes("expedia") ||
-    q.includes("booking.com")
-  ) {
-    return "AshBHub can support hospitality technology integrations such as PMS, OTA visibility, channel management guidance, and booking workflow improvement depending on the property needs.";
-  }
-
-  if (
-    q.includes("safari") ||
-    q.includes("tour") ||
-    q.includes("travel") ||
-    q.includes("package")
-  ) {
-    return "AshBHub also focuses on African safari and travel experiences. We help connect hospitality and safari services so travelers can discover hotels, tours, and travel solutions more easily.";
-  }
-
-  if (
-    q.includes("price") ||
-    q.includes("pricing") ||
-    q.includes("cost") ||
-    q.includes("how much")
-  ) {
-    return "Pricing depends on what you need: website, booking setup, digital marketing, support, or full hotel technology package. Please send your hotel name and needs, then our team will advise.";
-  }
-
-  if (
-    q.includes("contact") ||
-    q.includes("phone") ||
-    q.includes("email") ||
-    q.includes("whatsapp")
-  ) {
-    return "You can contact AshBHub by email at hotelandsafari@gmail.com, phone at +250 788 471 880, or WhatsApp using the chat button.";
-  }
-
-  if (
-    q.includes("list") ||
-    q.includes("register") ||
-    q.includes("join") ||
-    q.includes("hotel")
-  ) {
-    return "To list or register your hotel with AshBHub, please send your hotel name, location, contact email, and what support you need. Our team will follow up.";
-  }
-
-  return "Thank you for your question. AshBHub supports hotels, safaris, travel businesses, websites, booking tools, and digital marketing. You can ask about hotel websites, booking engine, pricing, digital marketing, or request live support.";
+  return (
+    q.includes("human") ||
+    q.includes("agent") ||
+    q.includes("admin") ||
+    q.includes("live support") ||
+    q.includes("support team") ||
+    q.includes("talk to someone") ||
+    q.includes("call me") ||
+    q.includes("contact me")
+  );
 }
 
 export default function SupportChatBadge() {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<ChatMode>("menu");
 
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const [botInput, setBotInput] = useState("");
+  const [botLoading, setBotLoading] = useState(false);
+  const [botError, setBotError] = useState("");
+  const [humanSupportSuggested, setHumanSupportSuggested] = useState(false);
+  const [humanSupportReason, setHumanSupportReason] = useState("");
+
+  const [quickQuestions, setQuickQuestions] =
+    useState<string[]>(defaultQuickQuestions);
+
   const [botMessages, setBotMessages] = useState<ChatMessage[]>([
     {
-      id: 1,
+      id: createMessageId(),
       role: "bot",
-      text: "Hello 👋 I am AshBHub assistant. Ask me about hotel websites, booking engine, digital marketing, safaris, or how to contact our team.",
+      text: "Hello 👋 I am AshBHub assistant. Ask me about hotel websites, booking engine, digital marketing, safaris, pricing, or how to contact our team.",
     },
   ]);
 
@@ -164,36 +146,44 @@ export default function SupportChatBadge() {
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const savedSessionId = window.localStorage.getItem(
+      SUPPORT_SESSION_STORAGE_KEY
+    );
+
+    if (savedSessionId) {
+      setSessionId(savedSessionId);
+    }
+  }, []);
+
+  useEffect(() => {
     if (mode === "bot") {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [botMessages, mode]);
+  }, [botMessages, botLoading, mode]);
 
   const resetToMenu = () => {
     setMode("menu");
     setLiveSuccess("");
     setLiveError("");
+    setBotError("");
   };
 
-  const sendBotMessage = (text?: string) => {
-    const message = (text || botInput).trim();
+  const openBot = () => {
+    setMode("bot");
+    setBotError("");
+  };
 
-    if (!message) return;
+  const openLiveSupport = (message?: string) => {
+    setMode("live");
+    setLiveSuccess("");
+    setLiveError("");
 
-    const userMessage: ChatMessage = {
-      id: Date.now(),
-      role: "user",
-      text: message,
-    };
-
-    const botReply: ChatMessage = {
-      id: Date.now() + 1,
-      role: "bot",
-      text: getBotAnswer(message),
-    };
-
-    setBotMessages((prev) => [...prev, userMessage, botReply]);
-    setBotInput("");
+    if (message) {
+      setLiveForm((prev) => ({
+        ...prev,
+        message,
+      }));
+    }
   };
 
   const handleLiveChange = (field: keyof LiveChatForm, value: string) => {
@@ -204,6 +194,138 @@ export default function SupportChatBadge() {
 
     setLiveError("");
     setLiveSuccess("");
+  };
+
+  const sendBotMessage = async (text?: string) => {
+    const message = (text || botInput).trim();
+
+    if (!message || botLoading) {
+      return;
+    }
+
+    const userMessage: ChatMessage = {
+      id: createMessageId(),
+      role: "user",
+      text: message,
+    };
+
+    setBotMessages((prev) => [...prev, userMessage]);
+    setBotInput("");
+    setBotError("");
+    setHumanSupportSuggested(false);
+
+    if (isHumanSupportRequest(message)) {
+      const botReply: ChatMessage = {
+        id: createMessageId(),
+        role: "bot",
+        text: "No problem 👍 Please send your name, email, hotel/company name, and message. Our support team will follow up with you.",
+      };
+
+      setBotMessages((prev) => [...prev, botReply]);
+      setHumanSupportSuggested(true);
+      setHumanSupportReason(message);
+      openLiveSupport(message);
+      return;
+    }
+
+    setBotLoading(true);
+
+    try {
+      const response = await fetch(
+        `${normalizeApiUrl(API_BASE_URL)}/support-ai/chat`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            message,
+            session_id: sessionId,
+            visitor_name: liveForm.full_name || undefined,
+            visitor_email: liveForm.work_email || undefined,
+            visitor_hotel: liveForm.hotel_name || undefined,
+            source: "support_badge",
+          }),
+        }
+      );
+
+      const result = await readJsonResponse(response);
+
+      if (!response.ok || result?.success === false) {
+        throw new Error(getValidationErrorMessage(result));
+      }
+
+      const data = result?.data || {};
+      const newSessionId = data.session_id || null;
+      const answer =
+        data.answer ||
+        "Thank you for your question. Please request human support so our team can help you better.";
+      const score = Number(data.score || 0);
+      const matchedTitle = data.matched_title || null;
+      const suggestions = Array.isArray(data.suggestions)
+        ? data.suggestions.filter(Boolean)
+        : [];
+
+      if (newSessionId) {
+        setSessionId(newSessionId);
+        window.localStorage.setItem(
+          SUPPORT_SESSION_STORAGE_KEY,
+          newSessionId
+        );
+      }
+
+      if (suggestions.length > 0) {
+        setQuickQuestions(suggestions.slice(0, 5));
+      }
+
+      const shouldSuggestHuman =
+        Boolean(data.requires_human) || score < HUMAN_SUPPORT_SCORE_LIMIT;
+
+      const botReply: ChatMessage = {
+        id: createMessageId(),
+        role: "bot",
+        text: answer,
+        score,
+        matchedTitle,
+      };
+
+      setBotMessages((prev) => [...prev, botReply]);
+
+      if (shouldSuggestHuman) {
+        setHumanSupportSuggested(true);
+        setHumanSupportReason(message);
+
+        setBotMessages((prev) => [
+          ...prev,
+          {
+            id: createMessageId(),
+            role: "system",
+            text: "This question may need a human support team member. You can send your details and our team will follow up.",
+          },
+        ]);
+      }
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Network error. Please check API connection.";
+
+      setBotError(errorMessage);
+      setHumanSupportSuggested(true);
+      setHumanSupportReason(message);
+
+      setBotMessages((prev) => [
+        ...prev,
+        {
+          id: createMessageId(),
+          role: "bot",
+          text: "Sorry, I could not connect to the AI support server right now. You can still send a support request and our team will contact you.",
+        },
+      ]);
+    } finally {
+      setBotLoading(false);
+    }
   };
 
   const submitLiveChat = async (e: FormEvent<HTMLFormElement>) => {
@@ -226,16 +348,10 @@ export default function SupportChatBadge() {
         }
       );
 
-      const result = await response.json();
+      const result = await readJsonResponse(response);
 
-      if (!response.ok) {
-        const errors = result?.errors
-          ? Object.values(result.errors).flat().join(" ")
-          : "";
-
-        throw new Error(
-          errors || result?.message || "Failed to send live chat message."
-        );
+      if (!response.ok || result?.success === false) {
+        throw new Error(getValidationErrorMessage(result));
       }
 
       setLiveSuccess(
@@ -243,12 +359,24 @@ export default function SupportChatBadge() {
           "Your message has been sent. Our support team will contact you soon."
       );
 
+      setBotMessages((prev) => [
+        ...prev,
+        {
+          id: createMessageId(),
+          role: "system",
+          text: "Live support request sent successfully ✅",
+        },
+      ]);
+
       setLiveForm({
         full_name: "",
         hotel_name: "",
         work_email: "",
         message: "",
       });
+
+      setHumanSupportSuggested(false);
+      setHumanSupportReason("");
     } catch (error) {
       setLiveError(
         error instanceof Error
@@ -273,7 +401,7 @@ export default function SupportChatBadge() {
                 </div>
 
                 <p className="mt-1 text-xs text-white/85">
-                  Chatbot and live support for customers 👋
+                  AI assistant and human support for customers 👋
                 </p>
               </div>
 
@@ -305,7 +433,7 @@ export default function SupportChatBadge() {
             <div className="space-y-3 p-4">
               <button
                 type="button"
-                onClick={() => setMode("bot")}
+                onClick={openBot}
                 className="flex w-full items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition hover:border-[#AD6419] hover:bg-orange-50"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
@@ -318,25 +446,6 @@ export default function SupportChatBadge() {
                   </p>
                   <p className="text-xs text-slate-500">
                     Ask about AshBHub services
-                  </p>
-                </div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setMode("live")}
-                className="flex w-full items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition hover:border-[#AD6419] hover:bg-orange-50"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
-                  <MessageSquareText className="h-5 w-5" />
-                </div>
-
-                <div>
-                  <p className="text-sm font-bold text-slate-900">
-                    Live chat request
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Send message to support team
                   </p>
                 </div>
               </button>
@@ -403,7 +512,7 @@ export default function SupportChatBadge() {
           )}
 
           {mode === "bot" && (
-            <div className="flex h-[460px] flex-col">
+            <div className="flex h-[500px] flex-col">
               <div className="border-b border-slate-100 bg-white px-4 py-3">
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-[#AD6419]" />
@@ -412,41 +521,98 @@ export default function SupportChatBadge() {
                   </p>
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
-                  Trained with basic AshBHub service information.
+                  Answers are loaded from your Laravel AI knowledge database.
                 </p>
               </div>
 
               <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4">
                 {botMessages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={`flex gap-2 ${
-                      message.role === "user" ? "justify-end" : "justify-start"
-                    }`}
-                  >
-                    {message.role === "bot" && (
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
-                        <Bot className="h-4 w-4" />
-                      </div>
-                    )}
-
+                  <div key={message.id}>
                     <div
-                      className={`max-w-[82%] rounded-2xl px-4 py-2 text-sm leading-6 ${
+                      className={`flex gap-2 ${
                         message.role === "user"
-                          ? "bg-[#AD6419] text-white"
-                          : "border border-slate-200 bg-white text-slate-700"
+                          ? "justify-end"
+                          : "justify-start"
                       }`}
                     >
-                      {message.text}
-                    </div>
+                      {message.role !== "user" && (
+                        <div
+                          className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                            message.role === "system"
+                              ? "bg-blue-100 text-blue-700"
+                              : "bg-[#AD6419]/10 text-[#AD6419]"
+                          }`}
+                        >
+                          {message.role === "system" ? (
+                            <AlertCircle className="h-4 w-4" />
+                          ) : (
+                            <Bot className="h-4 w-4" />
+                          )}
+                        </div>
+                      )}
 
-                    {message.role === "user" && (
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600">
-                        <User className="h-4 w-4" />
+                      <div
+                        className={`max-w-[82%] rounded-2xl px-4 py-2 text-sm leading-6 ${
+                          message.role === "user"
+                            ? "bg-[#AD6419] text-white"
+                            : message.role === "system"
+                            ? "border border-blue-100 bg-blue-50 text-blue-700"
+                            : "border border-slate-200 bg-white text-slate-700"
+                        }`}
+                      >
+                        <p>{message.text}</p>
+
+                        {message.role === "bot" && message.matchedTitle && (
+                          <p className="mt-2 text-[11px] font-semibold text-slate-400">
+                            Matched: {message.matchedTitle}
+                          </p>
+                        )}
                       </div>
-                    )}
+
+                      {message.role === "user" && (
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600">
+                          <User className="h-4 w-4" />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
+
+                {botLoading && (
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
+                    <Loader2 className="h-4 w-4 animate-spin text-[#AD6419]" />
+                    AI is checking knowledge base...
+                  </div>
+                )}
+
+                {botError && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
+                    {botError}
+                  </div>
+                )}
+
+                {humanSupportSuggested && (
+                  <div className="rounded-2xl border border-orange-200 bg-orange-50 p-3">
+                    <p className="text-xs leading-5 text-orange-800">
+                      Need more help? Send this question to the human support
+                      team.
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        openLiveSupport(
+                          humanSupportReason ||
+                            "I need help from human support."
+                        )
+                      }
+                      className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#AD6419] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#b98a35]"
+                    >
+                      <MessageSquareText className="h-4 w-4" />
+                      Talk to human support
+                    </button>
+                  </div>
+                )}
 
                 <div ref={messagesEndRef} />
               </div>
@@ -458,7 +624,8 @@ export default function SupportChatBadge() {
                       key={question}
                       type="button"
                       onClick={() => sendBotMessage(question)}
-                      className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#AD6419] hover:text-[#AD6419]"
+                      disabled={botLoading}
+                      className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#AD6419] hover:text-[#AD6419] disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {question}
                     </button>
@@ -476,16 +643,22 @@ export default function SupportChatBadge() {
                       }
                     }}
                     placeholder="Ask about AshBHub..."
-                    className="flex-1 bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400"
+                    disabled={botLoading}
+                    className="flex-1 bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 disabled:cursor-not-allowed"
                   />
 
                   <button
                     type="button"
                     onClick={() => sendBotMessage()}
-                    className="rounded-full bg-[#AD6419] p-2 text-white transition hover:bg-[#b98a35]"
+                    disabled={botLoading || !botInput.trim()}
+                    className="rounded-full bg-[#AD6419] p-2 text-white transition hover:bg-[#b98a35] disabled:cursor-not-allowed disabled:opacity-60"
                     aria-label="Send chatbot message"
                   >
-                    <Send className="h-4 w-4" />
+                    {botLoading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Send className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -526,6 +699,7 @@ export default function SupportChatBadge() {
                   }
                   placeholder="Full name"
                   autoComplete="name"
+                  required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-[#AD6419] focus:bg-white"
                 />
 
@@ -548,6 +722,7 @@ export default function SupportChatBadge() {
                   }
                   placeholder="Work email"
                   autoComplete="email"
+                  required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-[#AD6419] focus:bg-white"
                 />
 
@@ -556,6 +731,7 @@ export default function SupportChatBadge() {
                   onChange={(e) => handleLiveChange("message", e.target.value)}
                   placeholder="How can we help you?"
                   rows={4}
+                  required
                   className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-[#AD6419] focus:bg-white"
                 />
 
@@ -572,7 +748,7 @@ export default function SupportChatBadge() {
                   ) : (
                     <>
                       <Send className="h-4 w-4" />
-                      Send Live Chat Request
+                      Send Support Request
                     </>
                   )}
                 </button>
