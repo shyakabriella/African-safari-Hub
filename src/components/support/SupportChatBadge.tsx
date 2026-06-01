@@ -52,22 +52,15 @@ type SupportAiApiResponse = {
     matched_knowledge_id?: number | null;
     matched_title?: string | null;
     score?: number;
-    suggestions?: string[];
     requires_human?: boolean;
+    is_in_scope?: boolean;
+    source?: string;
   };
 };
 
-const defaultQuickQuestions = [
-  "What is AshBHub?",
-  "Do you build hotel websites?",
-  "Do you support booking engine?",
-  "Do you help with digital marketing?",
-  "How can I list my hotel?",
-];
-
 const thinkingMessages = [
   "Reading your question...",
-  "Checking AshBHub knowledge...",
+  "Checking ASHBHUB knowledge...",
   "Thinking with Gemini...",
   "Preparing a helpful answer...",
 ];
@@ -80,7 +73,9 @@ function createMessageId() {
   return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
-async function readJsonResponse(response: Response): Promise<SupportAiApiResponse> {
+async function readJsonResponse(
+  response: Response
+): Promise<SupportAiApiResponse> {
   const text = await response.text();
 
   if (!text) {
@@ -157,14 +152,11 @@ export default function SupportChatBadge() {
   const [humanSupportSuggested, setHumanSupportSuggested] = useState(false);
   const [humanSupportReason, setHumanSupportReason] = useState("");
 
-  const [quickQuestions, setQuickQuestions] =
-    useState<string[]>(defaultQuickQuestions);
-
   const [botMessages, setBotMessages] = useState<ChatMessage[]>([
     {
       id: createMessageId(),
       role: "bot",
-      text: "Hello 👋 I am AshBHub assistant. Ask me about hotel websites, booking engine, digital marketing, safaris, pricing, or how to contact our team.",
+      text: "Hello 👋 I am ASHBHUB assistant. Ask me about hotel websites, booking engine, digital marketing, safaris, pricing, or how to contact our team.",
     },
   ]);
 
@@ -208,7 +200,7 @@ export default function SupportChatBadge() {
     if (mode === "bot") {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [botMessages, botLoading, thinkingIndex, mode]);
+  }, [botMessages, botLoading, thinkingIndex, mode, humanSupportSuggested]);
 
   const resetToMenu = () => {
     setMode("menu");
@@ -262,6 +254,7 @@ export default function SupportChatBadge() {
     setBotInput("");
     setBotError("");
     setHumanSupportSuggested(false);
+    setHumanSupportReason("");
 
     if (isHumanSupportRequest(message)) {
       const botReply: ChatMessage = {
@@ -312,9 +305,6 @@ export default function SupportChatBadge() {
         "Thank you for your question. Please request human support so our team can help you better.";
       const score = Number(data.score || 0);
       const matchedTitle = data.matched_title || null;
-      const suggestions = Array.isArray(data.suggestions)
-        ? data.suggestions.filter(Boolean)
-        : [];
 
       if (newSessionId) {
         setSessionId(newSessionId);
@@ -322,10 +312,6 @@ export default function SupportChatBadge() {
           SUPPORT_SESSION_STORAGE_KEY,
           newSessionId
         );
-      }
-
-      if (suggestions.length > 0) {
-        setQuickQuestions(suggestions.slice(0, 5));
       }
 
       const shouldSuggestHuman =
@@ -344,15 +330,6 @@ export default function SupportChatBadge() {
       if (shouldSuggestHuman) {
         setHumanSupportSuggested(true);
         setHumanSupportReason(message);
-
-        setBotMessages((prev) => [
-          ...prev,
-          {
-            id: createMessageId(),
-            role: "system",
-            text: "This question may need a human support team member. You can send your details and our team will follow up.",
-          },
-        ]);
       }
     } catch (error) {
       const errorMessage =
@@ -494,7 +471,7 @@ export default function SupportChatBadge() {
                     Chat with AI Assistant
                   </p>
                   <p className="text-xs text-slate-500">
-                    Ask about AshBHub services
+                    Ask about ASHBHUB services
                   </p>
                 </div>
               </button>
@@ -569,7 +546,6 @@ export default function SupportChatBadge() {
                     ASHBHUB Support
                   </p>
                 </div>
-               
               </div>
 
               <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4">
@@ -662,20 +638,6 @@ export default function SupportChatBadge() {
               </div>
 
               <div className="border-t border-slate-100 bg-white p-3">
-                <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-                  {quickQuestions.map((question) => (
-                    <button
-                      key={question}
-                      type="button"
-                      onClick={() => sendBotMessage(question)}
-                      disabled={botLoading}
-                      className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-[#AD6419] hover:text-[#AD6419] disabled:cursor-not-allowed disabled:opacity-60"
-                    >
-                      {question}
-                    </button>
-                  ))}
-                </div>
-
                 <div className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2">
                   <input
                     type="text"
@@ -686,7 +648,7 @@ export default function SupportChatBadge() {
                         sendBotMessage();
                       }
                     }}
-                    placeholder="Ask about AshBHub..."
+                    placeholder="Ask about ASHBHUB..."
                     disabled={botLoading}
                     className="flex-1 bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 disabled:cursor-not-allowed"
                   />
