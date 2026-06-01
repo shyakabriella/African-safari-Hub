@@ -178,39 +178,18 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
 
+  /*
+   |--------------------------------------------------------------------------
+   | Pricing
+   |--------------------------------------------------------------------------
+   | We changed Pricing from dropdown menu to direct link because it now has
+   | only one page: Monthly Plans.
+   */
   {
-    type: "menu",
+    type: "link",
     label: "Pricing",
+    href: "/pricing/monthly-plans",
     icon: BadgeDollarSign,
-    children: [
-      {
-        label: "Monthly Plans",
-        href: "/pricing/monthly-plans",
-        icon: BadgeDollarSign,
-        description: "Basic / Standard / Premium",
-      },
-
-      /*
-      {
-        label: "One-time Setup Fees",
-        href: "/pricing/one-time-setup#setup-fees",
-        icon: FileText,
-        description: "Website, OTA setup, PMS…",
-      },
-      {
-        label: "Commission Option",
-        href: "/pricing/commision",
-        icon: Repeat2,
-        description: "Pay only when you earn",
-      },
-      {
-        label: "Compare Plans",
-        href: "/pricing/monthly-plans#compare",
-        icon: LayoutGrid,
-        description: "Choose what fits you",
-      },
-      */
-    ],
   },
 
   {
@@ -308,6 +287,7 @@ const NAV_ITEMS: NavItem[] = [
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
+
   return pathname === href || pathname.startsWith(href + "/");
 }
 
@@ -333,7 +313,10 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
   };
 
   const toggleMobileSection = (label: string) => {
-    setOpenMobileSections((prev) => ({ ...prev, [label]: !prev[label] }));
+    setOpenMobileSections((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
   };
 
   useEffect(() => {
@@ -426,7 +409,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   href={item.href}
                   className={`${pillBase} ${
                     active
-                      ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419] w-[12%]"
+                      ? "bg-[rgba(173,100,25,0.10)] text-[#AD6419]"
                       : ""
                   }`}
                 >
@@ -466,6 +449,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                 >
                   <Icon className="h-4 w-4" />
                   <span className="whitespace-nowrap">{item.label}</span>
+
                   <ChevronDown
                     className={`h-4 w-4 transition ${
                       isOpen ? "rotate-180" : ""
