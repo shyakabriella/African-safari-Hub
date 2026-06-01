@@ -65,6 +65,13 @@ const defaultQuickQuestions = [
   "How can I list my hotel?",
 ];
 
+const thinkingMessages = [
+  "Reading your question...",
+  "Checking AshBHub knowledge...",
+  "Thinking with Gemini...",
+  "Preparing a helpful answer...",
+];
+
 function normalizeApiUrl(url: string) {
   return String(url || "").replace(/\/+$/, "");
 }
@@ -110,6 +117,34 @@ function isHumanSupportRequest(message: string) {
   );
 }
 
+function ThinkingBubble({ text }: { text: string }) {
+  return (
+    <div className="flex justify-start gap-2">
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
+        <Bot className="h-4 w-4" />
+      </div>
+
+      <div className="max-w-[82%] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-semibold text-slate-500">
+            {text}
+          </span>
+
+          <div className="flex items-center gap-1">
+            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#AD6419]" />
+            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#AD6419] [animation-delay:150ms]" />
+            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#AD6419] [animation-delay:300ms]" />
+          </div>
+        </div>
+
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100">
+          <div className="h-full w-1/2 animate-pulse rounded-full bg-[#AD6419]/60" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SupportChatBadge() {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<ChatMode>("menu");
@@ -117,6 +152,7 @@ export default function SupportChatBadge() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [botInput, setBotInput] = useState("");
   const [botLoading, setBotLoading] = useState(false);
+  const [thinkingIndex, setThinkingIndex] = useState(0);
   const [botError, setBotError] = useState("");
   const [humanSupportSuggested, setHumanSupportSuggested] = useState(false);
   const [humanSupportReason, setHumanSupportReason] = useState("");
@@ -156,10 +192,23 @@ export default function SupportChatBadge() {
   }, []);
 
   useEffect(() => {
+    if (!botLoading) {
+      setThinkingIndex(0);
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setThinkingIndex((prev) => (prev + 1) % thinkingMessages.length);
+    }, 1400);
+
+    return () => window.clearInterval(interval);
+  }, [botLoading]);
+
+  useEffect(() => {
     if (mode === "bot") {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [botMessages, botLoading, mode]);
+  }, [botMessages, botLoading, thinkingIndex, mode]);
 
   const resetToMenu = () => {
     setMode("menu");
@@ -397,7 +446,7 @@ export default function SupportChatBadge() {
               <div>
                 <div className="flex items-center gap-2">
                   <Headphones className="h-5 w-5" />
-                  <h3 className="text-sm font-bold">AshBHub Support</h3>
+                  <h3 className="text-sm font-bold">ASHBHUB Support</h3>
                 </div>
 
                 <p className="mt-1 text-xs text-white/85">
@@ -521,7 +570,7 @@ export default function SupportChatBadge() {
                   </p>
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
-                  Answers are loaded from your Laravel AI knowledge database.
+                  Powered by your Laravel support AI and Gemini.
                 </p>
               </div>
 
@@ -579,10 +628,7 @@ export default function SupportChatBadge() {
                 ))}
 
                 {botLoading && (
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-                    <Loader2 className="h-4 w-4 animate-spin text-[#AD6419]" />
-                    AI is checking knowledge base...
-                  </div>
+                  <ThinkingBubble text={thinkingMessages[thinkingIndex]} />
                 )}
 
                 {botError && (
