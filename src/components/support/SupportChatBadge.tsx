@@ -1,11 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import {
   MessageCircle,
   X,
-  Mail,
   Phone,
   Headphones,
   Send,
@@ -20,7 +18,7 @@ import {
 } from "lucide-react";
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://d.ashbhub.com/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://api.ashbhub.com/api";
 
 const SUPPORT_SESSION_STORAGE_KEY = "ashbhub_support_ai_session_id";
 const HUMAN_SUPPORT_SCORE_LIMIT = 5;
@@ -302,7 +300,7 @@ export default function SupportChatBadge() {
       const newSessionId = data.session_id || null;
       const answer =
         data.answer ||
-        "Thank you for your question. Please request human support so our team can help you better.";
+        "Human support recommended. Please click “Talk to human support” below.";
       const score = Number(data.score || 0);
       const matchedTitle = data.matched_title || null;
 
@@ -475,42 +473,6 @@ export default function SupportChatBadge() {
                   </p>
                 </div>
               </button>
-
-              {/* <Link
-                href="/contact"
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#AD6419] hover:bg-orange-50"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
-                  <Send className="h-5 w-5" />
-                </div>
-
-                <div>
-                  <p className="text-sm font-bold text-slate-900">
-                    Contact form
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Open full contact page
-                  </p>
-                </div>
-              </Link> */}
-
-              {/* <a
-                href="mailto:hotelandsafari@gmail.com"
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#AD6419] hover:bg-orange-50"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#AD6419]/10 text-[#AD6419]">
-                  <Mail className="h-5 w-5" />
-                </div>
-
-                <div>
-                  <p className="text-sm font-bold text-slate-900">
-                    Email support
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    hotelandsafari@gmail.com
-                  </p>
-                </div>
-              </a> */}
 
               <a
                 href="tel:+250788471880"
