@@ -566,12 +566,10 @@ export default function SupportChatBadge() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-[#AD6419]" />
                   <p className="text-sm font-bold text-slate-900">
-                    AshBHub AI Assistant
+                    ASHBHUB Support
                   </p>
                 </div>
-                <p className="mt-1 text-xs text-slate-500">
-                  Powered by your Laravel support AI and Gemini.
-                </p>
+               
               </div>
 
               <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4">
