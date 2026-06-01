@@ -468,7 +468,7 @@ export default function SupportChatBadge() {
 
                 <div>
                   <p className="text-sm font-bold text-slate-900">
-                    Chat with AI Assistant
+                    Chat with ASHBHUB Bot
                   </p>
                   <p className="text-xs text-slate-500">
                     Ask about ASHBHUB services
@@ -476,7 +476,7 @@ export default function SupportChatBadge() {
                 </div>
               </button>
 
-              <Link
+              {/* <Link
                 href="/contact"
                 className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#AD6419] hover:bg-orange-50"
               >
@@ -492,9 +492,9 @@ export default function SupportChatBadge() {
                     Open full contact page
                   </p>
                 </div>
-              </Link>
+              </Link> */}
 
-              <a
+              {/* <a
                 href="mailto:hotelandsafari@gmail.com"
                 className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#AD6419] hover:bg-orange-50"
               >
@@ -510,7 +510,7 @@ export default function SupportChatBadge() {
                     hotelandsafari@gmail.com
                   </p>
                 </div>
-              </a>
+              </a> */}
 
               <a
                 href="tel:+250788471880"
