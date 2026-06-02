@@ -373,11 +373,11 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
 
           <div
             className={[
-              "relative overflow-hidden rounded-2xl bg-white ring ring-gray-300 shadow-2xs",
+              "relative overflow-hidden  rounded-2xl bg-white ring ring-gray-300 shadow-2xs",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-12 w-[200px] sm:h-14 sm:w-[170px]"
-                : "h-14 w-[220px] sm:h-16 sm:w-[160px]",
+                ? "h-14 w-[200px] sm:h-16 sm:w-[170px]"
+                : "h-16 w-[220px] sm:h-20 sm:w-[160px]",
             ].join(" ")}
           >
             <Image
@@ -413,7 +413,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                       : ""
                   }`}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-5 w-5" />
                   <span className="whitespace-nowrap">{item.label}</span>
                 </Link>
               );
@@ -447,11 +447,11 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   aria-haspopup="menu"
                   aria-expanded={isOpen}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-5 w-5" />
                   <span className="whitespace-nowrap">{item.label}</span>
 
                   <ChevronDown
-                    className={`h-4 w-4 transition ${
+                    className={`h-5 w-5 transition ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -500,7 +500,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                                 "group-hover:text-[#599E1A]",
                               ].join(" ")}
                             >
-                              <ChildIcon className="h-4 w-4" />
+                              <ChildIcon className="h-5 w-5" />
                             </div>
 
                             <div className="min-w-0">
@@ -596,7 +596,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                         : "text-gray-800 hover:bg-gray-50",
                     ].join(" ")}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-5 w-5" />
                     {item.label}
                   </Link>
                 );
@@ -619,12 +619,12 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                     onClick={() => toggleMobileSection(item.label)}
                   >
                     <span className="flex items-center gap-2">
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-5 w-5" />
                       {item.label}
                     </span>
 
                     <ChevronDown
-                      className={`h-4 w-4 transition ${
+                      className={`h-5 w-5 transition ${
                         open ? "rotate-180" : ""
                       }`}
                     />
@@ -647,7 +647,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                                 : "text-gray-700 hover:bg-gray-50",
                             ].join(" ")}
                           >
-                            <ChildIcon className="h-4 w-4" />
+                            <ChildIcon className="h-5 w-5" />
                             {child.label}
                           </Link>
                         );
