@@ -11,7 +11,7 @@ export default function FullService() {
           <div className="w-[880px] h-[92px] flex flex-col gap-[5px]">
             <div className="w-[880px] h-[48px]">
               <span className="text-[#FFFFFF] text-[32px] font-extrabold">
-                Full-Service SEO Features
+                Full-Service SEO Feature
               </span>
             </div>
             <div className="w-[672px] h-[28px]">

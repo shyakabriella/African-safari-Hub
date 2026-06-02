@@ -373,15 +373,15 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
 
           <div
             className={[
-              "relative overflow-hidden w-2.5 rounded-2xl bg-white",
+              "relative overflow-hidden rounded-2xl bg-white ring ring-gray-300 shadow-2xs",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-14 w-[200px] sm:h-16 sm:w-[170px]"
-                : "h-16 w-[220px] sm:h-20 sm:w-[160px]",
+                ? "h-12 w-[200px] sm:h-14 sm:w-[170px]"
+                : "h-14 w-[220px] sm:h-16 sm:w-[160px]",
             ].join(" ")}
           >
             <Image
-              src="/logo.png"
+              src="/lg.png"
               alt="HotelSafari logo"
               fill
               priority
@@ -389,7 +389,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
               className={[
                 "object-contain object-left",
                 "p-0",
-                "scale-190",
+                "scale-100",
                 "origin-left",
               ].join(" ")}
             />
