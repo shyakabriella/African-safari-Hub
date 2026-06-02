@@ -368,20 +368,20 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
         ].join(" ")}
       >
         {/* Logo */}
-       <Link href="/" className="group flex items-center shrink-0">
+       <Link href="/" className="group flex items-center shrink-0 ml-2 sm:ml-3">
           <span className="sr-only">african safari and hotel booking hub</span>
 
           <div
             className={[
-              "relative overflow-hidden w-2.5 rounded-2xl bg-white",
+              "relative overflow-hidden rounded-2xl bg-white",
               "transition-all duration-300 ease-out",
               compact
-                ? "h-14 w-[200px] sm:h-16 sm:w-[170px]"
-                : "h-16 w-[220px] sm:h-20 sm:w-[160px]",
+                ? "h-14 w-[170px] sm:h-16 sm:w-[200px]"
+                : "h-16 w-[160px] sm:h-20 sm:w-[220px]",
             ].join(" ")}
           >
             <Image
-              src="/logo.png"
+              src="/icon.svg"
               alt="HotelSafari logo"
               fill
               priority
@@ -389,7 +389,6 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
               className={[
                 "object-contain object-left",
                 "p-0",
-                "scale-190",
                 "origin-left",
               ].join(" ")}
             />

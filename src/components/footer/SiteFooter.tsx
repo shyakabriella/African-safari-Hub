@@ -65,7 +65,7 @@ export default function SiteFooter() {
             <Link href="/" className="inline-flex shrink-0 items-center">
               <span className="relative block w-[200px] sm:w-[320px]">
                 <Image
-                  src="/logo.png"
+                  src="/icon.svg"
                   alt="African Safari and Hotel Booking Hub logo"
                   width={320}
                   height={100}
