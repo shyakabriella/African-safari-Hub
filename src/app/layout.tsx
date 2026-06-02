@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   },
   description:
     "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
-  icons: {
-    icon: "/icon.svg",
-  },
   openGraph: {
     title: "AshBHub | African Safari and Hotel Booking Hub",
     description:
