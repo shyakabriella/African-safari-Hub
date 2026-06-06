@@ -9,7 +9,7 @@ export default function SocialMedia() {
     <>
     <SocialMediaWelcome />
     <SocialMediaStruggles />
-    <SocialMediaStrategies />
+    <SocialMediaStrategies /> 
     <SocialMediaImpact />
     <SocialMediaReadyToGoViral />
     </>

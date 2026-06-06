@@ -368,7 +368,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
         ].join(" ")}
       >
         {/* Logo */}
-        <Link href="/" className="group flex items-center shrink-0">
+         <Link href="/" className="group flex items-center shrink-0">
           <span className="sr-only">african safari and hotel booking hub</span>
 
           <div
@@ -413,7 +413,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                       : ""
                   }`}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-5 w-5" />
                   <span className="whitespace-nowrap">{item.label}</span>
                 </Link>
               );
@@ -447,11 +447,11 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                   aria-haspopup="menu"
                   aria-expanded={isOpen}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-5 w-5" />
                   <span className="whitespace-nowrap">{item.label}</span>
 
                   <ChevronDown
-                    className={`h-4 w-4 transition ${
+                    className={`h-5 w-5 transition ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -500,7 +500,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                                 "group-hover:text-[#599E1A]",
                               ].join(" ")}
                             >
-                              <ChildIcon className="h-4 w-4" />
+                              <ChildIcon className="h-5 w-5" />
                             </div>
 
                             <div className="min-w-0">
@@ -596,7 +596,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                         : "text-gray-800 hover:bg-gray-50",
                     ].join(" ")}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-5 w-5" />
                     {item.label}
                   </Link>
                 );
@@ -619,12 +619,12 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                     onClick={() => toggleMobileSection(item.label)}
                   >
                     <span className="flex items-center gap-2">
-                      <Icon className="h-4 w-4" />
+                      <Icon className="h-5 w-5" />
                       {item.label}
                     </span>
 
                     <ChevronDown
-                      className={`h-4 w-4 transition ${
+                      className={`h-5 w-5 transition ${
                         open ? "rotate-180" : ""
                       }`}
                     />
@@ -647,7 +647,7 @@ export default function MainNavbar({ compact = false }: { compact?: boolean }) {
                                 : "text-gray-700 hover:bg-gray-50",
                             ].join(" ")}
                           >
-                            <ChildIcon className="h-4 w-4" />
+                            <ChildIcon className="h-5 w-5" />
                             {child.label}
                           </Link>
                         );

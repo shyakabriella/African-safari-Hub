@@ -8,7 +8,6 @@ import {
   Printer,
   Smartphone,
   ArrowRight,
-  Menu,
   X,
   ChevronRight,
 } from "lucide-react";

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "AshBHub | African Safari and Hotel Booking Hub",
     description:
       "African Safari and Hotel Booking Hub — hotels, safaris, and travel solutions across Africa. Direct booking, marketing, and support.",
-    images: ["/og.png"],
+    images: ["/icon.png"],
     type: "website",
   },
 
