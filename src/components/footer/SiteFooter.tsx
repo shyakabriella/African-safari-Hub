@@ -36,7 +36,7 @@ const SOLUTIONS = [
   { label: "Channel Manager", href: "/solutions/channel-manager" },
   { label: "Property Management System (PMS)", href: "/solutions/pms" },
   { label: "Digital Marketing", href: "/solutions/marketing" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Pricing", href: "/pricing/monthly-plans" },
 ];
 
 const COMPANY = [
