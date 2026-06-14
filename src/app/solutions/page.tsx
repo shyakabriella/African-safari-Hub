@@ -175,7 +175,7 @@ export default function SolutionsPage() {
                 Schedule a Demo
               </Link>
               <Link
-                href="/pricing"
+                href="/pricing/monthly-plans"
                 className="inline-flex items-center justify-center rounded-full bg-white/10 px-8 py-4 text-[15px] font-semibold text-white ring-1 ring-white/20 transition-all hover:bg-white/20"
               >
                 View Pricing
