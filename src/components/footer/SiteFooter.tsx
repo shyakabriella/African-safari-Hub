@@ -38,6 +38,7 @@ const TikTokIcon = ({
 );
 
 const SOLUTIONS = [
+<<<<<<< HEAD
   {
     label: "Hotel Website + Booking Engine",
     href: "/solutions/website",
@@ -62,6 +63,14 @@ const SOLUTIONS = [
     label: "Pricing",
     href: "/pricing/monthly-plans",
   },
+=======
+  { label: "Hotel Website + Booking Engine", href: "/solutions/website" },
+  { label: "450+ OTAs Distribution", href: "/solutions/otas" },
+  { label: "Channel Manager", href: "/solutions/channel-manager" },
+  { label: "Property Management System (PMS)", href: "/solutions/pms" },
+  { label: "Digital Marketing", href: "/solutions/marketing" },
+  { label: "Pricing", href: "/pricing/monthly-plans" },
+>>>>>>> c8502b43f826d42618e66f5135b170b7e40cf3aa
 ];
 
 const COMPANY = [

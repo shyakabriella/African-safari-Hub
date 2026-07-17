@@ -234,7 +234,7 @@ export default function WhatsNewMain() {
           category: "One-Time Setup",
           title:
             "Foundation $4,500 · Horizon Implementation $8,750 · Elite Migration $15,000+.",
-          href: "/pricing/one-time-setup#setup-fees",
+          href: "/pricing/monthly-plans",
           image:
             "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80",
         },
@@ -242,7 +242,7 @@ export default function WhatsNewMain() {
           category: "Commission Model",
           title:
             "Pay when you earn: Growth 10%, Accelerator 15%, or custom Enterprise tier.",
-          href: "/pricing/commision",
+          href: "/pricing/monthly-plans",
           image:
             "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70",
         },
