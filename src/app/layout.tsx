@@ -9,7 +9,12 @@ import SiteFooter from "@/components/footer/SiteFooter";
 import SupportChatBadge from "@/components/support/SupportChatBadge";
 
 const HEADER_H = 88;
-const GOOGLE_ANALYTICS_ID = "G-YMM9N7S7XL";
+
+const UMAMI_ANALYTICS_URL =
+  "https://analytics.ashbhub.com/script.js";
+
+const UMAMI_WEBSITE_ID =
+  "9a8dea77-d98a-451c-8450-9381c98cf462";
 
 export const metadata: Metadata = {
   title: {
@@ -49,27 +54,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full w-full">
       <body className="min-h-screen w-full overflow-x-clip bg-white antialiased">
-        {/* Google Analytics external script */}
+        {/* Self-hosted Umami Analytics */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+          id="umami-analytics"
+          src={UMAMI_ANALYTICS_URL}
+          data-website-id={UMAMI_WEBSITE_ID}
+          data-performance="true"
           strategy="afterInteractive"
         />
-
-        {/* Google Analytics configuration */}
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-              window.dataLayer.push(arguments);
-            }
-
-            gtag('js', new Date());
-            gtag('config', '${GOOGLE_ANALYTICS_ID}', {
-              page_path: window.location.pathname
-            });
-          `}
-        </Script>
 
         <header className="fixed inset-x-0 top-0 z-50 bg-white">
           <SiteHeader />
@@ -78,7 +70,9 @@ export default function RootLayout({
         {/* Space reserved for the fixed header */}
         <div style={{ height: HEADER_H }} aria-hidden="true" />
 
-        <main className="w-full min-w-0 overflow-x-clip">{children}</main>
+        <main className="w-full min-w-0 overflow-x-clip">
+          {children}
+        </main>
 
         <SiteFooter />
 
